@@ -295,7 +295,6 @@ footer h2 span { color: #c8b6ff; }
         <a href="#p3" style="--c:var(--s3-accent)"><i></i><span>Scarfguy<small>Team game · Unity</small></span></a>
         <a href="#p4" style="--c:var(--s4-accent)"><i></i><span>Occult Blood Smackdown<small>Board game</small></span></a>
         <a href="#p5" style="--c:var(--s5-accent)"><i></i><span>[Platformer name]<small>2D platformer · Unity</small></span></a>
-        <a href="#other" style="--c:var(--brand)"><i></i><span>Other projects<small>Smaller projects</small></span></a>
       </div>
     </div>
     <div class="item" style="--c:var(--s6-accent)"><a class="nl" href="#writing" data-sec="writing">Writing</a></div>
@@ -467,21 +466,8 @@ footer h2 span { color: #c8b6ff; }
     </div>
   </section>
 
-  <!-- OTHER PROJECTS: one screenshot each. Copy or delete an <article> to add or remove one. -->
-  <section class="band plain" id="other">
-    <div class="wrap">
-      <div class="sec-head"><span class="eyebrow">More</span><h2>Other projects</h2></div>
-      <div class="mini">
-        <article><div class="ph" data-file="other-1"><span>Screenshot<small>other-1.jpg</small></span></div><span class="eyebrow">Puzzle levels · Baba Is You</span><h3>Baba Is You levels</h3><p>[One line.] Level codes: <b>[XXXX-XXXX]</b></p></article>
-        <article><div class="ph" data-file="other-2"><span>Screenshot<small>other-2.jpg</small></span></div><span class="eyebrow">Experiment · [Engine]</span><h3>[Experimental project]</h3><p>[One line: what you were testing.]</p></article>
-        <article><div class="ph" data-file="other-3"><span>Screenshot<small>other-3.jpg</small></span></div><span class="eyebrow">Prototype · [Engine]</span><h3>[Unfinished project]</h3><p>[One line: the idea.]</p></article>
-        <article><div class="ph" data-file="other-4"><span>Screenshot<small>other-4.jpg</small></span></div><span class="tag">In progress</span><h3>[Current project]</h3><p>[One line: what you're making now.]</p></article>
-      </div>
-    </div>
-  </section>
-
   <!-- EXPERIENCE: add the years when you know them -->
-  <section class="band plain" id="experience" style="padding-top:1rem">
+  <section class="band plain" id="experience">
     <div class="wrap">
       <div class="sec-head"><span class="eyebrow">Work</span><h2>Experience</h2></div>
       <ol class="xp">
@@ -505,9 +491,9 @@ footer h2 span { color: #c8b6ff; }
 </div></footer>
 <script>
   // Sections the marker tracks, with their colors. Add or remove pairs when you add or remove sections.
-  const SECS = [['top-hero','var(--brand)'],['p1','var(--s1-accent)'],['p2','var(--s2-accent)'],['p3','var(--s3-accent)'],['p4','var(--s4-accent)'],['p5','var(--s5-accent)'],['writing','var(--s6-accent)'],['other','var(--brand)'],['experience','var(--brand)'],['about','var(--brand)']]
+  const SECS = [['top-hero','var(--brand)'],['p1','var(--s1-accent)'],['p2','var(--s2-accent)'],['p3','var(--s3-accent)'],['p4','var(--s4-accent)'],['p5','var(--s5-accent)'],['writing','var(--s6-accent)'],['experience','var(--brand)'],['about','var(--brand)']]
     .map(([id,c]) => ({ el: document.getElementById(id), c })).filter(x => x.el);
-  const WORK = ['p1','p2','p3','p4','p5','other'];   // sections that light up "Projects" in the menu
+  const WORK = ['p1','p2','p3','p4','p5'];   // sections that light up "Projects" in the menu
   const rail = document.querySelector('.rail'), fill = rail.querySelector('.rail-fill'), bar = document.querySelector('.topbar');
   const dots = SECS.map(x => { const d = document.createElement('span'); d.className = 'dot'; d.style.setProperty('--c', x.c); rail.appendChild(d); return d; });
   const navLinks = [...document.querySelectorAll('.mainnav .nl')];
