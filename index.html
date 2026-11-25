@@ -238,8 +238,12 @@ footer h2 span { color: #c8b6ff; }
 .compact.flip > :first-child { order: 2; }
 @media (max-width: 820px) { .compact.flip > :first-child { order: 0; } }
 .compact .links { margin-top: 1rem; }
-.covers { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; }
-.covers .ph { aspect-ratio: 4/3; }
+.covers { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; align-items: start; }
+/* Book pages keep the A4 page shape (1 : 1.414) and look like paper */
+.covers .ph.page { aspect-ratio: 595/842; border-radius: 4px; box-shadow: 0 8px 22px rgba(0,0,0,.14); }
+.covers .ph.page.filled { background: #fff; }
+.covers .ph.page > img { object-fit: contain; }
+.covers .ph.page:nth-child(2) { transform: translateY(14px); }
 .thumbs { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; margin-top: 2rem; }
 @media (max-width: 560px) { .thumbs { grid-template-columns: 1fr; } }
 /* Writing: books */
@@ -452,7 +456,7 @@ footer h2 span { color: #c8b6ff; }
   <!-- WRITING · game design books -->
   <section class="band s6" id="writing">
     <div class="wrap compact flip">
-      <div class="covers"><div class="ph" data-file="book-1"><span>Book photo 1<small>book-1.jpg</small></span></div><div class="ph" data-file="book-2"><span>Book photo 2<small>book-2.jpg</small></span></div><div class="ph" data-file="book-3"><span>Book photo 3<small>book-3.jpg</small></span></div><div class="ph" data-file="book-4"><span>Book photo 4<small>book-4.jpg</small></span></div></div>
+      <div class="covers"><div class="ph page" data-file="book-1"><span>Page 1<small>book-1.jpg</small></span></div><div class="ph page" data-file="book-2"><span>Page 2<small>book-2.jpg</small></span></div><div class="ph page" data-file="book-3"><span>Page 3<small>book-3.jpg</small></span></div></div>
       <div>
         <span class="eyebrow">Writing</span>
         <h2>Game design books</h2>
