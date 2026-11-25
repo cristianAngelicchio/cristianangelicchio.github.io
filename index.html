@@ -138,6 +138,8 @@ li::marker { color: var(--sa); }
 .highlights { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 1.25rem; margin-top: 2.5rem; }
 @media (max-width: 760px) { .highlights { grid-template-columns: 1fr; } }
 .hl { display: grid; gap: .6rem; }
+.highlights.two { grid-template-columns: repeat(2, minmax(0,1fr)); gap: 2rem 1.5rem; }
+@media (max-width: 760px) { .highlights.two { grid-template-columns: 1fr; } }
 .hl h4 { margin: 0; font-family: var(--display); font-size: 1.05rem; }
 .hl p { font-size: .95rem; opacity: .85; }
 .process { margin-top: 2.5rem; }
@@ -349,13 +351,16 @@ footer h2 span { color: #c8b6ff; }
         </div>
         <div class="ph" style="aspect-ratio:4/3" data-file="uefn-map"><span>Top-down sketch of the map<small>uefn-map.jpg</small></span></div>
       </div>
-      <div class="highlights">
-        <div class="hl"><div class="ph" data-file="uefn-final-1"><span>Final shot 1<small>uefn-final-1.jpg</small></span></div><h4>[Lanes]</h4><p>[What this shot shows.]</p></div>
-        <div class="hl"><div class="ph" data-file="uefn-final-2"><span>Final shot 2<small>uefn-final-2.jpg</small></span></div><h4>[Sightlines &amp; cover]</h4><p>[What this shot shows.]</p></div>
-        <div class="hl"><div class="ph" data-file="uefn-final-3"><span>Final shot 3<small>uefn-final-3.jpg</small></span></div><h4>[Spawns]</h4><p>[What this shot shows.]</p></div>
+      <!-- 4 greybox/final sliders, 2 per row. Delete a <div class="hl"> block to remove one. -->
+      <div class="highlights two">
+        <div class="hl"><div class="cmp"><div class="ph a" data-file="uefn-greybox-1"><span>Greybox 1<small>uefn-greybox-1.jpg</small></span></div><div class="ph b" data-file="uefn-final-1"><span>Final 1<small>uefn-final-1.jpg</small></span></div><input type="range" min="0" max="100" value="50" aria-label="Compare greybox and final, shot 1"></div><h4>[Lanes]</h4><p>[What changed from greybox to final.]</p></div>
+        <div class="hl"><div class="cmp"><div class="ph a" data-file="uefn-greybox-2"><span>Greybox 2<small>uefn-greybox-2.jpg</small></span></div><div class="ph b" data-file="uefn-final-2"><span>Final 2<small>uefn-final-2.jpg</small></span></div><input type="range" min="0" max="100" value="50" aria-label="Compare greybox and final, shot 2"></div><h4>[Sightlines &amp; cover]</h4><p>[What changed from greybox to final.]</p></div>
+        <div class="hl"><div class="cmp"><div class="ph a" data-file="uefn-greybox-3"><span>Greybox 3<small>uefn-greybox-3.jpg</small></span></div><div class="ph b" data-file="uefn-final-3"><span>Final 3<small>uefn-final-3.jpg</small></span></div><input type="range" min="0" max="100" value="50" aria-label="Compare greybox and final, shot 3"></div><h4>[Spawns]</h4><p>[What changed from greybox to final.]</p></div>
+        <div class="hl"><div class="cmp"><div class="ph a" data-file="uefn-greybox-4"><span>Greybox 4<small>uefn-greybox-4.jpg</small></span></div><div class="ph b" data-file="uefn-final-4"><span>Final 4<small>uefn-final-4.jpg</small></span></div><input type="range" min="0" max="100" value="50" aria-label="Compare greybox and final, shot 4"></div><h4>[Landmark / area]</h4><p>[What changed from greybox to final.]</p></div>
       </div>
+      <p class="note" style="margin-top:.8rem">Drag each image to compare greybox and final.</p>
       <div class="reflect"><span class="eyebrow">Looking back</span><p>[What works, and what you'd change today.]</p></div>
-      <div class="cta-row"><a class="full" href="project-1.html">Read the full breakdown · greybox vs final →</a></div>
+      <div class="cta-row"><a class="full" href="project-1.html">Read the full breakdown →</a></div>
     </div>
   </section>
 
@@ -531,7 +536,8 @@ footer h2 span { color: #c8b6ff; }
   // Media loader: a gray box with data-file="uefn-final-1" shows assets/uefn-final-1.jpg (or .png .gif .webp; videos: .mp4 .webm)
   // as soon as that file exists. Put a YouTube ID in data-youtube="..." to embed a YouTube video instead.
   function fillPh(ph, el) { ph.querySelector('span')?.remove(); ph.classList.add('filled'); ph.appendChild(el); if (el.play) el.play().catch(() => {}); }
-  document.querySelectorAll('.ph[data-file]').forEach(ph => {
+  // Load each box only when it gets close to the screen, so the page opens fast
+  function loadPh(ph) {
     const label = ph.querySelector('span')?.firstChild?.textContent.trim() || '';
     if (ph.dataset.youtube) {
       const f = document.createElement('iframe'); f.src = 'https://www.youtube.com/embed/' + ph.dataset.youtube; f.title = label; f.allowFullscreen = true; fillPh(ph, f); return;
@@ -545,7 +551,12 @@ footer h2 span { color: #c8b6ff; }
       el.onerror = () => tryExt(k + 1);
       el.src = 'assets/' + ph.dataset.file + '.' + exts[k];
     })(0);
-  });
+  }
+  const phs = document.querySelectorAll('.ph[data-file]');
+  if ('IntersectionObserver' in window) {
+    const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { io.unobserve(e.target); loadPh(e.target); } }), { rootMargin: '800px 0px' });
+    phs.forEach(ph => io.observe(ph));
+  } else phs.forEach(loadPh);
 </script>
 </body>
 </html>
