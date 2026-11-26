@@ -80,6 +80,9 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
 .sub a i { width: 10px; height: 10px; border-radius: 50%; background: var(--c); margin-top: .45rem; flex: none; }
 .sub a small { display: block; font-size: .75rem; color: var(--muted); }
 .sub a:hover, .sub a:focus-visible { background: color-mix(in srgb, var(--c) 14%, transparent); }
+.sub-row { display: flex; align-items: center; gap: .3rem; }
+.sub-row > a:first-child { flex: 1; }
+.sub a.bd { font-size: .72rem; font-weight: 600; padding: .2rem .55rem; border: 1px solid var(--c); border-radius: 999px; white-space: nowrap; margin-right: .3rem; }
 .item.has-sub:hover .sub, .item.has-sub:focus-within .sub, .item.open .sub { opacity: 1; visibility: visible; transform: none; }
 .mainnav .btn { margin-left: .5rem; }
 .menu-btn { all: unset; display: none; cursor: pointer; font-weight: 600; font-size: .9rem; padding: .4rem .8rem; border: 1.5px solid currentColor; border-radius: 8px; }
@@ -265,6 +268,9 @@ blockquote { margin: 0; padding-left: 1rem; border-left: 3px solid var(--sa); fo
 .ph span { visibility: hidden; }   /* label stays hidden while loading; shows only if the file is missing */
 .ph.missing span { visibility: visible; }
 .ph > img, .ph > video, .ph > iframe { width: 100%; height: 100%; object-fit: cover; display: block; border: 0; border-radius: inherit; }
+figure { grid-template-columns: minmax(0, 1fr); }
+.ph.filled { position: relative; overflow: hidden; } .ph.filled > img, .ph.filled > video { position: absolute; inset: 0; }   /* media always fits the box shape */   /* images never push past their column */
+.ph[data-file*="sketch"].filled { background: #fff; } .ph[data-file*="sketch"] > img { object-fit: contain; }   /* sketches show whole */
 .ph span small { display: block; font: 500 .7rem/1.3 ui-monospace, Consolas, monospace; opacity: .7; }
 </style>
 </head>
@@ -276,12 +282,12 @@ blockquote { margin: 0; padding-left: 1rem; border-left: 3px solid var(--sa); fo
     <div class="item has-sub" style="--c:var(--brand)">
       <a class="nl" href="index.html#p1" data-sec="work">Projects</a><button class="caret" aria-expanded="false" aria-label="Projects list">▾</button>
       <div class="sub">
-        <a href="project-1.html" style="--c:var(--s1-accent)"><i></i><span>Train Station · UEFN<small>Full breakdown · this page</small></span></a>
-        <a href="index.html#p2" style="--c:var(--s2-accent)"><i></i><span>Racing Level<small>Racing level · Unity</small></span></a>
-        <a href="index.html#p3" style="--c:var(--s3-accent)"><i></i><span>Scarfguy<small>Puzzle Game · Unity</small></span></a>
-        <a href="index.html#p4" style="--c:var(--s4-accent)"><i></i><span>Occult Blood Smackdown<small>Board game</small></span></a>
-        <a href="index.html#p5" style="--c:var(--s5-accent)"><i></i><span>2D Platformer Level<small>2D Platformer · Unity</small></span></a>
-        <a href="index.html#writing" style="--c:var(--s6-accent)"><i></i><span>Game design books<small>Writing</small></span></a>
+        <div class="sub-row" style="--c:var(--s1-accent)"><a href="index.html#p1"><i></i><span>FPS Multiplayer Level<small>Train Station · UEFN</small></span></a><a class="bd" href="project-1.html">Breakdown →</a></div>
+        <div class="sub-row" style="--c:var(--s2-accent)"><a href="index.html#p2"><i></i><span>Racing Level<small>Pond Track · Unity</small></span></a><a class="bd" href="project-2.html">Breakdown →</a></div>
+        <a href="index.html#p3" style="--c:var(--s3-accent)"><i></i><span>Puzzle Game<small>Scarfguy · Unity</small></span></a>
+        <a href="index.html#p4" style="--c:var(--s4-accent)"><i></i><span>Board Game<small>Occult Blood Smackdown</small></span></a>
+        <a href="index.html#p5" style="--c:var(--s5-accent)"><i></i><span>2D Platformer Level<small>[Level name] · Unity</small></span></a>
+        <a href="index.html#writing" style="--c:var(--s6-accent)"><i></i><span>Game Design Writing<small>Game design books</small></span></a>
       </div>
     </div>
     <div class="item" style="--c:var(--brand)"><a class="nl" href="index.html#experience" data-sec="experience">Experience</a></div>
@@ -401,7 +407,7 @@ blockquote { margin: 0; padding-left: 1rem; border-left: 3px solid var(--sa); fo
       <section class="fb-sec" id="fb-back"><h2><small>11</small>Looking back</h2>
         <div class="reflect" style="margin-top:0"><span class="eyebrow">What worked</span><p>[…]</p></div>
         <div class="reflect" style="margin-top:0"><span class="eyebrow">What I'd change</span><p>[E.g. playtest with real players earlier.]</p></div>
-        <a class="crumb" href="index.html#p2" style="margin-top:1rem">Next project: [Track name] →</a>
+        <a class="crumb" href="project-2.html" style="margin-top:1rem">Next project: Pond Track →</a>
       </section>
     </div>
   </div>

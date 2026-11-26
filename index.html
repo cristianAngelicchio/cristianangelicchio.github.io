@@ -293,6 +293,9 @@ footer .avail i { width: 8px; height: 8px; border-radius: 50%; background: #3ecf
 .ph span { visibility: hidden; }   /* label stays hidden while loading; shows only if the file is missing */
 .ph.missing span { visibility: visible; }
 .ph > img, .ph > video, .ph > iframe { width: 100%; height: 100%; object-fit: cover; display: block; border: 0; border-radius: inherit; }
+figure { grid-template-columns: minmax(0, 1fr); }
+.ph.filled { position: relative; overflow: hidden; } .ph.filled > img, .ph.filled > video { position: absolute; inset: 0; }   /* media always fits the box shape */   /* images never push past their column */
+.ph[data-file*="sketch"].filled { background: #fff; } .ph[data-file*="sketch"] > img { object-fit: contain; }   /* sketches show whole */
 .ph span small { display: block; font: 500 .7rem/1.3 ui-monospace, Consolas, monospace; opacity: .7; }
 </style>
 </head>
@@ -305,7 +308,7 @@ footer .avail i { width: 8px; height: 8px; border-radius: 50%; background: #3ecf
       <a class="nl" href="#p1" data-sec="work">Projects</a><button class="caret" aria-expanded="false" aria-label="Projects list">▾</button>
       <div class="sub">
         <div class="sub-row" style="--c:var(--s1-accent)"><a href="#p1"><i></i><span>FPS Multiplayer Level<small>Train Station · UEFN</small></span></a><a class="bd" href="project-1.html">Breakdown →</a></div>
-        <a href="#p2" style="--c:var(--s2-accent)"><i></i><span>Racing Level<small>Pond Track · Unity</small></span></a>
+        <div class="sub-row" style="--c:var(--s2-accent)"><a href="#p2"><i></i><span>Racing Level<small>Pond Track · Unity</small></span></a><a class="bd" href="project-2.html">Breakdown →</a></div>
         <a href="#p3" style="--c:var(--s3-accent)"><i></i><span>Puzzle Game<small>Scarfguy · Unity</small></span></a>
         <a href="#p4" style="--c:var(--s4-accent)"><i></i><span>Board Game<small>Occult Blood Smackdown</small></span></a>
         <a href="#p5" style="--c:var(--s5-accent)"><i></i><span>2D Platformer Level<small>[Level name] · Unity</small></span></a>
@@ -378,7 +381,7 @@ footer .avail i { width: 8px; height: 8px; border-radius: 50%; background: #3ecf
     </div>
   </section>
 
-  <!-- PROJECT 2 · Racing level: extended -->
+  <!-- PROJECT 2 · Racing level: extended + full breakdown page (project-2.html) -->
   <section class="band s2" id="p2">
     <div class="wrap">
       <div class="p-head">
@@ -393,7 +396,6 @@ footer .avail i { width: 8px; height: 8px; border-radius: 50%; background: #3ecf
         <div>
           <div class="sec"><h3>Goal</h3><p>Give the fantasy of being a small toy car, and turn a race into a boss fight without changing the core mechanics of racing games.</p></div>
           <div class="sec"><h3>What I did</h3><ul><li>Set up the goals.</li><li>Made and iterated sketches.</li><li>Used probuilder to create the greybox</li><li>Tested and tunned track length, readability, and landmarks</li></ul></div>
-          <p class="note"><b>Note:</b> Built on a template project. The car, driving code and base art come from it; the track design and its iterations are mine.</p>
         </div>
         <div class="ph" style="aspect-ratio:4/3" data-file="racing-sketch"><span>Track sketch<small>racing-sketch.jpg</small></span></div>
       </div>
@@ -410,7 +412,7 @@ footer .avail i { width: 8px; height: 8px; border-radius: 50%; background: #3ecf
           <figure><div class="ph" data-file="racing-greybox-3"><span>Greybox 3<small>racing-greybox-3.jpg</small></span></div><figcaption><b>Greybox 3</b>[What changed]</figcaption></figure>
         </div>
       </div>
-      <div class="cta-row"><a class="play itch" href="#">Play on itch.io →</a></div>
+      <div class="cta-row"><a class="full" href="project-2.html">Read the full breakdown →</a><a class="play itch" href="#">Play on itch.io →</a></div>
     </div>
   </section>
 

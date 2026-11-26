@@ -1,0 +1,465 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Pond Track Breakdown</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&family=Inter:wght@400;500;600&display=swap">
+<style>
+/* Layout: a full-width reel opens the page; every project is a full-width band "dressed" in its own muted palette (taken from the game's mood), while the site itself stays neutral with a purple signature. */
+:root {
+  --bg: #f6f5f8; --fg: #1a1820; --muted: #615d6b; --line: #dedbe4; --card: #ffffff;
+  --brand: #6b45c9;             /* Cris purple: header, buttons, footer */
+  --hero-bg: #1c1726; --hero-fg: #f3f0f8;
+  /* Per-project skins (muted on purpose). Each one takes the mood of its game. */
+  --s1-bg: #e2e8f0; --s1-fg: #16202c; --s1-accent: #3d6694; --s1-soft: #cdd8e6;   /* steel blue: UEFN Team Deathmatch */
+  --s2-bg: #e4ecdf; --s2-fg: #1b2616; --s2-accent: #4f7a35; --s2-soft: #d2dfc9;   /* garden green: Racing level */
+  --s3-bg: #ececec; --s3-fg: #141414; --s3-accent: #b3261e; --s3-soft: #dcdcdc;   /* black & white with a red scarf: Scarfguy */
+  --s4-bg: #ece4e1; --s4-fg: #251819; --s4-accent: #8c2f39; --s4-soft: #ddd0cc;   /* dried blood: Occult Blood Smackdown */
+  --s5-bg: #dfe8e3; --s5-fg: #13211c; --s5-accent: #3a7468; --s5-soft: #c9d9d1;   /* murky sewer green-blue: 2D platformer */
+  --s6-bg: #f1ede4; --s6-fg: #24211b; --s6-accent: #7a6a4c; --s6-soft: #e4ded0;   /* paper: Writing */
+  --display: "Sora", "Segoe UI", sans-serif; --body: "Inter", system-ui, sans-serif;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bg: #121116; --fg: #eeecf2; --muted: #a39fae; --line: #2a2731; --card: #1b1a21; --brand: #a68bff;
+  --hero-bg: #0d0b12; --hero-fg: #f3f0f8;
+  --s1-bg: #131a23; --s1-fg: #e1e8f1; --s1-accent: #86aee0; --s1-soft: #1e2835;
+  --s2-bg: #161e12; --s2-fg: #e6efdf; --s2-accent: #9cc47e; --s2-soft: #222d1c;
+  --s3-bg: #121212; --s3-fg: #f0f0f0; --s3-accent: #e5534b; --s3-soft: #222222;
+  --s4-bg: #1f1415; --s4-fg: #f1e4e5; --s4-accent: #e07a85; --s4-soft: #311f22;
+  --s5-bg: #111b18; --s5-fg: #dfece6; --s5-accent: #7cbcab; --s5-soft: #1b2a25;
+  --s6-bg: #1c1a16; --s6-fg: #eeeadf; --s6-accent: #c9b88f; --s6-soft: #2a2721; color-scheme: dark; } }
+:root[data-theme="dark"] {
+  --bg: #121116; --fg: #eeecf2; --muted: #a39fae; --line: #2a2731; --card: #1b1a21; --brand: #a68bff;
+  --hero-bg: #0d0b12; --hero-fg: #f3f0f8;
+  --s1-bg: #131a23; --s1-fg: #e1e8f1; --s1-accent: #86aee0; --s1-soft: #1e2835;
+  --s2-bg: #161e12; --s2-fg: #e6efdf; --s2-accent: #9cc47e; --s2-soft: #222d1c;
+  --s3-bg: #121212; --s3-fg: #f0f0f0; --s3-accent: #e5534b; --s3-soft: #222222;
+  --s4-bg: #1f1415; --s4-fg: #f1e4e5; --s4-accent: #e07a85; --s4-soft: #311f22;
+  --s5-bg: #111b18; --s5-fg: #dfece6; --s5-accent: #7cbcab; --s5-soft: #1b2a25;
+  --s6-bg: #1c1a16; --s6-fg: #eeeadf; --s6-accent: #c9b88f; --s6-soft: #2a2721; color-scheme: dark; }
+
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } * { animation: none !important; transition: none !important; } }
+body { margin: 0; background: var(--bg); color: var(--fg); font: 16px/1.65 var(--body); }
+h1, h2, h3 { font-family: var(--display); line-height: 1.1; margin: 0; text-wrap: balance; letter-spacing: -.015em; }
+p { margin: 0; }
+a { color: inherit; }
+a:focus-visible { outline: 3px solid var(--brand); outline-offset: 3px; border-radius: 4px; }
+.wrap { max-width: 1160px; margin: 0 auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+.eyebrow { font-size: .74rem; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; }
+
+/* Header */
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 10; background: var(--hero-bg); }
+.top { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5; background: color-mix(in srgb, var(--hero-bg) 92%, transparent); backdrop-filter: blur(8px); color: var(--hero-fg); }
+.top .wrap { display: flex; align-items: center; gap: 1.25rem; padding-block: .7rem; overflow-x: auto; white-space: nowrap; }
+.top .brandname { font-weight: 700; font-family: var(--display); margin-right: auto; opacity: 1; display: inline-flex; align-items: center; gap: .55rem; }
+.top .brandname i { width: 10px; height: 10px; border-radius: 50%; background: var(--brand); display: inline-block; }
+.top a { text-decoration: none; font-size: .9rem; color: inherit; }
+.mainnav .nl:hover { opacity: 1; }
+.btn { display: inline-flex; align-items: center; text-decoration: none; font-weight: 600; font-size: .92rem; padding: .5rem 1rem; border-radius: 8px; border: 1.5px solid currentColor; }
+.btn.brand { background: var(--brand); border-color: var(--brand); color: #fff; opacity: 1 !important; }
+
+/* Main menu: one button per section; deeper sections open a dropdown */
+.top .wrap { overflow: visible; }
+.mainnav { display: flex; align-items: center; gap: .25rem; }
+.mainnav .item { position: relative; display: flex; align-items: center; }
+.mainnav .nl { padding: .45rem .6rem; border-radius: 6px; opacity: .8; position: relative; }
+.mainnav .nl::after { content: ""; position: absolute; left: .6rem; right: .6rem; bottom: .15rem; height: 2px; border-radius: 2px; background: var(--c); transform: scaleX(0); transition: transform .25s; }
+.mainnav .nl.on { opacity: 1; }
+.mainnav .nl.on::after { transform: scaleX(1); }
+.caret { all: unset; cursor: pointer; padding: .3rem .35rem; margin-left: -.35rem; font-size: .75rem; opacity: .7; border-radius: 4px; }
+.caret:focus-visible { outline: 2px solid var(--brand); }
+.sub { position: absolute; top: calc(100% + 6px); left: 0; min-width: 250px; display: grid; padding: .4rem; border-radius: 10px; background: var(--card); color: var(--fg);
+  border: 1px solid var(--line); box-shadow: 0 12px 30px rgba(0,0,0,.18); border-top: 3px solid var(--c); opacity: 0; visibility: hidden; transform: translateY(-4px); transition: opacity .15s, transform .15s, visibility .15s; }
+.sub a { padding: .45rem .6rem; border-radius: 6px; font-size: .9rem; opacity: 1 !important; text-decoration: none; }
+.sub a { display: flex; gap: .6rem; align-items: flex-start; }
+.sub a i { width: 10px; height: 10px; border-radius: 50%; background: var(--c); margin-top: .45rem; flex: none; }
+.sub a small { display: block; font-size: .75rem; color: var(--muted); }
+.sub a:hover, .sub a:focus-visible { background: color-mix(in srgb, var(--c) 14%, transparent); }
+.sub-row { display: flex; align-items: center; gap: .3rem; }
+.sub-row > a:first-child { flex: 1; }
+.sub a.bd { font-size: .72rem; font-weight: 600; padding: .2rem .55rem; border: 1px solid var(--c); border-radius: 999px; white-space: nowrap; margin-right: .3rem; }
+.item.has-sub:hover .sub, .item.has-sub:focus-within .sub, .item.open .sub { opacity: 1; visibility: visible; transform: none; }
+.mainnav .btn { margin-left: .5rem; }
+.menu-btn { all: unset; display: none; cursor: pointer; font-weight: 600; font-size: .9rem; padding: .4rem .8rem; border: 1.5px solid currentColor; border-radius: 8px; }
+@media (max-width: 900px) {
+  .top .wrap { flex-wrap: wrap; }
+  .menu-btn { display: inline-block; }
+  .mainnav { display: none; width: 100%; flex-direction: column; align-items: stretch; gap: 0; padding-bottom: .6rem; }
+  .mainnav.open { display: flex; }
+  .mainnav .item { flex-wrap: wrap; }
+  .mainnav .nl { flex: 1; }
+  .caret { display: none; }
+  .sub { position: static; opacity: 1; visibility: visible; transform: none; box-shadow: none; background: transparent; color: inherit; border: 0; border-left: 2px solid var(--c); border-radius: 0; margin: 0 0 .4rem .7rem; padding: 0 0 0 .4rem; min-width: 0; width: 100%; }
+  .sub a { font-size: .85rem; padding: .25rem .5rem; opacity: .75 !important; }
+  .mainnav .btn { margin: .5rem 0 0; justify-content: center; }
+}
+/* Hero reel (horsagh-style looping flythrough) */
+.hero { background: var(--hero-bg); color: var(--hero-fg); }
+.reel { position: relative; aspect-ratio: 21/9; max-width: 100%; min-height: 360px; overflow: hidden;
+  background: radial-gradient(70% 90% at 75% 40%, #3b2a63 0%, transparent 70%), radial-gradient(50% 70% at 15% 90%, #2a2044 0%, transparent 70%), var(--hero-bg); }
+.reel video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: .55; }
+.reel .label { position: absolute; right: 16px; top: 16px; font-size: .72rem; letter-spacing: .12em; text-transform: uppercase; border: 1px solid rgba(255,255,255,.35); padding: .25rem .6rem; border-radius: 4px; opacity: .8; }
+.reel .copy { position: absolute; inset: auto 0 0 0; padding-block: 2.5rem; background: linear-gradient(transparent, rgba(13,11,18,.85)); }
+.reel h1 { font-size: clamp(2.4rem, 6.5vw, 4.6rem); font-weight: 800; }
+.reel .role { color: #c8b6ff; font-weight: 600; margin-top: .4rem; font-size: 1.1rem; }
+.reel p.pitch { margin-top: .6rem; max-width: 56ch; opacity: .85; }
+.hero-actions { display: flex; gap: .7rem; flex-wrap: wrap; margin-top: 1.25rem; align-items: center; }
+.mail { user-select: all; opacity: .75; font-size: .88rem; }
+@media (max-width: 640px) { .reel { aspect-ratio: auto; min-height: 520px; } }
+
+/* Project index (horsagh-style dated list) */
+.index { padding-block: 2.5rem; }
+.index ol { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1rem; }
+@media (max-width: 860px) { .index ol { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 480px) { .index ol { grid-template-columns: 1fr; } }
+.index a { display: grid; gap: .2rem; text-decoration: none; padding: .9rem 1rem; border-radius: 10px; background: var(--card); border: 1px solid var(--line); border-top: 4px solid var(--c); height: 100%; }
+.index a:hover { border-color: var(--c); }
+.index .eyebrow { color: var(--muted); }
+.index b { font-family: var(--display); font-size: 1.1rem; }
+.index span.k { font-size: .85rem; color: var(--muted); }
+
+/* Skinned project bands (smcart-style section color change, muted) */
+.band { background: var(--sbg); color: var(--sfg); padding-block: 4.5rem; scroll-margin-top: 3.5rem; }
+.s1 { --sbg: var(--s1-bg); --sfg: var(--s1-fg); --sa: var(--s1-accent); --ss: var(--s1-soft); }
+.s2 { --sbg: var(--s2-bg); --sfg: var(--s2-fg); --sa: var(--s2-accent); --ss: var(--s2-soft); }
+.s3 { --sbg: var(--s3-bg); --sfg: var(--s3-fg); --sa: var(--s3-accent); --ss: var(--s3-soft); }
+.s4 { --sbg: var(--s4-bg); --sfg: var(--s4-fg); --sa: var(--s4-accent); --ss: var(--s4-soft); }
+.p-head { display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr); gap: 2rem; align-items: end; margin-bottom: 2rem; }
+@media (max-width: 820px) { .p-head { grid-template-columns: 1fr; gap: 1rem; } }
+.p-head .eyebrow { color: var(--sa); }
+.p-head h2 { font-size: clamp(2.2rem, 5.5vw, 3.8rem); font-weight: 800; margin-top: .4rem; }
+.p-head .tagline { margin-top: .6rem; font-size: 1.1rem; opacity: .85; max-width: 50ch; }
+.specs { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); border-top: 2px solid var(--sa); }
+.specs div { padding: .55rem .6rem .55rem 0; border-bottom: 1px solid color-mix(in srgb, var(--sfg) 15%, transparent); }
+.specs span { display: block; font-size: .72rem; letter-spacing: .1em; text-transform: uppercase; opacity: .7; }
+.specs b { font-weight: 600; }
+.ph { aspect-ratio: 16/9; max-width: 100%; border-radius: 10px; display: grid; place-items: center; background: var(--ss);
+  background-image: linear-gradient(color-mix(in srgb, var(--sa) 14%, transparent) 1px, transparent 1px), linear-gradient(90deg, color-mix(in srgb, var(--sa) 14%, transparent) 1px, transparent 1px); background-size: 32px 32px; }
+.ph span { font-size: .78rem; font-weight: 600; background: var(--sbg); color: var(--sfg); padding: .25rem .65rem; border-radius: 6px; }
+.p-grid { display: grid; grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr); gap: 2.5rem; align-items: start; margin-top: 2rem; }
+@media (max-width: 820px) { .p-grid { grid-template-columns: 1fr; gap: 1.5rem; } }
+.sec h3 { font-size: 1.25rem; margin-bottom: .5rem; display: flex; align-items: center; gap: .6rem; }
+.sec h3::before { content: ""; width: 18px; height: 3px; background: var(--sa); border-radius: 2px; }
+.sec + .sec { margin-top: 1.6rem; }
+ul { margin: 0; padding-left: 1.15rem; }
+li::marker { color: var(--sa); }
+.highlights { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 1.25rem; margin-top: 2.5rem; }
+@media (max-width: 760px) { .highlights { grid-template-columns: 1fr; } }
+.hl { display: grid; gap: .6rem; }
+.hl h4 { margin: 0; font-family: var(--display); font-size: 1.05rem; }
+.hl p { font-size: .95rem; opacity: .85; }
+.process { margin-top: 2.5rem; }
+.process > h3 { font-size: 1.25rem; margin-bottom: 1rem; }
+.steps { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 1rem; counter-reset: s; }
+@media (max-width: 640px) { .steps { grid-template-columns: 1fr; } }
+figure { margin: 0; display: grid; gap: .45rem; }
+figcaption { font-size: .9rem; opacity: .85; }
+figcaption b { color: var(--sa); margin-right: .35rem; }
+.reflect { margin-top: 2.5rem; padding: 1.25rem 1.4rem; border-left: 4px solid var(--sa); background: var(--ss); border-radius: 0 10px 10px 0; max-width: 72ch; }
+.reflect .eyebrow { color: var(--sa); display: block; margin-bottom: .3rem; }
+.play { display: inline-flex; margin-top: 1rem; font-weight: 600; color: var(--sa); text-decoration: none; }
+.play:hover { text-decoration: underline; }
+
+.games { display: flex; gap: .8rem; flex-wrap: wrap; margin-top: 1rem; }
+.games span { display: inline-flex; align-items: center; gap: .55rem; font-weight: 600; background: var(--sbg); border: 1.5px solid var(--sa); border-radius: 999px; padding: .25rem .9rem .25rem .3rem; }
+.games i { width: 30px; height: 30px; border-radius: 8px; background: var(--ss); display: inline-block; }
+
+.about { padding-block: 4rem; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.5fr); gap: 2rem; }
+@media (max-width: 820px) { .about { grid-template-columns: 1fr; gap: 1rem; } }
+.about h2 { font-size: 2.2rem; }
+.about p + p { margin-top: 1rem; }
+footer { background: var(--hero-bg); color: var(--hero-fg); padding-block: 3rem; }
+footer .wrap { display: flex; justify-content: space-between; align-items: center; gap: 1.5rem; flex-wrap: wrap; }
+footer h2 { font-size: clamp(1.8rem, 4vw, 2.6rem); }
+footer h2 span { color: #c8b6ff; }
+footer .avail { margin-top: .8rem; font-size: .88rem; opacity: .85; display: flex; align-items: center; gap: .5rem; }
+footer .avail i { width: 8px; height: 8px; border-radius: 50%; background: #3ecf6e; box-shadow: 0 0 0 3px rgba(62,207,110,.2); flex: none; }
+
+/* Scroll marker: a full-height vertical line on the left. It fills as you scroll, takes the color of the current section,
+   and has a dot where each section starts. */
+.rail { --cur: var(--brand); position: fixed; z-index: 4; left: max(22px, env(safe-area-inset-left, 0px)); top: calc(env(safe-area-inset-top, 0px) + 80px); bottom: 24px; width: 3px; }
+.rail-track, .rail-fill { position: absolute; left: 0; top: 0; width: 3px; border-radius: 3px; }
+.rail-track { bottom: 0; background: color-mix(in srgb, var(--muted) 30%, transparent); }
+.rail-fill { height: 0; background: var(--cur); transition: background .4s; }
+.rail .dot { position: absolute; left: 50%; width: 11px; height: 11px; border-radius: 50%; transform: translate(-50%, -50%); background: var(--bg); border: 2px solid color-mix(in srgb, var(--muted) 60%, transparent); transition: background .3s, border-color .3s, width .25s, height .25s; }
+.rail .dot.past { background: var(--c); border-color: var(--c); }
+.rail .dot.on { width: 16px; height: 16px; background: var(--c); border-color: var(--c); box-shadow: 0 0 0 4px color-mix(in srgb, var(--c) 25%, transparent); }
+@media (max-width: 1300px) { .rail { display: none; } }
+/* On smaller screens: a thin progress bar under the header in the current section's color */
+.topbar { position: fixed; left: 0; right: 0; top: calc(env(safe-area-inset-top, 0px) + 56px); height: 3px; z-index: 6; pointer-events: none; display: none; }
+.topbar span { display: block; height: 100%; width: var(--p, 0%); background: var(--cur, var(--brand)); transition: background .4s; }
+@media (max-width: 1300px) { .topbar { display: block; } }
+[id] { scroll-margin-top: 4.5rem; }
+.crumb { display: inline-block; margin-bottom: 1.5rem; font-weight: 600; text-decoration: none; color: var(--sa); }
+.next { padding-block: 2rem 3rem; }
+</style>
+<style>
+/* Full breakdown page: a long, complete case study with its own table of contents. */
+.fb-hero { padding-block: 2.5rem 2rem; }
+.crumb { display: inline-block; margin-bottom: 1.25rem; font-weight: 600; text-decoration: none; color: var(--sa); }
+.fb-hero h1 { font-size: clamp(2.4rem, 6vw, 4.2rem); font-weight: 800; margin-top: .4rem; }
+.fb-hero .tagline { margin-top: .6rem; font-size: 1.15rem; opacity: .85; max-width: 56ch; }
+.fb-layout { display: grid; grid-template-columns: 220px minmax(0, 1fr); gap: 3rem; align-items: start; padding-bottom: 4rem; }
+@media (max-width: 900px) { .fb-layout { grid-template-columns: 1fr; gap: 1.5rem; } }
+.toc { position: sticky; top: calc(env(safe-area-inset-top, 0px) + 5rem); display: grid; gap: .1rem; font-size: .9rem; }
+.toc .eyebrow { color: var(--sa); margin-bottom: .4rem; }
+.toc a { text-decoration: none; padding: .3rem .6rem; border-left: 2px solid color-mix(in srgb, var(--sfg) 15%, transparent); opacity: .75; }
+.toc a:hover { opacity: 1; }
+.toc a.on { opacity: 1; border-left-color: var(--sa); color: var(--sa); font-weight: 600; }
+@media (max-width: 900px) { .toc { position: static; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); } }
+.fb-sec { padding-block: 2.5rem; border-top: 1px solid color-mix(in srgb, var(--sfg) 14%, transparent); display: grid; gap: 1.2rem; min-width: 0; }
+.fb-sec:first-child { border-top: 0; padding-top: 0; }
+.fb-sec > h2 { font-size: clamp(1.5rem, 3vw, 2rem); display: flex; gap: .8rem; align-items: baseline; }
+.fb-sec > h2 small { font-family: var(--body); font-size: .75rem; font-weight: 600; letter-spacing: .12em; color: var(--sa); }
+.fb-sec p { max-width: 70ch; }
+.opt { font-size: .75rem; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; border: 1px dashed var(--sa); color: var(--sa); border-radius: 4px; padding: .05rem .4rem; margin-left: .4rem; vertical-align: middle; }
+.g2 { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 1rem; }
+.g3 { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 1rem; }
+.g4 { display: grid; grid-template-columns: repeat(4, minmax(0,1fr)); gap: .75rem; }
+@media (max-width: 700px) { .g2, .g3 { grid-template-columns: 1fr; } .g4 { grid-template-columns: repeat(2, minmax(0,1fr)); } }
+.doc { aspect-ratio: 3/4; }
+.chart { background: var(--ss); border-radius: 10px; padding: 1rem; overflow-x: auto; }
+.chart svg { width: 100%; min-width: 560px; height: auto; display: block; }
+.chart .ax { stroke: color-mix(in srgb, var(--sfg) 25%, transparent); stroke-width: 1; }
+.chart .curve { fill: none; stroke: var(--sa); stroke-width: 3; stroke-linejoin: round; }
+.chart .area { fill: color-mix(in srgb, var(--sa) 18%, transparent); }
+.chart .pt { fill: var(--sbg); stroke: var(--sa); stroke-width: 2.5; }
+.chart text { fill: var(--sfg); font: 500 12px Inter, sans-serif; opacity: .75; }
+.beats { display: grid; gap: 1.25rem; }
+.beat { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr); gap: 1.25rem; align-items: center; }
+@media (max-width: 700px) { .beat { grid-template-columns: 1fr; } }
+.beat h3 { font-size: 1.1rem; margin-bottom: .3rem; }
+.beat .eyebrow { color: var(--sa); }
+.ps { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 1rem; }
+@media (max-width: 700px) { .ps { grid-template-columns: 1fr; } }
+.iter { background: var(--ss); border-radius: 12px; padding: 1.25rem; display: grid; gap: 1rem; }
+.iter h3 { font-size: 1.15rem; }
+.iter dl { margin: 0; display: grid; grid-template-columns: 120px minmax(0,1fr); gap: .4rem 1rem; }
+@media (max-width: 560px) { .iter dl { grid-template-columns: 1fr; } }
+.iter dt { font-size: .75rem; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: var(--sa); padding-top: .15rem; }
+.iter dd { margin: 0; }
+blockquote { margin: 0; padding-left: 1rem; border-left: 3px solid var(--sa); font-style: italic; opacity: .85; }
+.g2 > .sec + .sec, .g3 > .sec + .sec { margin-top: 0; }
+.stats { display: flex; gap: 2rem; flex-wrap: wrap; }
+.stats div b { display: block; font-family: var(--display); font-size: 1.8rem; color: var(--sa); font-variant-numeric: tabular-nums; }
+.stats div span { font-size: .85rem; opacity: .75; }
+.s5 { --sbg: var(--s5-bg); --sfg: var(--s5-fg); --sa: var(--s5-accent); --ss: var(--s5-soft); }
+.s6 { --sbg: var(--s6-bg); --sfg: var(--s6-fg); --sa: var(--s6-accent); --ss: var(--s6-soft); }
+.cmp { position: relative; aspect-ratio: 16/9; border-radius: 10px; overflow: hidden; --x: 50%; }
+.cmp > .ph { position: absolute; inset: 0; aspect-ratio: auto; border-radius: 0; }
+.cmp > .ph.b { clip-path: inset(0 0 0 var(--x)); background-color: color-mix(in srgb, var(--sa) 22%, var(--ss)); }
+.cmp > .ph.a span { justify-self: start; margin-left: 1rem; }
+.cmp > .ph.b span { justify-self: end; margin-right: 1rem; }
+.cmp::after { content: ""; position: absolute; top: 0; bottom: 0; left: var(--x); width: 3px; transform: translateX(-50%); background: var(--sa); pointer-events: none; }
+.cmp::before { content: "⇆"; position: absolute; z-index: 1; top: 50%; left: var(--x); transform: translate(-50%, -50%); width: 36px; height: 36px; border-radius: 50%; display: grid; place-items: center; background: var(--sa); color: var(--sbg); font-weight: 700; pointer-events: none; }
+.cmp input { position: absolute; inset: 0; width: 100%; height: 100%; margin: 0; opacity: 0; cursor: ew-resize; z-index: 2; }
+.cmp:has(input:focus-visible) { outline: 3px solid var(--sa); outline-offset: 3px; }
+.cmp-row { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 1rem; }
+@media (max-width: 700px) { .cmp-row { grid-template-columns: 1fr; } }
+.cta-row { display: flex; gap: 1.5rem; align-items: center; flex-wrap: wrap; }
+.cta-row .play { margin-top: 0; }
+/* Media: each gray box loads assets/<name> by itself when that file exists (see README) */
+.ph.filled { background: none; }
+.ph span { visibility: hidden; }   /* label stays hidden while loading; shows only if the file is missing */
+.ph.missing span { visibility: visible; }
+.ph > img, .ph > video, .ph > iframe { width: 100%; height: 100%; object-fit: cover; display: block; border: 0; border-radius: inherit; }
+figure { grid-template-columns: minmax(0, 1fr); }
+.ph.filled { position: relative; overflow: hidden; } .ph.filled > img, .ph.filled > video { position: absolute; inset: 0; }   /* media always fits the box shape */   /* images never push past their column */
+.ph[data-file*="sketch"].filled { background: #fff; } .ph[data-file*="sketch"] > img { object-fit: contain; }   /* sketches show whole */
+.ph span small { display: block; font: 500 .7rem/1.3 ui-monospace, Consolas, monospace; opacity: .7; }
+.credits { margin-top: 1.5rem; font-size: .85rem; opacity: .7; max-width: 62ch; }
+</style>
+</head>
+<body>
+<header class="top"><div class="wrap">
+  <a class="brandname" href="index.html"><i aria-hidden="true"></i>Cris Angelicchio</a>
+  <button class="menu-btn" aria-expanded="false" aria-controls="mainnav">Menu</button>
+  <nav id="mainnav" class="mainnav" aria-label="Main">
+    <div class="item has-sub" style="--c:var(--brand)">
+      <a class="nl" href="index.html#p1" data-sec="work">Projects</a><button class="caret" aria-expanded="false" aria-label="Projects list">▾</button>
+      <div class="sub">
+        <div class="sub-row" style="--c:var(--s1-accent)"><a href="index.html#p1"><i></i><span>FPS Multiplayer Level<small>Train Station · UEFN</small></span></a><a class="bd" href="project-1.html">Breakdown →</a></div>
+        <div class="sub-row" style="--c:var(--s2-accent)"><a href="index.html#p2"><i></i><span>Racing Level<small>Pond Track · Unity</small></span></a><a class="bd" href="project-2.html">Breakdown →</a></div>
+        <a href="index.html#p3" style="--c:var(--s3-accent)"><i></i><span>Puzzle Game<small>Scarfguy · Unity</small></span></a>
+        <a href="index.html#p4" style="--c:var(--s4-accent)"><i></i><span>Board Game<small>Occult Blood Smackdown</small></span></a>
+        <a href="index.html#p5" style="--c:var(--s5-accent)"><i></i><span>2D Platformer Level<small>[Level name] · Unity</small></span></a>
+        <a href="index.html#writing" style="--c:var(--s6-accent)"><i></i><span>Game Design Writing<small>Game design books</small></span></a>
+      </div>
+    </div>
+    <div class="item" style="--c:var(--brand)"><a class="nl" href="index.html#experience" data-sec="experience">Experience</a></div>
+    <div class="item" style="--c:var(--brand)"><a class="nl" href="index.html#about" data-sec="about">About</a></div>
+    <a class="btn brand" href="resume.pdf">Resume</a>
+  </nav>
+</div></header>
+<div class="rail" aria-hidden="true"><span class="rail-track"></span><span class="rail-fill"></span></div>
+<div class="topbar" aria-hidden="true"><span></span></div>
+<main class="band s2" style="padding-block:0">
+  <div class="wrap fb-hero">
+    <a class="crumb" href="index.html#p2">← Back to the portfolio</a>
+    <span class="eyebrow" style="display:block;color:var(--sa)">Full breakdown · Racing level design · Unity</span>
+    <h1>Pond Track</h1>
+    <p class="tagline">A toy-car race around a pond, where a carnivorous plant reshapes the track every lap.</p>
+  </div>
+  <div class="wrap fb-layout">
+    <nav class="toc" aria-label="On this page">
+      <span class="eyebrow">On this page</span>
+      <a href="#fb-overview">Overview</a><a href="#fb-goal">Goal &amp; pillars</a><a href="#fb-layout">Sketches &amp; layout</a>
+      <a href="#fb-sections">Track sections</a><a href="#fb-boss">The boss fight</a><a href="#fb-greybox">Greybox</a>
+      <a href="#fb-iter">Iterations</a><a href="#fb-final">Final result</a><a href="#fb-back">Looking back</a>
+    </nav>
+    <div>
+      <section class="fb-sec" id="fb-overview"><h2><small>01</small>Overview</h2>
+        <div class="ph" data-file="racing-playthrough" data-kind="video" data-youtube=""><span>Full race video (all laps)<small>racing-playthrough.mp4</small></span></div>
+        <div class="specs" style="grid-template-columns:repeat(4,minmax(0,1fr))">
+          <div><span>Role</span><b>Level Designer</b></div><div><span>Engine</span><b>Unity</b></div><div><span>Team</span><b>Solo</b></div><div><span>Duration</span><b>3 weeks</b></div>
+          <div><span>Genre</span><b>Racing</b></div><div><span>Laps</span><b>[3]</b></div><div><span>Year</span><b>2026</b></div><div><span>Tools</span><b>ProBuilder</b></div>
+        </div>
+        <p>[A short paragraph: the setting (a pond seen from a toy car), the normal race, and the solo version where the track changes every lap.]</p>
+      </section>
+
+      <section class="fb-sec" id="fb-goal"><h2><small>02</small>Goal &amp; pillars</h2>
+        <p>Give the fantasy of being a small toy car, and turn a race into a boss fight without changing the core mechanics of racing games.</p>
+        <div class="g3">
+          <div class="sec"><h3>[Pillar 1]</h3><p>[E.g. how the scale sells being a toy car.]</p></div>
+          <div class="sec"><h3>[Pillar 2]</h3><p>[E.g. how the boss shows up using only driving.]</p></div>
+          <div class="sec"><h3>[Pillar 3]</h3><p>[E.g. how the player reads the track at speed.]</p></div>
+        </div>
+      </section>
+
+      <section class="fb-sec" id="fb-layout"><h2><small>03</small>Sketches &amp; layout</h2>
+        <p>[How the track evolved on paper, one line per sketch.]</p>
+        <div class="g3">
+          <figure><div class="ph" data-file="racing-sketch-v1"><span>Sketch v1<small>racing-sketch-v1.jpg</small></span></div><figcaption><b>v1</b>[First idea]</figcaption></figure>
+          <figure><div class="ph" data-file="racing-sketch-v2"><span>Sketch v2<small>racing-sketch-v2.jpg</small></span></div><figcaption><b>v2</b>[What changed]</figcaption></figure>
+          <figure><div class="ph" data-file="racing-sketch"><span>Final layout<small>racing-sketch.jpg</small></span></div><figcaption><b>Final</b>[Why]</figcaption></figure>
+        </div>
+      </section>
+
+      <section class="fb-sec" id="fb-sections"><h2><small>04</small>Track sections</h2>
+        <div class="ph" data-file="racing-sections-map"><span>Top-down track with sections and landmarks marked<small>racing-sections-map.jpg</small></span></div>
+        <div class="g3">
+          <figure><div class="ph" data-file="racing-shot-1"><span>Section 1<small>racing-shot-1.jpg</small></span></div><figcaption><b>[Section name]</b>[What the player does here.]</figcaption></figure>
+          <figure><div class="ph" data-file="racing-shot-2"><span>Section 2<small>racing-shot-2.jpg</small></span></div><figcaption><b>[Section name]</b>[What the player does here.]</figcaption></figure>
+          <figure><div class="ph" data-file="racing-shot-3"><span>Section 3<small>racing-shot-3.jpg</small></span></div><figcaption><b>[Section name]</b>[What the player does here.]</figcaption></figure>
+        </div>
+      </section>
+
+      <section class="fb-sec" id="fb-boss"><h2><small>05</small>The boss fight, lap by lap</h2>
+        <p>The first lap is a normal race. In the solo version, a carnivorous plant changes the track after every lap. [How the player defeats it.]</p>
+        <div class="beats">
+          <div class="beat"><div class="ph" data-file="racing-lap-1" data-kind="video"><span>Lap 1 clip<small>racing-lap-1.mp4</small></span></div><div><span class="eyebrow">Lap 1</span><h3>The normal track</h3><p>[What the player learns on this lap.]</p></div></div>
+          <div class="beat"><div class="ph" data-file="racing-lap-2" data-kind="video"><span>Lap 2 clip<small>racing-lap-2.mp4</small></span></div><div><span class="eyebrow">Lap 2</span><h3>[What changes]</h3><p>[What the plant does and how the player reacts.]</p></div></div>
+          <div class="beat"><div class="ph" data-file="racing-lap-3" data-kind="video"><span>Lap 3 clip<small>racing-lap-3.mp4</small></span></div><div><span class="eyebrow">Lap 3</span><h3>[What changes]</h3><p>[Copy one block per lap.]</p></div></div>
+        </div>
+      </section>
+
+      <section class="fb-sec" id="fb-greybox"><h2><small>06</small>Greybox</h2>
+        <p>[Built in ProBuilder. What you tested in each pass.]</p>
+        <div class="g3">
+          <figure><div class="ph" data-file="racing-greybox-1"><span>Greybox 1<small>racing-greybox-1.jpg</small></span></div><figcaption><b>Pass 1</b>[What you tested]</figcaption></figure>
+          <figure><div class="ph" data-file="racing-greybox-2"><span>Greybox 2<small>racing-greybox-2.jpg</small></span></div><figcaption><b>Pass 2</b>[What changed]</figcaption></figure>
+          <figure><div class="ph" data-file="racing-greybox-3"><span>Greybox 3<small>racing-greybox-3.jpg</small></span></div><figcaption><b>Pass 3</b>[What changed]</figcaption></figure>
+        </div>
+      </section>
+
+      <section class="fb-sec" id="fb-iter"><h2><small>07</small>Iterations</h2>
+        <div class="stats"><div><b>[2]</b><span>sketch versions</span></div><div><b>[3]</b><span>greybox passes</span></div><div><b>3</b><span>weeks</span></div></div>
+        <article class="iter">
+          <h3>[Change 1 · Short title]</h3>
+          <div class="ps"><figure><div class="ph" data-file="racing-before-1"><span>Before<small>racing-before-1.jpg</small></span></div></figure><figure><div class="ph" data-file="racing-after-1"><span>After<small>racing-after-1.jpg</small></span></div></figure></div>
+          <dl><dt>Problem</dt><dd>[What wasn't working when you played it: track length, readability, landmarks.]</dd><dt>Change</dt><dd>[What you changed and the result.]</dd></dl>
+        </article>
+        <article class="iter">
+          <h3>[Change 2 · Short title]</h3>
+          <div class="ps"><figure><div class="ph" data-file="racing-before-2"><span>Before<small>racing-before-2.jpg</small></span></div></figure><figure><div class="ph" data-file="racing-after-2"><span>After<small>racing-after-2.jpg</small></span></div></figure></div>
+          <dl><dt>Problem</dt><dd>[…]</dd><dt>Change</dt><dd>[…]</dd></dl>
+        </article>
+      </section>
+
+      <section class="fb-sec" id="fb-final"><h2><small>08</small>Final result</h2>
+        <div class="ph" data-file="racing-loop" data-kind="video"><span>Lap reel<small>racing-loop.mp4</small></span></div>
+        <div class="cta-row" style="margin-top:1rem"><a class="play" href="#">Play on itch.io →</a></div>
+      </section>
+
+      <section class="fb-sec" id="fb-back"><h2><small>09</small>Looking back</h2>
+        <div class="reflect" style="margin-top:0"><span class="eyebrow">What worked</span><p>[…]</p></div>
+        <div class="reflect" style="margin-top:0"><span class="eyebrow">What I'd change</span><p>[…]</p></div>
+        <p class="note credits">Credits: built on a Unity template project. The car, driving code and base art come from it; the track design, the boss-fight laps and their iterations are mine.</p>
+        <a class="crumb" href="index.html#p3" style="margin-top:1rem">Next project: Scarfguy →</a>
+      </section>
+    </div>
+  </div>
+</main>
+<footer><div class="wrap">
+  <h2>Let's build the <span>next one</span>.</h2>
+  <div class="foot-right"><div class="hero-actions" style="margin:0"><a class="btn brand" href="https://www.linkedin.com/in/cristianangelicchio-gamedesign/">LinkedIn</a><a class="btn" href="resume.pdf">Resume</a><span class="mail">cristianangelicchio@gmail.com</span></div>
+  <p class="avail"><i aria-hidden="true"></i>Open to level &amp; game design roles · Remote, or hybrid in Buenos Aires</p></div>
+</div></footer>
+<script>
+  const SECS = [...document.querySelectorAll('.fb-sec')].map(el => ({ el, c: 'var(--s2-accent)' }));
+  const tocLinks = [...document.querySelectorAll('.toc a')];
+  const rail = document.querySelector('.rail'), fill = rail.querySelector('.rail-fill'), bar = document.querySelector('.topbar');
+  const dots = SECS.map(x => { const d = document.createElement('span'); d.className = 'dot'; d.style.setProperty('--c', x.c); rail.appendChild(d); return d; });
+  const navLinks = [...document.querySelectorAll('.mainnav .nl')];
+  const yOf = el => el.getBoundingClientRect().top + scrollY;
+  function place() {
+    const max = document.documentElement.scrollHeight - innerHeight || 1;
+    SECS.forEach((x, i) => dots[i].style.top = Math.min(100, Math.max(0, (yOf(x.el) - innerHeight * 0.4) / max * 100)) + '%');
+    update();
+  }
+  function update() {
+    const max = document.documentElement.scrollHeight - innerHeight || 1;
+    const p = Math.min(100, Math.max(0, scrollY / max * 100));
+    const mid = scrollY + innerHeight * 0.4;
+    let cur = 0; SECS.forEach((x, i) => { if (yOf(x.el) <= mid) cur = i; });
+    dots.forEach((d, i) => { d.classList.toggle('on', i === cur); d.classList.toggle('past', i < cur); });
+    const color = getComputedStyle(dots[cur]).getPropertyValue('--c');
+    rail.style.setProperty('--cur', color); bar.style.setProperty('--cur', color);
+    fill.style.height = p + '%'; bar.style.setProperty('--p', p + '%');
+    const work = 'work'; tocLinks.forEach(l => l.classList.toggle('on', l.getAttribute('href') === '#' + SECS[cur].el.id));
+    navLinks.forEach(l => l.classList.toggle('on', l.dataset.sec === work));
+  }
+  addEventListener('scroll', update, { passive: true }); addEventListener('resize', place); addEventListener('load', place); place();
+  document.querySelectorAll('.cmp input').forEach(i => i.addEventListener('input', () => i.parentElement.style.setProperty('--x', i.value + '%')));
+  document.querySelectorAll('.caret').forEach(c => c.addEventListener('click', () => {
+    const it = c.closest('.item'); const open = !it.classList.contains('open');
+    it.classList.toggle('open', open); c.setAttribute('aria-expanded', open);
+  }));
+  document.addEventListener('click', e => { if (!e.target.closest('.item')) document.querySelectorAll('.item.open').forEach(x => x.classList.remove('open')); });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') document.querySelectorAll('.item.open').forEach(x => x.classList.remove('open')); });
+  const mb = document.querySelector('.menu-btn'), mn = document.getElementById('mainnav');
+  mb.addEventListener('click', () => { const o = mn.classList.toggle('open'); mb.setAttribute('aria-expanded', o); mb.textContent = o ? 'Close' : 'Menu'; });
+  mn.addEventListener('click', e => { if (e.target.closest('a') && innerWidth <= 900) { mn.classList.remove('open'); mb.setAttribute('aria-expanded', false); mb.textContent = 'Menu'; } });
+
+  // Media loader: a gray box with data-file="uefn-final-1" shows assets/uefn-final-1.jpg (or .png .gif .webp; videos: .mp4 .webm)
+  // as soon as that file exists. Put a YouTube ID in data-youtube="..." to embed a YouTube video instead.
+  function fillPh(ph, el) { ph.querySelector('span')?.remove(); ph.classList.add('filled'); ph.appendChild(el); if (el.play) el.play().catch(() => {}); }
+  // Load each box only when it gets close to the screen, so the page opens fast
+  function loadPh(ph) {
+    const label = ph.querySelector('span')?.firstChild?.textContent.trim() || '';
+    if (ph.dataset.youtube) {
+      const f = document.createElement('iframe'); f.src = 'https://www.youtube.com/embed/' + ph.dataset.youtube; f.title = label; f.allowFullscreen = true; fillPh(ph, f); return;
+    }
+    const vid = ph.dataset.kind === 'video', exts = vid ? ['mp4', 'webm'] : ['jpg', 'png', 'gif', 'webp', 'jpeg'];
+    (function tryExt(k) {
+      if (k >= exts.length) { ph.classList.add('missing'); return; }
+      const el = document.createElement(vid ? 'video' : 'img');
+      if (vid) { el.muted = true; el.loop = true; el.autoplay = true; el.playsInline = true; el.setAttribute('muted', ''); el.onloadeddata = () => fillPh(ph, el); }
+      else { el.alt = label; el.onload = () => fillPh(ph, el); }
+      el.onerror = () => tryExt(k + 1);
+      el.src = 'assets/' + ph.dataset.file + '.' + exts[k];
+    })(0);
+  }
+  const phs = document.querySelectorAll('.ph[data-file]');
+  if ('IntersectionObserver' in window) {
+    const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { io.unobserve(e.target); loadPh(e.target); } }), { rootMargin: '800px 0px' });
+    phs.forEach(ph => io.observe(ph));
+  } else phs.forEach(loadPh);
+</script>
+</body>
+</html>
