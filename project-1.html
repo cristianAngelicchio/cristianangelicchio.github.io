@@ -12,27 +12,33 @@
   --bg: #f6f5f8; --fg: #1a1820; --muted: #615d6b; --line: #dedbe4; --card: #ffffff;
   --brand: #6b45c9;             /* Cris purple: header, buttons, footer */
   --hero-bg: #1c1726; --hero-fg: #f3f0f8;
-  /* Per-project skins (muted on purpose). Rename/recolor per game. */
-  --s1-bg: #efe7dc; --s1-fg: #2b2118; --s1-accent: #9a5b2a; --s1-soft: #e2d5c4;   /* warm brass: e.g. an industrial / steampunk level */
-  --s2-bg: #e3ece6; --s2-fg: #17261d; --s2-accent: #3f7a58; --s2-soft: #cfdfd5;   /* moss green: e.g. a forest platformer */
-  --s3-bg: #e2e8f0; --s3-fg: #16202c; --s3-accent: #3d6694; --s3-soft: #cdd8e6;   /* slate blue: e.g. a systems prototype */
-  --s4-bg: #f2e4ea; --s4-fg: #2a1820; --s4-accent: #a64a72; --s4-soft: #e6d0da;   /* dusty candy: match-3 work */
+  /* Per-project skins (muted on purpose). Each one takes the mood of its game. */
+  --s1-bg: #e2e8f0; --s1-fg: #16202c; --s1-accent: #3d6694; --s1-soft: #cdd8e6;   /* steel blue: UEFN Team Deathmatch */
+  --s2-bg: #e4ecdf; --s2-fg: #1b2616; --s2-accent: #4f7a35; --s2-soft: #d2dfc9;   /* garden green: Racing level */
+  --s3-bg: #ececec; --s3-fg: #141414; --s3-accent: #b3261e; --s3-soft: #dcdcdc;   /* black & white with a red scarf: Scarfguy */
+  --s4-bg: #ece4e1; --s4-fg: #251819; --s4-accent: #8c2f39; --s4-soft: #ddd0cc;   /* dried blood: Occult Blood Smackdown */
+  --s5-bg: #dfe8e3; --s5-fg: #13211c; --s5-accent: #3a7468; --s5-soft: #c9d9d1;   /* murky sewer green-blue: 2D platformer */
+  --s6-bg: #f1ede4; --s6-fg: #24211b; --s6-accent: #7a6a4c; --s6-soft: #e4ded0;   /* paper: Writing */
   --display: "Sora", "Segoe UI", sans-serif; --body: "Inter", system-ui, sans-serif;
 }
 @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
   --bg: #121116; --fg: #eeecf2; --muted: #a39fae; --line: #2a2731; --card: #1b1a21; --brand: #a68bff;
   --hero-bg: #0d0b12; --hero-fg: #f3f0f8;
-  --s1-bg: #221b14; --s1-fg: #f2e9df; --s1-accent: #d39a63; --s1-soft: #33291f;
-  --s2-bg: #141e18; --s2-fg: #e3efe7; --s2-accent: #7cc19a; --s2-soft: #1f2d25;
-  --s3-bg: #131a23; --s3-fg: #e1e8f1; --s3-accent: #86aee0; --s3-soft: #1e2835;
-  --s4-bg: #22141a; --s4-fg: #f3e4ea; --s4-accent: #e08ab0; --s4-soft: #331f28; color-scheme: dark; } }
+  --s1-bg: #131a23; --s1-fg: #e1e8f1; --s1-accent: #86aee0; --s1-soft: #1e2835;
+  --s2-bg: #161e12; --s2-fg: #e6efdf; --s2-accent: #9cc47e; --s2-soft: #222d1c;
+  --s3-bg: #121212; --s3-fg: #f0f0f0; --s3-accent: #e5534b; --s3-soft: #222222;
+  --s4-bg: #1f1415; --s4-fg: #f1e4e5; --s4-accent: #e07a85; --s4-soft: #311f22;
+  --s5-bg: #111b18; --s5-fg: #dfece6; --s5-accent: #7cbcab; --s5-soft: #1b2a25;
+  --s6-bg: #1c1a16; --s6-fg: #eeeadf; --s6-accent: #c9b88f; --s6-soft: #2a2721; color-scheme: dark; } }
 :root[data-theme="dark"] {
   --bg: #121116; --fg: #eeecf2; --muted: #a39fae; --line: #2a2731; --card: #1b1a21; --brand: #a68bff;
   --hero-bg: #0d0b12; --hero-fg: #f3f0f8;
-  --s1-bg: #221b14; --s1-fg: #f2e9df; --s1-accent: #d39a63; --s1-soft: #33291f;
-  --s2-bg: #141e18; --s2-fg: #e3efe7; --s2-accent: #7cc19a; --s2-soft: #1f2d25;
-  --s3-bg: #131a23; --s3-fg: #e1e8f1; --s3-accent: #86aee0; --s3-soft: #1e2835;
-  --s4-bg: #22141a; --s4-fg: #f3e4ea; --s4-accent: #e08ab0; --s4-soft: #331f28; color-scheme: dark; }
+  --s1-bg: #131a23; --s1-fg: #e1e8f1; --s1-accent: #86aee0; --s1-soft: #1e2835;
+  --s2-bg: #161e12; --s2-fg: #e6efdf; --s2-accent: #9cc47e; --s2-soft: #222d1c;
+  --s3-bg: #121212; --s3-fg: #f0f0f0; --s3-accent: #e5534b; --s3-soft: #222222;
+  --s4-bg: #1f1415; --s4-fg: #f1e4e5; --s4-accent: #e07a85; --s4-soft: #311f22;
+  --s5-bg: #111b18; --s5-fg: #dfece6; --s5-accent: #7cbcab; --s5-soft: #1b2a25;
+  --s6-bg: #1c1a16; --s6-fg: #eeeadf; --s6-accent: #c9b88f; --s6-soft: #2a2721; color-scheme: dark; }
 
 * { box-sizing: border-box; }
 [hidden] { display: none !important; }
@@ -168,6 +174,8 @@ footer { background: var(--hero-bg); color: var(--hero-fg); padding-block: 3rem;
 footer .wrap { display: flex; justify-content: space-between; align-items: center; gap: 1.5rem; flex-wrap: wrap; }
 footer h2 { font-size: clamp(1.8rem, 4vw, 2.6rem); }
 footer h2 span { color: #c8b6ff; }
+footer .avail { margin-top: .8rem; font-size: .88rem; opacity: .85; display: flex; align-items: center; gap: .5rem; }
+footer .avail i { width: 8px; height: 8px; border-radius: 50%; background: #3ecf6e; box-shadow: 0 0 0 3px rgba(62,207,110,.2); flex: none; }
 
 /* Scroll marker: a full-height vertical line on the left. It fills as you scroll, takes the color of the current section,
    and has a dot where each section starts. */
@@ -183,9 +191,6 @@ footer h2 span { color: #c8b6ff; }
 .topbar { position: fixed; left: 0; right: 0; top: calc(env(safe-area-inset-top, 0px) + 56px); height: 3px; z-index: 6; pointer-events: none; display: none; }
 .topbar span { display: block; height: 100%; width: var(--p, 0%); background: var(--cur, var(--brand)); transition: background .4s; }
 @media (max-width: 1300px) { .topbar { display: block; } }
-.s2 { background: linear-gradient(var(--s1-bg), var(--s2-bg) 140px); }
-.s3 { background: linear-gradient(var(--s2-bg), var(--s3-bg) 140px); }
-.s4 { background: linear-gradient(var(--s3-bg), var(--s4-bg) 140px); }
 [id] { scroll-margin-top: 4.5rem; }
 .crumb { display: inline-block; margin-bottom: 1.5rem; font-weight: 600; text-decoration: none; color: var(--sa); }
 .next { padding-block: 2rem 3rem; }
@@ -240,22 +245,44 @@ blockquote { margin: 0; padding-left: 1rem; border-left: 3px solid var(--sa); fo
 .stats { display: flex; gap: 2rem; flex-wrap: wrap; }
 .stats div b { display: block; font-family: var(--display); font-size: 1.8rem; color: var(--sa); font-variant-numeric: tabular-nums; }
 .stats div span { font-size: .85rem; opacity: .75; }
+.s5 { --sbg: var(--s5-bg); --sfg: var(--s5-fg); --sa: var(--s5-accent); --ss: var(--s5-soft); }
+.s6 { --sbg: var(--s6-bg); --sfg: var(--s6-fg); --sa: var(--s6-accent); --ss: var(--s6-soft); }
+.cmp { position: relative; aspect-ratio: 16/9; border-radius: 10px; overflow: hidden; --x: 50%; }
+.cmp > .ph { position: absolute; inset: 0; aspect-ratio: auto; border-radius: 0; }
+.cmp > .ph.b { clip-path: inset(0 0 0 var(--x)); background-color: color-mix(in srgb, var(--sa) 22%, var(--ss)); }
+.cmp > .ph.a span { justify-self: start; margin-left: 1rem; }
+.cmp > .ph.b span { justify-self: end; margin-right: 1rem; }
+.cmp::after { content: ""; position: absolute; top: 0; bottom: 0; left: var(--x); width: 3px; transform: translateX(-50%); background: var(--sa); pointer-events: none; }
+.cmp::before { content: "⇆"; position: absolute; z-index: 1; top: 50%; left: var(--x); transform: translate(-50%, -50%); width: 36px; height: 36px; border-radius: 50%; display: grid; place-items: center; background: var(--sa); color: var(--sbg); font-weight: 700; pointer-events: none; }
+.cmp input { position: absolute; inset: 0; width: 100%; height: 100%; margin: 0; opacity: 0; cursor: ew-resize; z-index: 2; }
+.cmp:has(input:focus-visible) { outline: 3px solid var(--sa); outline-offset: 3px; }
+.cmp-row { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 1rem; }
+@media (max-width: 700px) { .cmp-row { grid-template-columns: 1fr; } }
+.cta-row { display: flex; gap: 1.5rem; align-items: center; flex-wrap: wrap; }
+.cta-row .play { margin-top: 0; }
+/* Media: each gray box loads assets/<name> by itself when that file exists (see README) */
+.ph.filled { background: none; }
+.ph > img, .ph > video, .ph > iframe { width: 100%; height: 100%; object-fit: cover; display: block; border: 0; border-radius: inherit; }
+.ph span small { display: block; font: 500 .7rem/1.3 ui-monospace, Consolas, monospace; opacity: .7; }
 </style>
 </head>
 <body>
 <header class="top"><div class="wrap">
-  <a class="brandname" href="index.html"><i aria-hidden="true"></i>Cris [Surname]</a>
+  <a class="brandname" href="index.html"><i aria-hidden="true"></i>Cris Angelicchio</a>
   <button class="menu-btn" aria-expanded="false" aria-controls="mainnav">Menu</button>
   <nav id="mainnav" class="mainnav" aria-label="Main">
     <div class="item has-sub" style="--c:var(--brand)">
       <a class="nl" href="index.html#p1" data-sec="work">Projects</a><button class="caret" aria-expanded="false" aria-label="Projects list">▾</button>
       <div class="sub">
-        <a href="project-1.html" style="--c:var(--s1-accent)"><i></i><span>[Level 1]<small>Full breakdown · own page</small></span></a>
-        <a href="index.html#p2" style="--c:var(--s2-accent)"><i></i><span>[Level 2]<small>On this page</small></span></a>
-        <a href="index.html#p3" style="--c:var(--s3-accent)"><i></i><span>[System]<small>On this page</small></span></a>
+        <a href="project-1.html" style="--c:var(--s1-accent)"><i></i><span>Train Station · UEFN<small>Full breakdown · this page</small></span></a>
+        <a href="index.html#p2" style="--c:var(--s2-accent)"><i></i><span>Racing Level<small>Racing level · Unity</small></span></a>
+        <a href="index.html#p3" style="--c:var(--s3-accent)"><i></i><span>Scarfguy<small>Puzzle Game · Unity</small></span></a>
+        <a href="index.html#p4" style="--c:var(--s4-accent)"><i></i><span>Occult Blood Smackdown<small>Board game</small></span></a>
+        <a href="index.html#p5" style="--c:var(--s5-accent)"><i></i><span>2D Platformer Level<small>2D Platformer · Unity</small></span></a>
+        <a href="index.html#writing" style="--c:var(--s6-accent)"><i></i><span>Game design books<small>Writing</small></span></a>
       </div>
     </div>
-    <div class="item" style="--c:var(--s4-accent)"><a class="nl" href="index.html#pro" data-sec="pro">Experience</a></div>
+    <div class="item" style="--c:var(--brand)"><a class="nl" href="index.html#experience" data-sec="experience">Experience</a></div>
     <div class="item" style="--c:var(--brand)"><a class="nl" href="index.html#about" data-sec="about">About</a></div>
     <a class="btn brand" href="resume.pdf">Resume</a>
   </nav>
@@ -265,126 +292,122 @@ blockquote { margin: 0; padding-left: 1rem; border-left: 3px solid var(--sa); fo
 <main class="band s1" style="padding-block:0">
   <div class="wrap fb-hero">
     <a class="crumb" href="index.html#p1">← Back to the portfolio</a>
-    <span class="eyebrow" style="display:block;color:var(--sa)">Full breakdown · Level design</span>
-    <h1>[Level name]</h1>
-    <p class="tagline">[One line: the fantasy of the level.]</p>
+    <span class="eyebrow" style="display:block;color:var(--sa)">Full breakdown · Multiplayer level design · UEFN</span>
+    <h1>Train Station</h1>
+    <p class="tagline">A Team Deathmatch map for Fortnite, from paper sketch to greybox to final dressing, in one month.</p>
   </div>
   <div class="wrap fb-layout">
     <nav class="toc" aria-label="On this page">
       <span class="eyebrow">On this page</span>
-      <a href="#fb-overview">Overview</a><a href="#fb-goal">Goal &amp; pillars</a><a href="#fb-research">Research &amp; references</a>
-      <a href="#fb-ldd">Level design document</a><a href="#fb-pacing">Beat sheet &amp; pacing</a><a href="#fb-layout">2D layout</a>
-      <a href="#fb-blockout">Blockout</a><a href="#fb-walk">Walkthrough</a><a href="#fb-tech">Techniques</a>
-      <a href="#fb-iter">Iterations &amp; playtests</a><a href="#fb-final">Final result</a><a href="#fb-back">Looking back</a>
+      <a href="#fb-overview">Overview</a><a href="#fb-goal">Goal &amp; pillars</a><a href="#fb-research">References</a>
+      <a href="#fb-layout">Sketches &amp; layout</a><a href="#fb-lanes">Areas &amp; flow</a>
+      <a href="#fb-compare">Greybox → final</a><a href="#fb-walk">Map tour</a><a href="#fb-tech">Techniques</a>
+      <a href="#fb-iter">Iterations</a><a href="#fb-final">Final result</a><a href="#fb-back">Looking back</a>
     </nav>
     <div>
       <section class="fb-sec" id="fb-overview"><h2><small>01</small>Overview</h2>
-        <div class="ph"><span>Full playthrough video</span></div>
+        <div class="ph" data-file="uefn-playthrough" data-kind="video" data-youtube=""><span>Full playthrough video<small>uefn-playthrough.mp4</small></span></div>
         <div class="specs" style="grid-template-columns:repeat(4,minmax(0,1fr))">
-          <div><span>Role</span><b>Level Designer</b></div><div><span>Engine</span><b>UE5</b></div><div><span>Team</span><b>[Solo]</b></div><div><span>Duration</span><b>[6 weeks]</b></div>
-          <div><span>Genre</span><b>[3D action]</b></div><div><span>Tools</span><b>[Blender, Miro]</b></div><div><span>Iterations</span><b>[4]</b></div><div><span>Playtests</span><b>[3]</b></div>
+          <div><span>Role</span><b>Level Designer</b></div><div><span>Engine</span><b>UEFN</b></div><div><span>Team</span><b>Solo</b></div><div><span>Duration</span><b>1 month</b></div>
+          <div><span>Genre</span><b>FPS - Team Deathmatch</b></div><div><span>Players</span><b>[8 v 8]</b></div><div><span>Year</span><b>2026</b></div><div><span>Iterations</span><b>[3]</b></div>
         </div>
-        <p>[A short paragraph: what the level is, where it sits in the game, and what the player does from start to finish.]</p>
+        <p>[A short paragraph: the setting, the size of the map, and how a match plays out from spawn to the first fight.]</p>
       </section>
 
       <section class="fb-sec" id="fb-goal"><h2><small>02</small>Goal &amp; pillars</h2>
-        <p>[The main goal of the level in 2–3 lines.]</p>
+        <p>[The main goal of the map in 2–3 lines.]</p>
         <div class="g3">
-          <div class="sec"><h3>[Pillar 1]</h3><p>[E.g. "Always show the next objective before the player needs it."]</p></div>
-          <div class="sec"><h3>[Pillar 2]</h3><p>[E.g. "Use height to offer a safe and a risky route."]</p></div>
-          <div class="sec"><h3>[Pillar 3]</h3><p>[E.g. "Tell the place's story without text."]</p></div>
+          <div class="sec"><h3>[Pillar 1]</h3><p>[E.g. "Every fight has a flank route."]</p></div>
+          <div class="sec"><h3>[Pillar 2]</h3><p>[E.g. "No spawn point is in a long sightline."]</p></div>
+          <div class="sec"><h3>[Pillar 3]</h3><p>[E.g. "You always know where you are at a glance."]</p></div>
         </div>
       </section>
 
-      <section class="fb-sec" id="fb-research"><h2><small>03</small>Research &amp; references <span class="opt">Optional</span></h2>
-        <p>[What you looked at before designing: games, real places, art. Why these.]</p>
-        <div class="g4"><figure><div class="ph"><span>Reference</span></div></figure><figure><div class="ph"><span>Reference</span></div></figure><figure><div class="ph"><span>Reference</span></div></figure><figure><div class="ph"><span>Reference</span></div></figure></div>
+      <section class="fb-sec" id="fb-research"><h2><small>03</small>References <span class="opt">Optional</span></h2>
+        <p>[Maps or places you looked at before designing, and what you took from each.]</p>
+        <div class="g4"><figure><div class="ph" data-file="uefn-reference-1"><span>Reference<small>uefn-reference-1.jpg</small></span></div></figure><figure><div class="ph" data-file="uefn-reference-2"><span>Reference<small>uefn-reference-2.jpg</small></span></div></figure><figure><div class="ph" data-file="uefn-reference-3"><span>Reference<small>uefn-reference-3.jpg</small></span></div></figure><figure><div class="ph" data-file="uefn-reference-4"><span>Reference<small>uefn-reference-4.jpg</small></span></div></figure></div>
       </section>
 
-      <section class="fb-sec" id="fb-ldd"><h2><small>04</small>Level design document <span class="opt">Optional</span></h2>
-        <p>[Pages from your LDD or one-page design, with a link to the full document.]</p>
-        <div class="g3"><figure><div class="ph doc"><span>LDD page 1</span></div></figure><figure><div class="ph doc"><span>LDD page 2</span></div></figure><figure><div class="ph doc"><span>LDD page 3</span></div></figure></div>
-        <a class="play" href="#">Open the full document (PDF) →</a>
-      </section>
-
-      <section class="fb-sec" id="fb-pacing"><h2><small>05</small>Beat sheet &amp; pacing</h2>
-        <p>[How intensity rises and falls through the level. Replace the sample curve with your beats.]</p>
-        <div class="chart">
-          <svg viewBox="0 0 640 230" role="img" aria-label="Sample pacing chart: intensity by beat, rising to a climax at beat 7 and releasing at the end">
-            <line class="ax" x1="40" y1="190" x2="620" y2="190"/><line class="ax" x1="40" y1="20" x2="40" y2="190"/>
-            <text x="8" y="28">High</text><text x="8" y="190">Low</text>
-            <path class="area" d="M60 170 L130 140 L200 155 L270 110 L340 125 L410 80 L480 40 L550 150 L610 165 L610 190 L60 190 Z"/>
-            <polyline class="curve" points="60,170 130,140 200,155 270,110 340,125 410,80 480,40 550,150 610,165"/>
-            <g><circle class="pt" cx="60" cy="170" r="5"/><text x="56" y="210">1</text><circle class="pt" cx="130" cy="140" r="5"/><text x="126" y="210">2</text><circle class="pt" cx="200" cy="155" r="5"/><text x="196" y="210">3</text><circle class="pt" cx="270" cy="110" r="5"/><text x="266" y="210">4</text><circle class="pt" cx="340" cy="125" r="5"/><text x="336" y="210">5</text><circle class="pt" cx="410" cy="80" r="5"/><text x="406" y="210">6</text><circle class="pt" cx="480" cy="40" r="5"/><text x="476" y="210">7</text><circle class="pt" cx="550" cy="150" r="5"/><text x="546" y="210">8</text><circle class="pt" cx="610" cy="165" r="5"/><text x="606" y="210">9</text></g>
-            <text x="300" y="228">Beat</text>
-          </svg>
-        </div>
+      <section class="fb-sec" id="fb-layout"><h2><small>04</small>Sketches &amp; layout</h2>
+        <p>[How the top-down layout evolved on paper, one line per sketch.]</p>
         <div class="g3">
-          <div class="sec"><h3>Beats 1–3 · Intro</h3><p>[Teach the core idea safely.]</p></div>
-          <div class="sec"><h3>Beats 4–7 · Rise</h3><p>[Combine mechanics, build to the climax.]</p></div>
-          <div class="sec"><h3>Beats 8–9 · Release</h3><p>[Reward and exit.]</p></div>
+          <figure><div class="ph" data-file="uefn-sketch-v1"><span>Sketch v1<small>uefn-sketch-v1.jpg</small></span></div><figcaption><b>v1</b>[First idea]</figcaption></figure>
+          <figure><div class="ph" data-file="uefn-sketch-v2"><span>Sketch v2<small>uefn-sketch-v2.jpg</small></span></div><figcaption><b>v2</b>[What changed]</figcaption></figure>
+          <figure><div class="ph" data-file="uefn-map"><span>Final layout<small>uefn-map.jpg</small></span></div><figcaption><b>Final</b>[Why]</figcaption></figure>
         </div>
       </section>
 
-      <section class="fb-sec" id="fb-layout"><h2><small>06</small>2D layout</h2>
-        <p>[How the top-down layout evolved, one line per version.]</p>
+      <section class="fb-sec" id="fb-lanes"><h2><small>05</small>Areas &amp; flow</h2>
+        <p>[The map is long on one axis: half is the station platforms, then the footbridge, then the tracks running to the tunnel. Five main areas:]</p>
+        <div class="ph" data-file="uefn-lanes-map"><span>Top-down map with areas, routes and sightlines drawn on top<small>uefn-lanes-map.jpg</small></span></div>
         <div class="g3">
-          <figure><div class="ph"><span>Layout v1</span></div><figcaption><b>v1</b>[First idea]</figcaption></figure>
-          <figure><div class="ph"><span>Layout v2</span></div><figcaption><b>v2</b>[What changed]</figcaption></figure>
-          <figure><div class="ph"><span>Layout final</span></div><figcaption><b>Final</b>[Why]</figcaption></figure>
+          <div class="sec"><h3>Platforms</h3><p>[What kind of fight happens here.]</p></div>
+          <div class="sec"><h3>Waiting room</h3><p>[Close range inside the platforms area.]</p></div>
+          <div class="sec"><h3>Footbridge</h3><p>[The divider between the two halves: what it controls.]</p></div>
+          <div class="sec"><h3>Maintenance building</h3><p>[Its role in the flow.]</p></div>
+          <div class="sec"><h3>Watchtower</h3><p>[Height and long sightlines: how it is countered.]</p></div>
         </div>
       </section>
 
-      <section class="fb-sec" id="fb-blockout"><h2><small>07</small>Blockout</h2>
-        <p>[What you tested in the greybox: scale, jump distances, sightlines, timing.]</p>
-        <div class="g2"><figure><div class="ph"><span>Greybox overview</span></div></figure><figure><div class="ph"><span>Greybox detail</span></div></figure></div>
+
+      <section class="fb-sec" id="fb-compare"><h2><small>06</small>Greybox → final</h2>
+        <p>The same shots in greybox and final. Drag each image to compare.</p>
+        <div class="cmp-row" style="grid-template-columns:1fr">
+          <div class="cmp"><div class="ph a" data-file="uefn-greybox-1"><span>Greybox 1<small>uefn-greybox-1.jpg</small></span></div><div class="ph b" data-file="uefn-final-1"><span>Final 1<small>uefn-final-1.jpg</small></span></div><input type="range" min="0" max="100" value="50" aria-label="Compare greybox and final, shot 1"></div>
+          <p>[What you tested in this greybox, and what changed in the final.]</p>
+          <div class="cmp"><div class="ph a" data-file="uefn-greybox-2"><span>Greybox 2<small>uefn-greybox-2.jpg</small></span></div><div class="ph b" data-file="uefn-final-2"><span>Final 2<small>uefn-final-2.jpg</small></span></div><input type="range" min="0" max="100" value="50" aria-label="Compare greybox and final, shot 2"></div>
+          <p>[What you tested in this greybox, and what changed in the final.]</p>
+          <div class="cmp"><div class="ph a" data-file="uefn-greybox-3"><span>Greybox 3<small>uefn-greybox-3.jpg</small></span></div><div class="ph b" data-file="uefn-final-3"><span>Final 3<small>uefn-final-3.jpg</small></span></div><input type="range" min="0" max="100" value="50" aria-label="Compare greybox and final, shot 3"></div>
+          <p>[What you tested in this greybox, and what changed in the final.]</p>
+        </div>
       </section>
 
-      <section class="fb-sec" id="fb-walk"><h2><small>08</small>Walkthrough by beats</h2>
+      <section class="fb-sec" id="fb-walk"><h2><small>07</small>Map tour</h2>
         <div class="beats">
-          <div class="beat"><div class="ph"><span>Beat 1 clip</span></div><div><span class="eyebrow">Beat 1</span><h3>[Beat name]</h3><p>[What happens and what it teaches.]</p></div></div>
-          <div class="beat"><div class="ph"><span>Beat 2 clip</span></div><div><span class="eyebrow">Beat 2</span><h3>[Beat name]</h3><p>[What happens and what it teaches.]</p></div></div>
-          <div class="beat"><div class="ph"><span>Beat 3 clip</span></div><div><span class="eyebrow">Beat 3</span><h3>[Beat name]</h3><p>[Copy one block per beat.]</p></div></div>
+          <div class="beat"><div class="ph" data-file="uefn-area-1" data-kind="video"><span>Area clip<small>uefn-area-1.mp4</small></span></div><div><span class="eyebrow">Area 1</span><h3>[Area name]</h3><p>[What happens here and why it's shaped this way.]</p></div></div>
+          <div class="beat"><div class="ph" data-file="uefn-area-2" data-kind="video"><span>Area clip<small>uefn-area-2.mp4</small></span></div><div><span class="eyebrow">Area 2</span><h3>[Middle]</h3><p>[Where teams first meet.]</p></div></div>
+          <div class="beat"><div class="ph" data-file="uefn-area-3" data-kind="video"><span>Area clip<small>uefn-area-3.mp4</small></span></div><div><span class="eyebrow">Area 3</span><h3>[Area name]</h3><p>[Copy one block per area.]</p></div></div>
         </div>
       </section>
 
-      <section class="fb-sec" id="fb-tech"><h2><small>09</small>Techniques</h2>
-        <p>[Show each technique with a plain shot next to the same shot with guides drawn on top.]</p>
-        <div class="sec"><h3>Framing</h3><div class="g2"><figure><div class="ph"><span>Plain shot</span></div></figure><figure><div class="ph"><span>With guides</span></div></figure></div><p>[How you guide the eye.]</p></div>
-        <div class="sec"><h3>Verticality</h3><div class="g2"><figure><div class="ph"><span>Plain shot</span></div></figure><figure><div class="ph"><span>With guides</span></div></figure></div><p>[How height creates choices.]</p></div>
-        <div class="sec"><h3>Environmental storytelling</h3><div class="g2"><figure><div class="ph"><span>Plain shot</span></div></figure><figure><div class="ph"><span>With guides</span></div></figure></div><p>[What the space tells.]</p></div>
+      <section class="fb-sec" id="fb-tech"><h2><small>08</small>Techniques</h2>
+        <p>Each technique as a plain shot next to the same shot with guides drawn on top.</p>
+        <div class="sec"><h3>Cover &amp; sightlines</h3><div class="g2"><figure><div class="ph" data-file="uefn-plain-1"><span>Plain shot<small>uefn-plain-1.jpg</small></span></div></figure><figure><div class="ph" data-file="uefn-guides-1"><span>With guides<small>uefn-guides-1.jpg</small></span></div></figure></div><p>[How cover breaks long shots.]</p></div>
+        <div class="sec"><h3>Verticality</h3><div class="g2"><figure><div class="ph" data-file="uefn-plain-2"><span>Plain shot<small>uefn-plain-2.jpg</small></span></div></figure><figure><div class="ph" data-file="uefn-guides-2"><span>With guides<small>uefn-guides-2.jpg</small></span></div></figure></div><p>[How height creates choices.]</p></div>
+        <div class="sec"><h3>Landmarks</h3><div class="g2"><figure><div class="ph" data-file="uefn-plain-3"><span>Plain shot<small>uefn-plain-3.jpg</small></span></div></figure><figure><div class="ph" data-file="uefn-guides-3"><span>With guides<small>uefn-guides-3.jpg</small></span></div></figure></div><p>[How players know where they are.]</p></div>
       </section>
 
-      <section class="fb-sec" id="fb-iter"><h2><small>10</small>Iterations &amp; playtests</h2>
-        <div class="stats"><div><b>[4]</b><span>iterations</span></div><div><b>[3]</b><span>playtests</span></div><div><b>[12]</b><span>testers</span></div></div>
+      <section class="fb-sec" id="fb-iter"><h2><small>09</small>Iterations</h2>
+        <div class="stats"><div><b>[3]</b><span>sketch versions</span></div><div><b>[2]</b><span>greybox passes</span></div><div><b>1</b><span>month</span></div></div>
         <article class="iter">
-          <h3>[Iteration 2 · Short title]</h3>
-          <div class="ps"><figure><div class="ph"><span>Before</span></div></figure><figure><div class="ph"><span>After</span></div></figure></div>
-          <dl><dt>Problem</dt><dd>[What wasn't working.]</dd><dt>Feedback</dt><dd><blockquote>"[A tester's quote]"</blockquote></dd><dt>Solution</dt><dd>[What you changed and the result.]</dd></dl>
+          <h3>[Change 1 · Short title]</h3>
+          <div class="ps"><figure><div class="ph" data-file="uefn-before-1"><span>Before<small>uefn-before-1.jpg</small></span></div></figure><figure><div class="ph" data-file="uefn-after-1"><span>After<small>uefn-after-1.jpg</small></span></div></figure></div>
+          <dl><dt>Problem</dt><dd>[What wasn't working when you played it.]</dd><dt>Change</dt><dd>[What you changed and the result.]</dd></dl>
         </article>
         <article class="iter">
-          <h3>[Iteration 3 · Short title]</h3>
-          <div class="ps"><figure><div class="ph"><span>Before</span></div></figure><figure><div class="ph"><span>After</span></div></figure></div>
-          <dl><dt>Problem</dt><dd>[…]</dd><dt>Solution</dt><dd>[…]</dd></dl>
+          <h3>[Change 2 · Short title]</h3>
+          <div class="ps"><figure><div class="ph" data-file="uefn-before-2"><span>Before<small>uefn-before-2.jpg</small></span></div></figure><figure><div class="ph" data-file="uefn-after-2"><span>After<small>uefn-after-2.jpg</small></span></div></figure></div>
+          <dl><dt>Problem</dt><dd>[…]</dd><dt>Change</dt><dd>[…]</dd></dl>
         </article>
       </section>
 
-      <section class="fb-sec" id="fb-final"><h2><small>11</small>Final result</h2>
-        <div class="g3"><figure><div class="ph"><span>Final shot</span></div></figure><figure><div class="ph"><span>Final shot</span></div></figure><figure><div class="ph"><span>Final shot</span></div></figure></div>
-        <div class="cta-row" style="display:flex;gap:1.5rem;flex-wrap:wrap"><a class="play" href="#">Play on itch.io →</a><a class="play" href="#">Download build →</a></div>
+      <section class="fb-sec" id="fb-final"><h2><small>10</small>Final result</h2>
+        <div class="g3"><figure><div class="ph" data-file="uefn-shot-1"><span>Final shot<small>uefn-shot-1.jpg</small></span></div></figure><figure><div class="ph" data-file="uefn-shot-2"><span>Final shot<small>uefn-shot-2.jpg</small></span></div></figure><figure><div class="ph" data-file="uefn-shot-3"><span>Final shot<small>uefn-shot-3.jpg</small></span></div></figure></div>
+        <div class="cta-row"><a class="play" href="#">Watch the full playthrough on YouTube →</a></div>
       </section>
 
-      <section class="fb-sec" id="fb-back"><h2><small>12</small>Looking back</h2>
+      <section class="fb-sec" id="fb-back"><h2><small>11</small>Looking back</h2>
         <div class="reflect" style="margin-top:0"><span class="eyebrow">What worked</span><p>[…]</p></div>
-        <div class="reflect" style="margin-top:0"><span class="eyebrow">What I'd change</span><p>[…]</p></div>
-        <a class="crumb" href="index.html#p2" style="margin-top:1rem">Next project: [Level 2] →</a>
+        <div class="reflect" style="margin-top:0"><span class="eyebrow">What I'd change</span><p>[E.g. playtest with real players earlier.]</p></div>
+        <a class="crumb" href="index.html#p2" style="margin-top:1rem">Next project: [Track name] →</a>
       </section>
     </div>
   </div>
 </main>
 <footer><div class="wrap">
   <h2>Let's build the <span>next one</span>.</h2>
-  <div class="hero-actions" style="margin:0"><a class="btn brand" href="#">LinkedIn</a><a class="btn" href="resume.pdf">Resume</a><span class="mail">your.email@example.com</span></div>
+  <div class="foot-right"><div class="hero-actions" style="margin:0"><a class="btn brand" href="https://www.linkedin.com/in/cristianangelicchio-gamedesign/">LinkedIn</a><a class="btn" href="resume.pdf">Resume</a><span class="mail">cristianangelicchio@gmail.com</span></div>
+  <p class="avail"><i aria-hidden="true"></i>Open to level &amp; game design roles · Remote, or hybrid in Buenos Aires</p></div>
 </div></footer>
 <script>
   const SECS = [...document.querySelectorAll('.fb-sec')].map(el => ({ el, c: 'var(--s1-accent)' }));
@@ -411,6 +434,7 @@ blockquote { margin: 0; padding-left: 1rem; border-left: 3px solid var(--sa); fo
     navLinks.forEach(l => l.classList.toggle('on', l.dataset.sec === work));
   }
   addEventListener('scroll', update, { passive: true }); addEventListener('resize', place); addEventListener('load', place); place();
+  document.querySelectorAll('.cmp input').forEach(i => i.addEventListener('input', () => i.parentElement.style.setProperty('--x', i.value + '%')));
   document.querySelectorAll('.caret').forEach(c => c.addEventListener('click', () => {
     const it = c.closest('.item'); const open = !it.classList.contains('open');
     it.classList.toggle('open', open); c.setAttribute('aria-expanded', open);
@@ -420,6 +444,31 @@ blockquote { margin: 0; padding-left: 1rem; border-left: 3px solid var(--sa); fo
   const mb = document.querySelector('.menu-btn'), mn = document.getElementById('mainnav');
   mb.addEventListener('click', () => { const o = mn.classList.toggle('open'); mb.setAttribute('aria-expanded', o); mb.textContent = o ? 'Close' : 'Menu'; });
   mn.addEventListener('click', e => { if (e.target.closest('a') && innerWidth <= 900) { mn.classList.remove('open'); mb.setAttribute('aria-expanded', false); mb.textContent = 'Menu'; } });
+
+  // Media loader: a gray box with data-file="uefn-final-1" shows assets/uefn-final-1.jpg (or .png .gif .webp; videos: .mp4 .webm)
+  // as soon as that file exists. Put a YouTube ID in data-youtube="..." to embed a YouTube video instead.
+  function fillPh(ph, el) { ph.querySelector('span')?.remove(); ph.classList.add('filled'); ph.appendChild(el); if (el.play) el.play().catch(() => {}); }
+  // Load each box only when it gets close to the screen, so the page opens fast
+  function loadPh(ph) {
+    const label = ph.querySelector('span')?.firstChild?.textContent.trim() || '';
+    if (ph.dataset.youtube) {
+      const f = document.createElement('iframe'); f.src = 'https://www.youtube.com/embed/' + ph.dataset.youtube; f.title = label; f.allowFullscreen = true; fillPh(ph, f); return;
+    }
+    const vid = ph.dataset.kind === 'video', exts = vid ? ['mp4', 'webm'] : ['jpg', 'png', 'gif', 'webp', 'jpeg'];
+    (function tryExt(k) {
+      if (k >= exts.length) return;
+      const el = document.createElement(vid ? 'video' : 'img');
+      if (vid) { el.muted = true; el.loop = true; el.autoplay = true; el.playsInline = true; el.setAttribute('muted', ''); el.onloadeddata = () => fillPh(ph, el); }
+      else { el.alt = label; el.onload = () => fillPh(ph, el); }
+      el.onerror = () => tryExt(k + 1);
+      el.src = 'assets/' + ph.dataset.file + '.' + exts[k];
+    })(0);
+  }
+  const phs = document.querySelectorAll('.ph[data-file]');
+  if ('IntersectionObserver' in window) {
+    const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { io.unobserve(e.target); loadPh(e.target); } }), { rootMargin: '800px 0px' });
+    phs.forEach(ph => io.observe(ph));
+  } else phs.forEach(loadPh);
 </script>
 </body>
 </html>

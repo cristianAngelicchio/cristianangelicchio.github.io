@@ -168,6 +168,8 @@ footer { background: var(--hero-bg); color: var(--hero-fg); padding-block: 3rem;
 footer .wrap { display: flex; justify-content: space-between; align-items: center; gap: 1.5rem; flex-wrap: wrap; }
 footer h2 { font-size: clamp(1.8rem, 4vw, 2.6rem); }
 footer h2 span { color: #c8b6ff; }
+footer .avail { margin-top: .8rem; font-size: .88rem; opacity: .85; display: flex; align-items: center; gap: .5rem; }
+footer .avail i { width: 8px; height: 8px; border-radius: 50%; background: #3ecf6e; box-shadow: 0 0 0 3px rgba(62,207,110,.2); flex: none; }
 
 /* Scroll marker: a full-height vertical line on the left. It fills as you scroll, takes the color of the current section,
    and has a dot where each section starts. */
@@ -247,7 +249,9 @@ footer h2 span { color: #c8b6ff; }
 .covers .ph.page > img { object-fit: contain; }
 .covers .ph.page:nth-child(2) { transform: translateY(14px); }
 .thumbs { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; margin-top: 2rem; }
-@media (max-width: 560px) { .thumbs { grid-template-columns: 1fr; } }
+.thumbs.four { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+@media (max-width: 900px) { .thumbs.four { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 560px) { .thumbs, .thumbs.four { grid-template-columns: 1fr; } }
 /* Writing: books */
 .books { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 2rem; }
 @media (max-width: 760px) { .books { grid-template-columns: 1fr; } }
@@ -297,6 +301,7 @@ footer h2 span { color: #c8b6ff; }
         <a href="#p3" style="--c:var(--s3-accent)"><i></i><span>Scarfguy<small>Puzzle Game · Unity</small></span></a>
         <a href="#p4" style="--c:var(--s4-accent)"><i></i><span>Occult Blood Smackdown<small>Board game</small></span></a>
         <a href="#p5" style="--c:var(--s5-accent)"><i></i><span>2D Platformer Level<small>2D Platformer · Unity</small></span></a>
+        <a href="#writing" style="--c:var(--s6-accent)"><i></i><span>Game design books<small>Writing</small></span></a>
       </div>
     </div>
     <div class="item" style="--c:var(--brand)"><a class="nl" href="#experience" data-sec="experience">Experience</a></div>
@@ -313,7 +318,7 @@ footer h2 span { color: #c8b6ff; }
     <div class="copy"><div class="wrap">
       <h1>Cris Angelicchio</h1>
       <p class="role">Game Designer | Level Designer</p>
-      <p class="pitch">I start every design with a clear goal that shapes the player's experience. [Looking for a level or game design role.]</p>
+      <p class="pitch">I start every design with a clear goal that shapes the player's experience.</p>
       <div class="hero-actions">
         <a class="btn brand" href="resume.pdf">Resume (PDF)</a>
         <a class="btn" href="https://www.linkedin.com/in/cristianangelicchio-gamedesign/">LinkedIn</a>
@@ -346,7 +351,7 @@ footer h2 span { color: #c8b6ff; }
       <div class="p-grid">
         <div>
           <div class="sec"><h3>Goal</h3><p>A war-torn train station that could exist in real life. The map is long and narrow, so fights keep moving between the platforms and the tracks, like a train in motion.</p></div>
-          <div class="sec"><h3>What I did</h3><ul><li>Set the goal and sketched the layout on paper.</li><li>Built and iterated the greybox in UEFN.</li><li>Tested and tuned sightlines, spawn safety and readability.</li><li>Dressed and lit the final map</li></ul></div>
+          <div class="sec"><h3>What I did</h3><ul><li>Set the goal and sketched the layout on paper.</li><li>Built and iterated the greybox in UEFN.</li><li>Tested and tuned sightlines, spawn safety and readability.</li><li>Dressed and lit the final map.</li></ul></div>
         </div>
         <div class="ph" style="aspect-ratio:4/3" data-file="uefn-map"><span>Top-down sketch of the map<small>uefn-map.jpg</small></span></div>
       </div>
@@ -367,10 +372,10 @@ footer h2 span { color: #c8b6ff; }
   <section class="band s2" id="p2">
     <div class="wrap">
       <div class="p-head">
-        <div><span class="eyebrow">Project 02 · Level design</span><h2>[Track name]</h2><p class="tagline">A racing track through a garden, designed from a sketch and iterated in greybox.</p></div>
+        <div><span class="eyebrow">Racing Level</span><h2>[Track name]</h2><p class="tagline">A racing track through a garden, designed from a sketch and iterated in greybox.</p></div>
         <div class="specs">
           <div><span>Role</span><b>Level Designer</b></div><div><span>Engine</span><b>Unity</b></div><div><span>Team</span><b>Solo</b></div>
-          <div><span>Duration</span><b>3 weeks</b></div><div><span>Year</span><b>2026</b></div><div><span>Status</span><b>Prototype</b></div>
+          <div><span>Genre</span><b>Racing</b></div><div><span>Duration</span><b>3 weeks</b></div><div><span>Year</span><b>2026</b></div>
         </div>
       </div>
       <div class="ph" data-file="racing-loop" data-kind="video"><span>Lap reel (20–25 s)<small>racing-loop.mp4</small></span></div>
@@ -405,12 +410,13 @@ footer h2 span { color: #c8b6ff; }
       <div class="compact">
         <div class="ph" data-file="scarfguy-loop" data-kind="video"><span>Gameplay reel (15 s)<small>scarfguy-loop.mp4</small></span></div>
         <div>
-          <span class="eyebrow">Project 03 · Team game</span>
+          <span class="eyebrow">Puzzle Game</span>
           <h2>Scarfguy</h2>
           <p>[One or two lines: what the game is about, and what you drew and designed.]</p>
           <p class="note">On itch.io the credits list me as the artist; I also co-designed the game with the team.</p>
           <div class="specs">
-            <div><span>Role</span><b>Artist &amp; co-designer</b></div><div><span>Team</span><b>3 people</b></div><div><span>Year</span><b>2019</b></div>
+            <div><span>Role</span><b>Artist &amp; co-designer</b></div><div><span>Engine</span><b>Unity</b></div><div><span>Team</span><b>3 people</b></div>
+            <div><span>Genre</span><b>Puzzle</b></div><div><span>Duration</span><b>4 months</b></div><div><span>Year</span><b>2019</b></div>
           </div>
           <a class="play itch" href="#">Play on itch.io →</a>
         </div>
@@ -424,12 +430,13 @@ footer h2 span { color: #c8b6ff; }
     <div class="wrap compact flip">
       <div class="ph" data-file="obs-cards"><span>Photo of the cards<small>obs-cards.jpg</small></span></div>
       <div>
-        <span class="eyebrow">Project 04 · Game design · Board game</span>
+        <span class="eyebrow">Board Game</span>
         <h2>Occult Blood Smackdown</h2>
         <p>[One or two lines: the fantasy, how you win, and what you balanced.]</p>
         <p class="note">Designed solo with help from an artist. Balanced with a spreadsheet and playtested with friends.</p>
         <div class="specs">
-          <div><span>Role</span><b>Game Designer</b></div><div><span>Years</span><b>2025–2026</b></div><div><span>Tools</span><b>Notion, Sheets</b></div>
+          <div><span>Role</span><b>Game Designer</b></div><div><span>Engine</span><b>Tabletop</b></div><div><span>Team</span><b>Solo + 1 artist</b></div>
+          <div><span>Genre</span><b>[Genre]</b></div><div><span>Duration</span><b>[Duration]</b></div><div><span>Year</span><b>2025–2026</b></div>
         </div>
         <div class="links"><a class="play" href="#">Design wiki (Notion) →</a><a class="play" href="#">Balance sheet →</a></div>
       </div>
@@ -442,17 +449,18 @@ footer h2 span { color: #c8b6ff; }
       <div class="compact">
         <div class="ph" data-file="platformer-loop" data-kind="video"><span>Gameplay reel (15 s)<small>platformer-loop.mp4</small></span></div>
         <div>
-          <span class="eyebrow">Project 05 · Level design</span>
+          <span class="eyebrow">2D Platformer Level</span>
           <h2>[Platformer name]</h2>
           <p>[One or two lines: what the levels teach and how difficulty grows, in the sewers.]</p>
           <p class="note">Built on a Unity tutorial base with free assets. I designed the levels, from paper sketch to final.</p>
           <div class="specs">
-            <div><span>Engine</span><b>Unity 2D</b></div><div><span>Team</span><b>Solo</b></div><div><span>Duration</span><b>3 weeks</b></div>
+            <div><span>Role</span><b>Level Designer</b></div><div><span>Engine</span><b>Unity 2D</b></div><div><span>Team</span><b>Solo</b></div>
+            <div><span>Genre</span><b>2D Platformer</b></div><div><span>Duration</span><b>3 weeks</b></div><div><span>Year</span><b>[Year]</b></div>
           </div>
           <a class="play itch" href="#">Play on itch.io →</a>
         </div>
       </div>
-      <div class="thumbs"><div class="ph" data-file="platformer-shot-1"><span>Screenshot 1<small>platformer-shot-1.jpg</small></span></div><div class="ph" data-file="platformer-shot-2"><span>Screenshot 2<small>platformer-shot-2.jpg</small></span></div><div class="ph" data-file="platformer-shot-3"><span>Screenshot 3<small>platformer-shot-3.jpg</small></span></div></div>
+      <div class="thumbs four"><div class="ph" data-file="platformer-sketch"><span>Level sketch<small>platformer-sketch.jpg</small></span></div><div class="ph" data-file="platformer-shot-1"><span>Screenshot 1<small>platformer-shot-1.jpg</small></span></div><div class="ph" data-file="platformer-shot-2"><span>Screenshot 2<small>platformer-shot-2.jpg</small></span></div><div class="ph" data-file="platformer-shot-3"><span>Screenshot 3<small>platformer-shot-3.jpg</small></span></div></div>
     </div>
   </section>
 
@@ -461,7 +469,7 @@ footer h2 span { color: #c8b6ff; }
     <div class="wrap compact flip">
       <div class="covers"><div class="ph page" data-file="book-1"><span>Page 1<small>book-1.jpg</small></span></div><div class="ph page" data-file="book-2"><span>Page 2<small>book-2.jpg</small></span></div><div class="ph page" data-file="book-3"><span>Page 3<small>book-3.jpg</small></span></div></div>
       <div>
-        <span class="eyebrow">Writing</span>
+        <span class="eyebrow">Game Design Writing</span>
         <h2>Game design books</h2>
         <p>[One or two lines: what the series is about and who it's for.]</p>
         <p class="note">A six-book series. The first two are in preliminary versions.</p>
@@ -491,13 +499,14 @@ footer h2 span { color: #c8b6ff; }
 
 <footer><div class="wrap">
   <h2>Let's build the <span>next one</span>.</h2>
-  <div class="hero-actions" style="margin:0"><a class="btn brand" href="#">LinkedIn</a><a class="btn" href="resume.pdf">Resume</a><span class="mail">your.email@example.com</span></div>
+  <div class="foot-right"><div class="hero-actions" style="margin:0"><a class="btn brand" href="https://www.linkedin.com/in/cristianangelicchio-gamedesign/">LinkedIn</a><a class="btn" href="resume.pdf">Resume</a><span class="mail">cristianangelicchio@gmail.com</span></div>
+  <p class="avail"><i aria-hidden="true"></i>Open to level &amp; game design roles · Remote, or hybrid in Buenos Aires</p></div>
 </div></footer>
 <script>
   // Sections the marker tracks, with their colors. Add or remove pairs when you add or remove sections.
   const SECS = [['top-hero','var(--brand)'],['p1','var(--s1-accent)'],['p2','var(--s2-accent)'],['p3','var(--s3-accent)'],['p4','var(--s4-accent)'],['p5','var(--s5-accent)'],['writing','var(--s6-accent)'],['experience','var(--brand)'],['about','var(--brand)']]
     .map(([id,c]) => ({ el: document.getElementById(id), c })).filter(x => x.el);
-  const WORK = ['p1','p2','p3','p4','p5'];   // sections that light up "Projects" in the menu
+  const WORK = ['p1','p2','p3','p4','p5','writing'];   // sections that light up "Projects" in the menu
   const rail = document.querySelector('.rail'), fill = rail.querySelector('.rail-fill'), bar = document.querySelector('.topbar');
   const dots = SECS.map(x => { const d = document.createElement('span'); d.className = 'dot'; d.style.setProperty('--c', x.c); rail.appendChild(d); return d; });
   const navLinks = [...document.querySelectorAll('.mainnav .nl')];
