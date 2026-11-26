@@ -144,6 +144,8 @@ li::marker { color: var(--sa); }
 .hl p { font-size: .95rem; opacity: .85; }
 .process { margin-top: 2.5rem; }
 .process > h3 { font-size: 1.25rem; margin-bottom: 1rem; }
+.sub-h { font-size: 1.25rem; margin-top: 2.75rem; }
+.sub-h + .note { margin-top: .3rem; }
 .steps { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 1rem; counter-reset: s; }
 @media (max-width: 640px) { .steps { grid-template-columns: 1fr; } }
 figure { margin: 0; display: grid; gap: .45rem; }
@@ -359,13 +361,15 @@ footer .avail i { width: 8px; height: 8px; border-radius: 50%; background: #3ecf
         <div class="ph" style="aspect-ratio:4/3" data-file="uefn-map"><span>Top-down sketch of the map<small>uefn-map.jpg</small></span></div>
       </div>
       <!-- 2 greybox/final sliders: pick the most dramatic changes. Caption = the concrete change, not the concept. -->
-      <div class="highlights two">
-        <div class="hl"><div class="cmp"><div class="ph a" data-file="uefn-greybox-1"><span>Greybox 1<small>uefn-greybox-1.jpg</small></span></div><div class="ph b" data-file="uefn-final-1"><span>Final 1<small>uefn-final-1.jpg</small></span></div><input type="range" min="0" max="100" value="50" aria-label="Compare greybox and final, shot 1"></div><p>[The concrete change, e.g. "Added a wall in mid: the greybox had a 40 m sightline between spawns."]</p></div>
-        <div class="hl"><div class="cmp"><div class="ph a" data-file="uefn-greybox-2"><span>Greybox 2<small>uefn-greybox-2.jpg</small></span></div><div class="ph b" data-file="uefn-final-2"><span>Final 2<small>uefn-final-2.jpg</small></span></div><input type="range" min="0" max="100" value="50" aria-label="Compare greybox and final, shot 2"></div><p>[The concrete change, e.g. "Added a wall in mid: the greybox had a 40 m sightline between spawns."]</p></div>
+      <h3 class="sub-h">Greybox vs final</h3>
+      <p class="note">Drag each image to compare.</p>
+      <div class="highlights two" style="margin-top:1rem">
+        <div class="hl"><div class="cmp"><div class="ph a" data-file="uefn-greybox-1"><span>Greybox 1<small>uefn-greybox-1.jpg</small></span></div><div class="ph b" data-file="uefn-final-1"><span>Final 1<small>uefn-final-1.jpg</small></span></div><input type="range" min="0" max="100" value="50" aria-label="Compare greybox and final, shot 1"></div><p>[Area: what changed, in under 10 words]</p></div>
+        <div class="hl"><div class="cmp"><div class="ph a" data-file="uefn-greybox-2"><span>Greybox 2<small>uefn-greybox-2.jpg</small></span></div><div class="ph b" data-file="uefn-final-2"><span>Final 2<small>uefn-final-2.jpg</small></span></div><input type="range" min="0" max="100" value="50" aria-label="Compare greybox and final, shot 2"></div><p>[Area: what changed, in under 10 words]</p></div>
       </div>
-      <p class="note" style="margin-top:.8rem">Drag each image to compare greybox and final.</p>
       <!-- 3 final shots: just show it looks good -->
-      <div class="thumbs"><div class="ph" data-file="uefn-shot-1"><span>Final shot 1<small>uefn-shot-1.jpg</small></span></div><div class="ph" data-file="uefn-shot-2"><span>Final shot 2<small>uefn-shot-2.jpg</small></span></div><div class="ph" data-file="uefn-shot-3"><span>Final shot 3<small>uefn-shot-3.jpg</small></span></div></div>
+      <h3 class="sub-h">Final shots</h3>
+      <div class="thumbs" style="margin-top:1rem"><div class="ph" data-file="uefn-shot-1"><span>Final shot 1<small>uefn-shot-1.jpg</small></span></div><div class="ph" data-file="uefn-shot-2"><span>Final shot 2<small>uefn-shot-2.jpg</small></span></div><div class="ph" data-file="uefn-shot-3"><span>Final shot 3<small>uefn-shot-3.jpg</small></span></div></div>
       <div class="reflect"><span class="eyebrow">Looking back</span><p>[What works, and what you'd change today.]</p></div>
       <div class="cta-row"><a class="full" href="project-1.html">Read the full breakdown →</a></div>
     </div>
