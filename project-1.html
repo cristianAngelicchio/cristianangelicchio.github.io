@@ -262,6 +262,8 @@ blockquote { margin: 0; padding-left: 1rem; border-left: 3px solid var(--sa); fo
 .cta-row .play { margin-top: 0; }
 /* Media: each gray box loads assets/<name> by itself when that file exists (see README) */
 .ph.filled { background: none; }
+.ph span { visibility: hidden; }   /* label stays hidden while loading; shows only if the file is missing */
+.ph.missing span { visibility: visible; }
 .ph > img, .ph > video, .ph > iframe { width: 100%; height: 100%; object-fit: cover; display: block; border: 0; border-radius: inherit; }
 .ph span small { display: block; font: 500 .7rem/1.3 ui-monospace, Consolas, monospace; opacity: .7; }
 </style>
@@ -456,7 +458,7 @@ blockquote { margin: 0; padding-left: 1rem; border-left: 3px solid var(--sa); fo
     }
     const vid = ph.dataset.kind === 'video', exts = vid ? ['mp4', 'webm'] : ['jpg', 'png', 'gif', 'webp', 'jpeg'];
     (function tryExt(k) {
-      if (k >= exts.length) return;
+      if (k >= exts.length) { ph.classList.add('missing'); return; }
       const el = document.createElement(vid ? 'video' : 'img');
       if (vid) { el.muted = true; el.loop = true; el.autoplay = true; el.playsInline = true; el.setAttribute('muted', ''); el.onloadeddata = () => fillPh(ph, el); }
       else { el.alt = label; el.onload = () => fillPh(ph, el); }
