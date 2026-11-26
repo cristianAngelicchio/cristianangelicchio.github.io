@@ -80,6 +80,9 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
 .sub a i { width: 10px; height: 10px; border-radius: 50%; background: var(--c); margin-top: .45rem; flex: none; }
 .sub a small { display: block; font-size: .75rem; color: var(--muted); }
 .sub a:hover, .sub a:focus-visible { background: color-mix(in srgb, var(--c) 14%, transparent); }
+.sub-row { display: flex; align-items: center; gap: .3rem; }
+.sub-row > a:first-child { flex: 1; }
+.sub a.bd { font-size: .72rem; font-weight: 600; padding: .2rem .55rem; border: 1px solid var(--c); border-radius: 999px; white-space: nowrap; margin-right: .3rem; }
 .item.has-sub:hover .sub, .item.has-sub:focus-within .sub, .item.open .sub { opacity: 1; visibility: visible; transform: none; }
 .mainnav .btn { margin-left: .5rem; }
 .menu-btn { all: unset; display: none; cursor: pointer; font-weight: 600; font-size: .9rem; padding: .4rem .8rem; border: 1.5px solid currentColor; border-radius: 8px; }
@@ -99,6 +102,7 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
 .hero { background: var(--hero-bg); color: var(--hero-fg); }
 .reel { position: relative; aspect-ratio: 21/9; max-width: 100%; min-height: 360px; overflow: hidden;
   background: radial-gradient(70% 90% at 75% 40%, #3b2a63 0%, transparent 70%), radial-gradient(50% 70% at 15% 90%, #2a2044 0%, transparent 70%), var(--hero-bg); }
+.reel .label { visibility: hidden; } .reel.missing .label { visibility: visible; }
 .reel video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: .55; }
 .reel .label { position: absolute; right: 16px; top: 16px; font-size: .72rem; letter-spacing: .12em; text-transform: uppercase; border: 1px solid rgba(255,255,255,.35); padding: .25rem .6rem; border-radius: 4px; opacity: .8; }
 .reel .copy { position: absolute; inset: auto 0 0 0; padding-block: 2.5rem; background: linear-gradient(transparent, rgba(13,11,18,.85)); }
@@ -300,13 +304,12 @@ footer .avail i { width: 8px; height: 8px; border-radius: 50%; background: #3ecf
     <div class="item has-sub" style="--c:var(--brand)">
       <a class="nl" href="#p1" data-sec="work">Projects</a><button class="caret" aria-expanded="false" aria-label="Projects list">▾</button>
       <div class="sub">
-        <a href="#p1" style="--c:var(--s1-accent)"><i></i><span>Train Station · UEFN<small>Team Deathmatch map · on this page</small></span></a>
-        <a class="deep" href="project-1.html" style="--c:var(--s1-accent)"><i></i><span>↳ Full breakdown<small>Separate page</small></span></a>
-        <a href="#p2" style="--c:var(--s2-accent)"><i></i><span>Racing Level<small>Racing level · Unity</small></span></a>
-        <a href="#p3" style="--c:var(--s3-accent)"><i></i><span>Scarfguy<small>Puzzle Game · Unity</small></span></a>
-        <a href="#p4" style="--c:var(--s4-accent)"><i></i><span>Occult Blood Smackdown<small>Board game</small></span></a>
-        <a href="#p5" style="--c:var(--s5-accent)"><i></i><span>2D Platformer Level<small>2D Platformer · Unity</small></span></a>
-        <a href="#writing" style="--c:var(--s6-accent)"><i></i><span>Game design books<small>Writing</small></span></a>
+        <div class="sub-row" style="--c:var(--s1-accent)"><a href="#p1"><i></i><span>FPS Multiplayer Level<small>Train Station · UEFN</small></span></a><a class="bd" href="project-1.html">Breakdown →</a></div>
+        <a href="#p2" style="--c:var(--s2-accent)"><i></i><span>Racing Level<small>Pond Track · Unity</small></span></a>
+        <a href="#p3" style="--c:var(--s3-accent)"><i></i><span>Puzzle Game<small>Scarfguy · Unity</small></span></a>
+        <a href="#p4" style="--c:var(--s4-accent)"><i></i><span>Board Game<small>Occult Blood Smackdown</small></span></a>
+        <a href="#p5" style="--c:var(--s5-accent)"><i></i><span>2D Platformer Level<small>[Level name] · Unity</small></span></a>
+        <a href="#writing" style="--c:var(--s6-accent)"><i></i><span>Game Design Writing<small>Game design books</small></span></a>
       </div>
     </div>
     <div class="item" style="--c:var(--brand)"><a class="nl" href="#experience" data-sec="experience">Experience</a></div>
@@ -318,7 +321,7 @@ footer .avail i { width: 8px; height: 8px; border-radius: 50%; background: #3ecf
 <section class="hero" id="top-hero" aria-label="Introduction">
   <div class="reel">
     <!-- Your reel: put it in assets/reel.mp4 and it shows here by itself -->
-    <video src="assets/reel.mp4" autoplay muted loop playsinline onloadeddata="this.parentElement.querySelector('.label')?.remove()" onerror="this.remove()"></video>
+    <video src="assets/reel.mp4" autoplay muted loop playsinline onloadeddata="this.parentElement.querySelector('.label')?.remove()" onerror="this.parentElement.classList.add('missing'); this.remove()"></video>
     <span class="label">Reel · assets/reel.mp4</span>
     <div class="copy"><div class="wrap">
       <h1>Cris Angelicchio</h1>
@@ -345,7 +348,7 @@ footer .avail i { width: 8px; height: 8px; border-radius: 50%; background: #3ecf
         <div>
           <span class="eyebrow">FPS Multiplayer Level</span>
           <h2>Train Station</h2>
-          <p class="tagline">Team Deathmatch map on a train station devastated by war.</p>
+          <p class="tagline">A Team Deathmatch map set in a war-torn train station.</p>
         </div>
         <div class="specs">
           <div><span>Role</span><b>Level Designer</b></div><div><span>Engine</span><b>UEFN</b></div><div><span>Team</span><b>Solo</b></div>
@@ -364,14 +367,14 @@ footer .avail i { width: 8px; height: 8px; border-radius: 50%; background: #3ecf
       <h3 class="sub-h">Greybox vs final</h3>
       <p class="note">Drag each image to compare.</p>
       <div class="highlights two" style="margin-top:1rem">
-        <div class="hl"><div class="cmp"><div class="ph a" data-file="uefn-greybox-1"><span>Greybox 1<small>uefn-greybox-1.jpg</small></span></div><div class="ph b" data-file="uefn-final-1"><span>Final 1<small>uefn-final-1.jpg</small></span></div><input type="range" min="0" max="100" value="50" aria-label="Compare greybox and final, shot 1"></div><p>Fixed: sightlines at the window, readability and flow on the footbridge stairs.</p></div>
-        <div class="hl"><div class="cmp"><div class="ph a" data-file="uefn-greybox-2"><span>Greybox 2<small>uefn-greybox-2.jpg</small></span></div><div class="ph b" data-file="uefn-final-2"><span>Final 2<small>uefn-final-2.jpg</small></span></div><input type="range" min="0" max="100" value="50" aria-label="Compare greybox and final, shot 2"></div><p>Fixed: movement around the mountains, sightlines near the water tower.</p></div>
+        <div class="hl"><div class="cmp"><div class="ph a" data-file="uefn-greybox-1"><span>Greybox 1<small>uefn-greybox-1.jpg</small></span></div><div class="ph b" data-file="uefn-final-1"><span>Final 1<small>uefn-final-1.jpg</small></span></div><input type="range" min="0" max="100" value="50" aria-label="Compare greybox and final, shot 1"></div><p>[Area: what changed, in under 10 words]</p></div>
+        <div class="hl"><div class="cmp"><div class="ph a" data-file="uefn-greybox-2"><span>Greybox 2<small>uefn-greybox-2.jpg</small></span></div><div class="ph b" data-file="uefn-final-2"><span>Final 2<small>uefn-final-2.jpg</small></span></div><input type="range" min="0" max="100" value="50" aria-label="Compare greybox and final, shot 2"></div><p>[Area: what changed, in under 10 words]</p></div>
       </div>
       <!-- 3 final shots: just show it looks good -->
       <h3 class="sub-h">Final shots</h3>
       <div class="thumbs" style="margin-top:1rem"><div class="ph" data-file="uefn-shot-1"><span>Final shot 1<small>uefn-shot-1.jpg</small></span></div><div class="ph" data-file="uefn-shot-2"><span>Final shot 2<small>uefn-shot-2.jpg</small></span></div><div class="ph" data-file="uefn-shot-3"><span>Final shot 3<small>uefn-shot-3.jpg</small></span></div></div>
       <div class="reflect"><span class="eyebrow">Looking back</span><p>Playtests showed the map works: players found their way easily, and each area felt different to fight in.<br>What I'd change: better lighting, so no area feels too dark and paths are clearly lit, and fewer routes where too many paths lead to the same place.</p></div>
-      <div class="cta-row"><a class="full" href="project-1.html">Full breakdown →</a></div>
+      <div class="cta-row"><a class="full" href="project-1.html">Read the full breakdown →</a></div>
     </div>
   </section>
 
@@ -379,7 +382,7 @@ footer .avail i { width: 8px; height: 8px; border-radius: 50%; background: #3ecf
   <section class="band s2" id="p2">
     <div class="wrap">
       <div class="p-head">
-        <div><span class="eyebrow">Racing Level</span><h2>Pond Track</h2><p class="tagline">A racing level where you control a toy-car driving around a small pond, with a catch, a surprise solo-version where they track changes after every lap due to a carnivorous plant that has to be defeated.</p></div>
+        <div><span class="eyebrow">Racing Level</span><h2>Pond Track</h2><p class="tagline">A toy-car race around a small pond. The twist: in the solo version, a carnivorous plant changes the track after every lap until you defeat it.</p></div>
         <div class="specs">
           <div><span>Role</span><b>Level Designer</b></div><div><span>Engine</span><b>Unity</b></div><div><span>Team</span><b>Solo</b></div>
           <div><span>Genre</span><b>Racing</b></div><div><span>Duration</span><b>3 weeks</b></div><div><span>Year</span><b>2026</b></div>
