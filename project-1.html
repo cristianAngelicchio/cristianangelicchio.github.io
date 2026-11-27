@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Level Full Breakdown</title>
+<title>FPS Multiplayer Level Breakdown · Cris Angelicchio</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&family=Inter:wght@400;500;600&display=swap">
 <style>
@@ -163,7 +163,7 @@ li::marker { color: var(--sa); }
 figure { margin: 0; display: grid; gap: .45rem; }
 figcaption { font-size: .9rem; opacity: .85; }
 figcaption b { color: var(--sa); margin-right: .35rem; }
-.reflect { margin-top: 2.5rem; padding: 1.25rem 1.4rem; border-left: 4px solid var(--sa); background: var(--ss); border-radius: 0 10px 10px 0; max-width: 72ch; }
+.reflect { margin-top: 2.5rem; padding: 1.25rem 1.4rem; border-left: 4px solid var(--sa); background: var(--ss); border-radius: 0 10px 10px 0; }
 .reflect .eyebrow { color: var(--sa); display: block; margin-bottom: .3rem; }
 .play { display: inline-flex; margin-top: 1rem; font-weight: 600; color: var(--sa); text-decoration: none; }
 .play:hover { text-decoration: underline; }
@@ -219,7 +219,7 @@ footer .avail i { width: 8px; height: 8px; border-radius: 50%; background: #3ecf
 .fb-sec:first-child { border-top: 0; padding-top: 0; }
 .fb-sec > h2 { font-size: clamp(1.5rem, 3vw, 2rem); display: flex; gap: .8rem; align-items: baseline; }
 .fb-sec > h2 small { font-family: var(--body); font-size: .75rem; font-weight: 600; letter-spacing: .12em; color: var(--sa); }
-.fb-sec p { max-width: 70ch; }
+.fb-sec p { max-width: none; }
 #fb-tech .sec > p { margin-bottom: .9rem; opacity: .9; }
 .opt { font-size: .75rem; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; border: 1px dashed var(--sa); color: var(--sa); border-radius: 4px; padding: .05rem .4rem; margin-left: .4rem; vertical-align: middle; }
 .g2 { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 1rem; }
@@ -322,7 +322,7 @@ figure { grid-template-columns: minmax(0, 1fr); }
           <div><span>Role</span><b>Level Designer</b></div><div><span>Engine</span><b>UEFN</b></div><div><span>Team</span><b>Solo</b></div>
           <div><span>Genre</span><b>FPS - 6v6 Team Deathmatch</b></div><div><span>Duration</span><b>1 month</b></div><div><span>Year</span><b>2026</b></div>
         </div>
-        <p>A 6v6 Team Deathmatch map built in UEFN, set in a realistic train station. Players have to keep moving around the level and fight over unique weapons and timed objectives. Each area plays and looks different, with some built for close-range fights and others for long range.</p>
+        <p>A 6v6 Team Deathmatch map built in UEFN, set in a realistic train station. Players have to keep moving around the level and fight over unique weapons and timed objectives. Each area is designed to play and look different.</p>
       </section>
 
       <section class="fb-sec" id="fb-goal"><h2><small>02</small>Goal</h2>
@@ -339,11 +339,11 @@ figure { grid-template-columns: minmax(0, 1fr); }
         <div class="g3"><figure><div class="ph" data-file="uefn-v1-greybox-1"><span>First version greybox<small>uefn-v1-greybox-1.jpg</small></span></div></figure><figure><div class="ph" data-file="uefn-v1-greybox-2"><span>First version greybox<small>uefn-v1-greybox-2.jpg</small></span></div></figure><figure><div class="ph" data-file="uefn-v1-greybox-3"><span>First version greybox<small>uefn-v1-greybox-3.jpg</small></span></div></figure></div>
         <p>The first version was symmetrical: each team had its own base, with two areas between them, the platforms and the station lobby. It never felt right, and it failed on three things I needed from the map:</p>
         <div class="g3">
-          <div class="sec"><h3>Players stopped moving</h3><p>Everyone fought over one area at a time. The middle became the only fight, and the rest of the map sat empty.</p></div>
-          <div class="sec"><h3>The objective picked your style</h3><p>If the fight was in the lobby, it was all long range. If it was on the platforms, it was all close range.</p></div>
-          <div class="sec"><h3>Both halves looked the same</h3><p>Symmetry meant an identical layout on each side, so only the set dressing told them apart.</p></div>
+          <div class="sec"><h3>Stagnant gameplay</h3><p>Fights stayed on one area at a time, and the middle of the map became the focus.</p></div>
+          <div class="sec"><h3>No decision-making</h3><p>The active objective decided the range: long in the lobby, close on the platforms.</p></div>
+          <div class="sec"><h3>Visually similar</h3><p>Both halves shared the same layout, so only the set dressing told them apart.</p></div>
         </div>
-        <p>So I dropped the bases and rebuilt the map as one continuous station.</p>
+        <p>For these and other reasons, I redesigned the map around the train wagons, the most interesting part of this first draft.</p>
       </section>
 
       <section class="fb-sec" id="fb-layout"><h2><small>05</small>Sketches</h2>
@@ -358,12 +358,12 @@ figure { grid-template-columns: minmax(0, 1fr); }
       <section class="fb-sec" id="fb-compare"><h2><small>06</small>Greybox → final</h2>
         <p>The same shots in greybox and final. Drag each image to compare.</p>
         <div class="cmp-row" style="grid-template-columns:1fr">
+          <div class="cmp"><div class="ph a" data-file="uefn-greybox-3"><span>Greybox 3<small>uefn-greybox-3.jpg</small></span></div><div class="ph b" data-file="uefn-final-3"><span>Final 3<small>uefn-final-3.jpg</small></span></div><input type="range" min="0" max="100" value="50" aria-label="Compare greybox and final, shot 3"></div>
+          <p>Fixed: [what changed].</p>
           <div class="cmp"><div class="ph a" data-file="uefn-greybox-1"><span>Greybox 1<small>uefn-greybox-1.jpg</small></span></div><div class="ph b" data-file="uefn-final-1"><span>Final 1<small>uefn-final-1.jpg</small></span></div><input type="range" min="0" max="100" value="50" aria-label="Compare greybox and final, shot 1"></div>
           <p>Fixed: sightlines at the window, readability and flow on the footbridge stairs.</p>
           <div class="cmp"><div class="ph a" data-file="uefn-greybox-2"><span>Greybox 2<small>uefn-greybox-2.jpg</small></span></div><div class="ph b" data-file="uefn-final-2"><span>Final 2<small>uefn-final-2.jpg</small></span></div><input type="range" min="0" max="100" value="50" aria-label="Compare greybox and final, shot 2"></div>
           <p>Fixed: movement around the mountains, sightlines near the water tower.</p>
-          <div class="cmp"><div class="ph a" data-file="uefn-greybox-3"><span>Greybox 3<small>uefn-greybox-3.jpg</small></span></div><div class="ph b" data-file="uefn-final-3"><span>Final 3<small>uefn-final-3.jpg</small></span></div><input type="range" min="0" max="100" value="50" aria-label="Compare greybox and final, shot 3"></div>
-          <p>Fixed: [what changed].</p>
         </div>
       </section>
 
