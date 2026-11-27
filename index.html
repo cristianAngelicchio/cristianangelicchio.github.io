@@ -73,6 +73,13 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
 .mainnav .nl:hover { opacity: 1; }
 .btn { display: inline-flex; align-items: center; text-decoration: none; font-weight: 600; font-size: .92rem; padding: .5rem 1rem; border-radius: 8px; border: 1.5px solid currentColor; }
 .btn.brand { background: var(--brand); border-color: var(--brand); color: #fff; opacity: 1 !important; }
+/* Hover feedback for every button-like link: a slight lift plus a tint */
+.btn, .play, .full, .bd { transition: background .15s, color .15s, filter .15s, transform .15s; }
+.btn:hover, .btn:focus-visible { background: color-mix(in srgb, currentColor 14%, transparent); transform: translateY(-1px); }
+.btn.brand:hover, .btn.brand:focus-visible { background: var(--brand); filter: brightness(1.15); }
+.play:hover, .full:hover, .play:focus-visible, .full:focus-visible { transform: translateY(-1px); }
+.crumb:hover, .crumb:focus-visible { text-decoration: underline; text-underline-offset: 4px; }
+@media (prefers-reduced-motion: reduce) { .btn, .play, .full, .bd { transition: none; } .btn:hover, .play:hover, .full:hover { transform: none; } }
 
 /* Main menu: one button per section; deeper sections open a dropdown */
 .top .wrap { overflow: visible; }

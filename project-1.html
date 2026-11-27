@@ -4,6 +4,14 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>FPS Multiplayer Level Breakdown · Cris Angelicchio</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 24 24%27%3E%3Cpath d=%27M21 3C14 3 8.6 7.4 7.6 14.6L7 17l2.4-.6C16.6 15.4 21 10 21 3Z%27 fill=%27%236b45c9%27 stroke=%27%231c1726%27 stroke-width=%271.6%27 stroke-linejoin=%27round%27/%3E%3Cpath d=%27M3 21L16 8%27 stroke=%27%231c1726%27 stroke-width=%272%27 stroke-linecap=%27round%27/%3E%3C/svg%3E">
+<meta name="description" content="Full breakdown of Train Station, a 6v6 Team Deathmatch map built in UEFN: failed version, sketches, greybox and techniques.">
+<meta property="og:title" content="FPS Multiplayer Level Breakdown · Cris Angelicchio">
+<meta property="og:description" content="Full breakdown of Train Station, a 6v6 Team Deathmatch map built in UEFN: failed version, sketches, greybox and techniques.">
+<meta property="og:image" content="https://cristianangelicchio.github.io/assets/uefn-final-1.jpg">
+<meta property="og:url" content="https://cristianangelicchio.github.io/project-1.html">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&family=Inter:wght@400;500;600&display=swap">
 <style>
@@ -65,6 +73,13 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
 .mainnav .nl:hover { opacity: 1; }
 .btn { display: inline-flex; align-items: center; text-decoration: none; font-weight: 600; font-size: .92rem; padding: .5rem 1rem; border-radius: 8px; border: 1.5px solid currentColor; }
 .btn.brand { background: var(--brand); border-color: var(--brand); color: #fff; opacity: 1 !important; }
+/* Hover feedback for every button-like link: a slight lift plus a tint */
+.btn, .play, .full, .bd { transition: background .15s, color .15s, filter .15s, transform .15s; }
+.btn:hover, .btn:focus-visible { background: color-mix(in srgb, currentColor 14%, transparent); transform: translateY(-1px); }
+.btn.brand:hover, .btn.brand:focus-visible { background: var(--brand); filter: brightness(1.15); }
+.play:hover, .full:hover, .play:focus-visible, .full:focus-visible { transform: translateY(-1px); }
+.crumb:hover, .crumb:focus-visible { text-decoration: underline; text-underline-offset: 4px; }
+@media (prefers-reduced-motion: reduce) { .btn, .play, .full, .bd { transition: none; } .btn:hover, .play:hover, .full:hover { transform: none; } }
 
 /* Main menu: one button per section; deeper sections open a dropdown */
 .top .wrap { overflow: visible; }
