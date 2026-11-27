@@ -254,7 +254,7 @@ blockquote { margin: 0; padding-left: 1rem; border-left: 3px solid var(--sa); fo
 .s5 { --sbg: var(--s5-bg); --sfg: var(--s5-fg); --sa: var(--s5-accent); --ss: var(--s5-soft); }
 .s6 { --sbg: var(--s6-bg); --sfg: var(--s6-fg); --sa: var(--s6-accent); --ss: var(--s6-soft); }
 .cmp { position: relative; aspect-ratio: 16/9; border-radius: 10px; overflow: hidden; --x: 50%; }
-.cmp > .ph { position: absolute; inset: 0; aspect-ratio: auto; border-radius: 0; }
+.cmp > .ph, .cmp > .ph.filled { position: absolute; inset: 0; aspect-ratio: auto; border-radius: 0; }
 .cmp > .ph.b { clip-path: inset(0 0 0 var(--x)); background-color: color-mix(in srgb, var(--sa) 22%, var(--ss)); }
 .cmp > .ph.a span { justify-self: start; margin-left: 1rem; }
 .cmp > .ph.b span { justify-self: end; margin-right: 1rem; }

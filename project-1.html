@@ -220,6 +220,7 @@ footer .avail i { width: 8px; height: 8px; border-radius: 50%; background: #3ecf
 .fb-sec > h2 { font-size: clamp(1.5rem, 3vw, 2rem); display: flex; gap: .8rem; align-items: baseline; }
 .fb-sec > h2 small { font-family: var(--body); font-size: .75rem; font-weight: 600; letter-spacing: .12em; color: var(--sa); }
 .fb-sec p { max-width: 70ch; }
+#fb-tech .sec > p { margin-bottom: .9rem; opacity: .9; }
 .opt { font-size: .75rem; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; border: 1px dashed var(--sa); color: var(--sa); border-radius: 4px; padding: .05rem .4rem; margin-left: .4rem; vertical-align: middle; }
 .g2 { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 1rem; }
 .g3 { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 1rem; }
@@ -254,7 +255,7 @@ blockquote { margin: 0; padding-left: 1rem; border-left: 3px solid var(--sa); fo
 .s5 { --sbg: var(--s5-bg); --sfg: var(--s5-fg); --sa: var(--s5-accent); --ss: var(--s5-soft); }
 .s6 { --sbg: var(--s6-bg); --sfg: var(--s6-fg); --sa: var(--s6-accent); --ss: var(--s6-soft); }
 .cmp { position: relative; aspect-ratio: 16/9; border-radius: 10px; overflow: hidden; --x: 50%; }
-.cmp > .ph { position: absolute; inset: 0; aspect-ratio: auto; border-radius: 0; }
+.cmp > .ph, .cmp > .ph.filled { position: absolute; inset: 0; aspect-ratio: auto; border-radius: 0; }
 .cmp > .ph.b { clip-path: inset(0 0 0 var(--x)); background-color: color-mix(in srgb, var(--sa) 22%, var(--ss)); }
 .cmp > .ph.a span { justify-self: start; margin-left: 1rem; }
 .cmp > .ph.b span { justify-self: end; margin-right: 1rem; }
@@ -310,56 +311,49 @@ figure { grid-template-columns: minmax(0, 1fr); }
   <div class="wrap fb-layout">
     <nav class="toc" aria-label="On this page">
       <span class="eyebrow">On this page</span>
-      <a href="#fb-overview">Overview</a><a href="#fb-goal">Goal &amp; pillars</a><a href="#fb-research">References</a>
-      <a href="#fb-layout">Sketches &amp; layout</a><a href="#fb-lanes">Areas &amp; flow</a>
-      <a href="#fb-compare">Greybox → final</a><a href="#fb-walk">Map tour</a><a href="#fb-tech">Techniques</a>
-      <a href="#fb-iter">Iterations</a><a href="#fb-final">Final result</a><a href="#fb-back">Looking back</a>
+      <a href="#fb-overview">Overview</a><a href="#fb-goal">Goal</a><a href="#fb-research">Moodboard</a>
+      <a href="#fb-v1">Failed version</a><a href="#fb-layout">Sketches</a><a href="#fb-compare">Greybox → final</a>
+      <a href="#fb-tech">Techniques</a><a href="#fb-final">Final result</a><a href="#fb-back">Looking back</a>
     </nav>
     <div>
       <section class="fb-sec" id="fb-overview"><h2><small>01</small>Overview</h2>
-        <div class="ph" data-file="uefn-playthrough" data-kind="video" data-youtube=""><span>Full playthrough video<small>uefn-playthrough.mp4</small></span></div>
-        <div class="specs" style="grid-template-columns:repeat(4,minmax(0,1fr))">
-          <div><span>Role</span><b>Level Designer</b></div><div><span>Engine</span><b>UEFN</b></div><div><span>Team</span><b>Solo</b></div><div><span>Duration</span><b>1 month</b></div>
-          <div><span>Genre</span><b>FPS - Team Deathmatch</b></div><div><span>Players</span><b>[8 v 8]</b></div><div><span>Year</span><b>2026</b></div><div><span>Iterations</span><b>[3]</b></div>
+        <div class="ph" data-file="uefn-playthrough" data-kind="video" data-youtube=""><span>Full playthrough<small>YouTube video ID in data-youtube</small></span></div>
+        <div class="specs">
+          <div><span>Role</span><b>Level Designer</b></div><div><span>Engine</span><b>UEFN</b></div><div><span>Team</span><b>Solo</b></div>
+          <div><span>Genre</span><b>FPS - 6v6 Team Deathmatch</b></div><div><span>Duration</span><b>1 month</b></div><div><span>Year</span><b>2026</b></div>
         </div>
-        <p>A war-torn train station with a derailed train. The map is long and narrow: half of it is the station platforms, a footbridge splits it in the middle, and the other half is the tracks running into a tunnel. [How a match plays out, from spawn to the first fight.]</p>
+        <p>A 6v6 Team Deathmatch map built in UEFN, set in a realistic train station. Players have to keep moving around the level and fight over unique weapons and timed objectives. Each area plays and looks different, with some built for close-range fights and others for long range.</p>
       </section>
 
-      <section class="fb-sec" id="fb-goal"><h2><small>02</small>Goal &amp; pillars</h2>
+      <section class="fb-sec" id="fb-goal"><h2><small>02</small>Goal</h2>
         <p>A war-torn train station that could exist in real life. The map is long and narrow, so fights keep moving between the platforms and the tracks, like a train in motion.</p>
+      </section>
+
+      <section class="fb-sec" id="fb-research"><h2><small>03</small>Moodboard / References</h2>
+        <p>Images used as inspiration when designing the level's layout.</p>
+        <div class="ph" data-file="uefn-moodboard"><span>Moodboard<small>uefn-moodboard.jpg</small></span></div>
+      </section>
+
+      <section class="fb-sec" id="fb-v1"><h2><small>04</small>Failed version</h2>
+        <div class="ph" data-file="uefn-v1-sketch"><span>First version sketch<small>uefn-v1-sketch.jpg</small></span></div>
+        <div class="g3"><figure><div class="ph" data-file="uefn-v1-greybox-1"><span>First version greybox<small>uefn-v1-greybox-1.jpg</small></span></div></figure><figure><div class="ph" data-file="uefn-v1-greybox-2"><span>First version greybox<small>uefn-v1-greybox-2.jpg</small></span></div></figure><figure><div class="ph" data-file="uefn-v1-greybox-3"><span>First version greybox<small>uefn-v1-greybox-3.jpg</small></span></div></figure></div>
+        <p>The first version was symmetrical: each team had its own base, with two areas between them, the platforms and the station lobby. It never felt right, and it failed on three things I needed from the map:</p>
         <div class="g3">
-          <div class="sec"><h3>[Pillar 1]</h3><p>[E.g. "Every fight has a flank route."]</p></div>
-          <div class="sec"><h3>[Pillar 2]</h3><p>[E.g. "No spawn point is in a long sightline."]</p></div>
-          <div class="sec"><h3>[Pillar 3]</h3><p>[E.g. "You always know where you are at a glance."]</p></div>
+          <div class="sec"><h3>Players stopped moving</h3><p>Everyone fought over one area at a time. The middle became the only fight, and the rest of the map sat empty.</p></div>
+          <div class="sec"><h3>The objective picked your style</h3><p>If the fight was in the lobby, it was all long range. If it was on the platforms, it was all close range.</p></div>
+          <div class="sec"><h3>Both halves looked the same</h3><p>Symmetry meant an identical layout on each side, so only the set dressing told them apart.</p></div>
+        </div>
+        <p>So I dropped the bases and rebuilt the map as one continuous station.</p>
+      </section>
+
+      <section class="fb-sec" id="fb-layout"><h2><small>05</small>Sketches</h2>
+        <figure><div class="ph" data-file="uefn-map"><span>Final sketch<small>uefn-map.jpg</small></span></div><figcaption><b>Final sketch</b></figcaption></figure>
+        <span class="eyebrow" style="display:block">Earlier iterations</span>
+        <div class="g2">
+          <figure><div class="ph" data-file="uefn-sketch-v1"><span>Earlier sketch<small>uefn-sketch-v1.jpg</small></span></div><figcaption>[What changed]</figcaption></figure>
+          <figure><div class="ph" data-file="uefn-sketch-v2"><span>Earlier sketch<small>uefn-sketch-v2.jpg</small></span></div><figcaption>[What changed]</figcaption></figure>
         </div>
       </section>
-
-      <section class="fb-sec" id="fb-research"><h2><small>03</small>References <span class="opt">Optional</span></h2>
-        <p>[Maps or places you looked at before designing, and what you took from each.]</p>
-        <div class="g4"><figure><div class="ph" data-file="uefn-reference-1"><span>Reference<small>uefn-reference-1.jpg</small></span></div></figure><figure><div class="ph" data-file="uefn-reference-2"><span>Reference<small>uefn-reference-2.jpg</small></span></div></figure><figure><div class="ph" data-file="uefn-reference-3"><span>Reference<small>uefn-reference-3.jpg</small></span></div></figure><figure><div class="ph" data-file="uefn-reference-4"><span>Reference<small>uefn-reference-4.jpg</small></span></div></figure></div>
-      </section>
-
-      <section class="fb-sec" id="fb-layout"><h2><small>04</small>Sketches &amp; layout</h2>
-        <p>[How the top-down layout evolved on paper, one line per sketch.]</p>
-        <div class="g3">
-          <figure><div class="ph" data-file="uefn-sketch-v1"><span>Sketch v1<small>uefn-sketch-v1.jpg</small></span></div><figcaption><b>v1</b>[First idea]</figcaption></figure>
-          <figure><div class="ph" data-file="uefn-sketch-v2"><span>Sketch v2<small>uefn-sketch-v2.jpg</small></span></div><figcaption><b>v2</b>[What changed]</figcaption></figure>
-          <figure><div class="ph" data-file="uefn-map"><span>Final layout<small>uefn-map.jpg</small></span></div><figcaption><b>Final</b>[Why]</figcaption></figure>
-        </div>
-      </section>
-
-      <section class="fb-sec" id="fb-lanes"><h2><small>05</small>Areas &amp; flow</h2>
-        <p>The map is long on one axis: half is the station platforms, then the footbridge, then the tracks running to the tunnel. Five main areas:</p>
-        <div class="ph" data-file="uefn-lanes-map"><span>Top-down map with areas, routes and sightlines drawn on top<small>uefn-lanes-map.jpg</small></span></div>
-        <div class="g3">
-          <div class="sec"><h3>Platforms</h3><p>[What kind of fight happens here.]</p></div>
-          <div class="sec"><h3>Waiting room</h3><p>[Close range inside the platforms area.]</p></div>
-          <div class="sec"><h3>Footbridge</h3><p>[The divider between the two halves: what it controls.]</p></div>
-          <div class="sec"><h3>Maintenance building</h3><p>[Its role in the flow.]</p></div>
-          <div class="sec"><h3>Watchtower</h3><p>[Height and long sightlines: how it is countered.]</p></div>
-        </div>
-      </section>
-
 
       <section class="fb-sec" id="fb-compare"><h2><small>06</small>Greybox → final</h2>
         <p>The same shots in greybox and final. Drag each image to compare.</p>
@@ -369,48 +363,33 @@ figure { grid-template-columns: minmax(0, 1fr); }
           <div class="cmp"><div class="ph a" data-file="uefn-greybox-2"><span>Greybox 2<small>uefn-greybox-2.jpg</small></span></div><div class="ph b" data-file="uefn-final-2"><span>Final 2<small>uefn-final-2.jpg</small></span></div><input type="range" min="0" max="100" value="50" aria-label="Compare greybox and final, shot 2"></div>
           <p>Fixed: movement around the mountains, sightlines near the water tower.</p>
           <div class="cmp"><div class="ph a" data-file="uefn-greybox-3"><span>Greybox 3<small>uefn-greybox-3.jpg</small></span></div><div class="ph b" data-file="uefn-final-3"><span>Final 3<small>uefn-final-3.jpg</small></span></div><input type="range" min="0" max="100" value="50" aria-label="Compare greybox and final, shot 3"></div>
-          <p>[What you tested in this greybox, and what changed in the final.]</p>
+          <p>Fixed: [what changed].</p>
         </div>
       </section>
 
-      <section class="fb-sec" id="fb-walk"><h2><small>07</small>Map tour</h2>
-        <div class="beats">
-          <div class="beat"><div class="ph" data-file="uefn-area-1" data-kind="video"><span>Area clip<small>uefn-area-1.mp4</small></span></div><div><span class="eyebrow">Area 1</span><h3>[Area name]</h3><p>[What happens here and why it's shaped this way.]</p></div></div>
-          <div class="beat"><div class="ph" data-file="uefn-area-2" data-kind="video"><span>Area clip<small>uefn-area-2.mp4</small></span></div><div><span class="eyebrow">Area 2</span><h3>[Middle]</h3><p>[Where teams first meet.]</p></div></div>
-          <div class="beat"><div class="ph" data-file="uefn-area-3" data-kind="video"><span>Area clip<small>uefn-area-3.mp4</small></span></div><div><span class="eyebrow">Area 3</span><h3>[Area name]</h3><p>[Copy one block per area.]</p></div></div>
+      <section class="fb-sec" id="fb-tech"><h2><small>07</small>Techniques</h2>
+        <div class="sec"><h3>Sightlines &amp; cover</h3><p>Controlling how far players can see and shoot, so long-range weapons don't own every space.</p><div class="g2"><figure><div class="ph" data-file="uefn-cover-1"><span>Example<small>uefn-cover-1.jpg</small></span></div><figcaption>Cover breaks a long sightline, so weapons can't reach across the whole area.</figcaption></figure><figure><div class="ph" data-file="uefn-cover-2"><span>Example<small>uefn-cover-2.jpg</small></span></div><figcaption>A billboard sign cuts the sightline vertically, without working as cover.</figcaption></figure></div></div>
+        <div class="sec"><h3>Landmarks</h3><p>Each area has something that stands out, so players recognize where they are.</p><div class="g3"><figure><div class="ph" data-file="uefn-landmark-1"><span>Example<small>uefn-landmark-1.jpg</small></span></div><figcaption>The footbridge works as a weenie: it's visible from anywhere on the map.</figcaption></figure><figure><div class="ph" data-file="uefn-landmark-2"><span>Example<small>uefn-landmark-2.jpg</small></span></div><figcaption>The derailed train and the crane.</figcaption></figure><figure><div class="ph" data-file="uefn-landmark-3"><span>Example<small>uefn-landmark-3.jpg</small></span></div><figcaption>The waiting benches on the platforms.</figcaption></figure></div></div>
+        <div class="sec"><h3>Affordance</h3><p>Visual cues that tell players where they can go.</p><div class="g2"><figure><div class="ph" data-file="uefn-affordance-1"><span>Example<small>uefn-affordance-1.jpg</small></span></div><figcaption>Light draws the eye to an entrance.</figcaption></figure><figure><div class="ph" data-file="uefn-affordance-2"><span>Example<small>uefn-affordance-2.jpg</small></span></div><figcaption>Subtle arrows point players in the right direction.</figcaption></figure></div></div>
+      </section>
+
+      <section class="fb-sec" id="fb-final"><h2><small>08</small>Final result</h2>
+        <div class="g2">
+          <figure><div class="ph" data-file="uefn-area-1"><span>Platforms<small>uefn-area-1.jpg</small></span></div><figcaption><b>Platforms</b></figcaption></figure>
+          <figure><div class="ph" data-file="uefn-area-2"><span>Wagons<small>uefn-area-2.jpg</small></span></div><figcaption><b>Wagons</b></figcaption></figure>
+          <figure><div class="ph" data-file="uefn-area-3"><span>Waiting room<small>uefn-area-3.jpg</small></span></div><figcaption><b>Waiting room</b></figcaption></figure>
+          <figure><div class="ph" data-file="uefn-area-4"><span>Footbridge<small>uefn-area-4.jpg</small></span></div><figcaption><b>Footbridge</b></figcaption></figure>
+          <figure><div class="ph" data-file="uefn-area-5"><span>Water tower<small>uefn-area-5.jpg</small></span></div><figcaption><b>Water tower</b></figcaption></figure>
+          <figure><div class="ph" data-file="uefn-area-6"><span>Maintenance building<small>uefn-area-6.jpg</small></span></div><figcaption><b>Maintenance building</b></figcaption></figure>
+          <figure><div class="ph" data-file="uefn-area-7"><span>Watchtower<small>uefn-area-7.jpg</small></span></div><figcaption><b>Watchtower</b></figcaption></figure>
+          <figure><div class="ph" data-file="uefn-area-8"><span>[Area 8]<small>uefn-area-8.jpg</small></span></div><figcaption><b>[Area 8]</b></figcaption></figure>
         </div>
       </section>
 
-      <section class="fb-sec" id="fb-tech"><h2><small>08</small>Techniques</h2>
-        <p>Each technique as a plain shot next to the same shot with guides drawn on top.</p>
-        <div class="sec"><h3>Cover &amp; sightlines</h3><div class="g2"><figure><div class="ph" data-file="uefn-plain-1"><span>Plain shot<small>uefn-plain-1.jpg</small></span></div></figure><figure><div class="ph" data-file="uefn-guides-1"><span>With guides<small>uefn-guides-1.jpg</small></span></div></figure></div><p>[How cover breaks long shots.]</p></div>
-        <div class="sec"><h3>Verticality</h3><div class="g2"><figure><div class="ph" data-file="uefn-plain-2"><span>Plain shot<small>uefn-plain-2.jpg</small></span></div></figure><figure><div class="ph" data-file="uefn-guides-2"><span>With guides<small>uefn-guides-2.jpg</small></span></div></figure></div><p>[How height creates choices.]</p></div>
-        <div class="sec"><h3>Landmarks</h3><div class="g2"><figure><div class="ph" data-file="uefn-plain-3"><span>Plain shot<small>uefn-plain-3.jpg</small></span></div></figure><figure><div class="ph" data-file="uefn-guides-3"><span>With guides<small>uefn-guides-3.jpg</small></span></div></figure></div><p>[How players know where they are.]</p></div>
-      </section>
-
-      <section class="fb-sec" id="fb-iter"><h2><small>09</small>Iterations</h2>
-        <div class="stats"><div><b>[3]</b><span>sketch versions</span></div><div><b>[2]</b><span>greybox passes</span></div><div><b>1</b><span>month</span></div></div>
-        <article class="iter">
-          <h3>[Change 1 · Short title]</h3>
-          <div class="ps"><figure><div class="ph" data-file="uefn-before-1"><span>Before<small>uefn-before-1.jpg</small></span></div></figure><figure><div class="ph" data-file="uefn-after-1"><span>After<small>uefn-after-1.jpg</small></span></div></figure></div>
-          <dl><dt>Problem</dt><dd>[What wasn't working when you played it.]</dd><dt>Change</dt><dd>[What you changed and the result.]</dd></dl>
-        </article>
-        <article class="iter">
-          <h3>[Change 2 · Short title]</h3>
-          <div class="ps"><figure><div class="ph" data-file="uefn-before-2"><span>Before<small>uefn-before-2.jpg</small></span></div></figure><figure><div class="ph" data-file="uefn-after-2"><span>After<small>uefn-after-2.jpg</small></span></div></figure></div>
-          <dl><dt>Problem</dt><dd>[…]</dd><dt>Change</dt><dd>[…]</dd></dl>
-        </article>
-      </section>
-
-      <section class="fb-sec" id="fb-final"><h2><small>10</small>Final result</h2>
-        <div class="g3"><figure><div class="ph" data-file="uefn-shot-1"><span>Final shot<small>uefn-shot-1.jpg</small></span></div></figure><figure><div class="ph" data-file="uefn-shot-2"><span>Final shot<small>uefn-shot-2.jpg</small></span></div></figure><figure><div class="ph" data-file="uefn-shot-3"><span>Final shot<small>uefn-shot-3.jpg</small></span></div></figure></div>
-        <div class="cta-row"><a class="play" href="#">Watch the full playthrough on YouTube →</a></div>
-      </section>
-
-      <section class="fb-sec" id="fb-back"><h2><small>11</small>Looking back</h2>
+      <section class="fb-sec" id="fb-back"><h2><small>09</small>Looking back</h2>
         <div class="reflect" style="margin-top:0"><span class="eyebrow">What worked</span><p>Playtests showed the map works: players found their way easily, and each area felt different to fight in.</p></div>
         <div class="reflect" style="margin-top:0"><span class="eyebrow">What I'd change</span><p>Better lighting, so no area feels too dark and paths are clearly lit, and fewer routes where too many paths lead to the same place.</p></div>
-        <a class="crumb" href="project-2.html" style="margin-top:1rem">Next project: Pond Track →</a>
+        <div class="cta-row" style="margin-top:1rem;justify-content:space-between"><a class="crumb" href="index.html#p1" style="margin:0">← Back to the portfolio</a><a class="crumb" href="project-2.html" style="margin:0">Next project: Pond Track →</a></div>
       </section>
     </div>
   </div>

@@ -225,7 +225,7 @@ footer .avail i { width: 8px; height: 8px; border-radius: 50%; background: #3ecf
 
 /* Greybox vs final: drag to compare (UEFN has comparable shot pairs) */
 .cmp { position: relative; aspect-ratio: 16/9; border-radius: 10px; overflow: hidden; --x: 50%; }
-.cmp > .ph { position: absolute; inset: 0; aspect-ratio: auto; border-radius: 0; }
+.cmp > .ph, .cmp > .ph.filled { position: absolute; inset: 0; aspect-ratio: auto; border-radius: 0; }
 .cmp > .ph.b { clip-path: inset(0 0 0 var(--x)); background-color: color-mix(in srgb, var(--sa) 22%, var(--ss)); }
 .cmp > .ph.a span { justify-self: start; margin-left: 1rem; }
 .cmp > .ph.b span { justify-self: end; margin-right: 1rem; }
@@ -383,7 +383,7 @@ figure { grid-template-columns: minmax(0, 1fr); }
       <div class="p-grid">
         <div>
           <div class="sec"><h3>Goal</h3><p>A war-torn train station that could exist in real life. The map is long and narrow, so fights keep moving between the platforms and the tracks, like a train in motion.</p></div>
-          <div class="sec"><h3>What I did</h3><ul><li>Set the goal and sketched the layout on paper.</li><li>Built and iterated the greybox in UEFN.</li><li>Tested and tuned sightlines, spawn safety and readability.</li><li>Dressed and lit the final map.</li></ul></div>
+          <div class="sec"><h3>What I did</h3><ul><li>Set the goal and sketched the layout on paper.</li><li>Built the greybox in UEFN and reworked it through playtests.</li><li>Tested and tuned sightlines, spawn safety and readability.</li><li>Dressed and lit the final map.</li></ul></div>
         </div>
         <div class="ph" style="aspect-ratio:4/3" data-file="uefn-map"><span>Top-down sketch of the map<small>uefn-map.jpg</small></span></div>
       </div>
@@ -416,7 +416,7 @@ figure { grid-template-columns: minmax(0, 1fr); }
       <div class="p-grid">
         <div>
           <div class="sec"><h3>Goal</h3><p>Give the fantasy of being a small toy car, and turn a race into a boss fight without changing the core mechanics of racing games.</p></div>
-          <div class="sec"><h3>What I did</h3><ul><li>Sketched and iterated the track layout.</li><li>Designed the track changes for each lap.</li><li>Built the greybox with ProBuilder.</li><li>Tested and tuned track length, readability and landmarks.</li></ul></div>
+          <div class="sec"><h3>What I did</h3><ul><li>Sketched and iterated the track layout.</li><li>Designed the track changes for each lap.</li><li>Built the greybox with ProBuilder.</li><li>Adjusted track length and placed landmarks to guide the player.</li></ul></div>
         </div>
         <div class="ph" style="aspect-ratio:4/3" data-file="racing-sketch"><span>Track sketch<small>racing-sketch.jpg</small></span></div>
       </div>
@@ -481,7 +481,7 @@ figure { grid-template-columns: minmax(0, 1fr); }
       <div class="compact flip">
         <div class="ph" data-file="obs-cards"><span>Photo of the cards<small>obs-cards.jpg</small></span></div>
         <div>
-          <div class="sec"><h3>What I did</h3><ul><li>Designed the game solo, with help from an artist.</li><li>Balanced the cards with a spreadsheet.</li><li>Playtested with friends and iterated.</li></ul></div>
+          <div class="sec"><h3>What I did</h3><ul><li>Designed the game solo, with help from an artist.</li><li>Balanced the cards with a spreadsheet.</li><li>Ran playtests with friends and reworked the cards based on them.</li></ul></div>
         </div>
       </div>
       <div class="cta-row"><a class="play" href="#">Design wiki (Notion) →</a><a class="play" href="#">Balance sheet →</a></div>
@@ -495,7 +495,7 @@ figure { grid-template-columns: minmax(0, 1fr); }
         <div>
           <span class="eyebrow">2D Platformer Level</span>
           <h2>Sewer Escape</h2>
-          <p class="tagline">A sewer platformer level where the main mechanic is turning enemies and hazards into tools to get through.</p>
+          <p class="tagline">A sewer platformer level where enemies and hazards become the tools to get through.</p>
         </div>
         <div class="specs">
           <div><span>Role</span><b>Level Designer</b></div><div><span>Engine</span><b>Unity</b></div><div><span>Team</span><b>Solo</b></div>
@@ -508,7 +508,7 @@ figure { grid-template-columns: minmax(0, 1fr); }
       </div>
       <div class="compact flip sketch-row">
         <div class="ph sketch" data-file="platformer-sketch"><span>Level sketch<small>platformer-sketch.jpg</small></span></div>
-        <div class="sec"><h3>What I did</h3><ul><li>Sketched and iterated the layout.</li><li>Designed and built new mechanics on top of the base project.</li><li>Built the level directly in final 2D art.</li><li>Playtested and iterated the layout to deliver the intended experience and tune the difficulty.</li></ul></div>
+        <div class="sec"><h3>What I did</h3><ul><li>Sketched the layout on paper first.</li><li>Designed and built new mechanics on top of the base project.</li><li>Built the level directly in final 2D art.</li><li>Playtested and adjusted the layout to tune the difficulty and keep the escape frantic.</li></ul></div>
       </div>
       <div class="thumbs"><div class="ph" data-file="platformer-shot-1"><span>Screenshot 1<small>platformer-shot-1.jpg</small></span></div><div class="ph" data-file="platformer-shot-2"><span>Screenshot 2<small>platformer-shot-2.jpg</small></span></div><div class="ph" data-file="platformer-shot-3"><span>Screenshot 3<small>platformer-shot-3.jpg</small></span></div></div>
       <div class="cta-row"><a class="play itch" href="#">Play on itch.io →</a></div>
