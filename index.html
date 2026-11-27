@@ -103,17 +103,20 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
 .reel { position: relative; aspect-ratio: 21/9; max-width: 100%; min-height: 360px; overflow: hidden;
   background: radial-gradient(70% 90% at 75% 40%, #3b2a63 0%, transparent 70%), radial-gradient(50% 70% at 15% 90%, #2a2044 0%, transparent 70%), var(--hero-bg); }
 .reel .label { visibility: hidden; } .reel.missing .label { visibility: visible; }
-.reel video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: .55; }
+.reel { --strip: 190px; }
+/* The video ends where the solid strip starts, and is cropped from the top (the bottom of the reel matters most) */
+.reel video { position: absolute; top: 0; left: 0; width: 100%; height: calc(100% - var(--strip)); object-fit: cover; object-position: 50% 100%; opacity: .55; }
+.reel::after { content: ""; position: absolute; inset: auto 0 0 0; height: calc(var(--strip) + 110px); background: linear-gradient(to bottom, rgba(13,11,18,0), #0d0b12 110px); pointer-events: none; }
 .reel .label { position: absolute; right: 16px; top: 16px; font-size: .72rem; letter-spacing: .12em; text-transform: uppercase; border: 1px solid rgba(255,255,255,.35); padding: .25rem .6rem; border-radius: 4px; opacity: .8; }
 /* Bottom shade: a gradient that settles into a solid strip, so the name and title always read over any frame of the reel */
-.reel .copy { position: absolute; inset: auto 0 0 0; padding-block: 7rem 2.5rem; background: linear-gradient(to bottom, rgba(13,11,18,0) 0%, rgba(13,11,18,.75) 35%, rgba(13,11,18,.94) 55%, #0d0b12 75%); }
+.reel .copy { position: absolute; inset: auto 0 0 0; padding-block: 2.5rem; z-index: 2; }
 .reel .copy h1, .reel .copy p { text-shadow: 0 1px 12px rgba(0,0,0,.5); }
 .reel h1 { font-size: clamp(2.4rem, 6.5vw, 4.6rem); font-weight: 800; }
 .reel .role { color: #c8b6ff; font-weight: 600; margin-top: .4rem; font-size: 1.1rem; }
 .reel p.pitch { margin-top: .6rem; max-width: 56ch; opacity: .85; }
 .hero-actions { display: flex; gap: .7rem; flex-wrap: wrap; margin-top: 1.25rem; align-items: center; }
 .mail { user-select: all; opacity: .75; font-size: .88rem; }
-@media (max-width: 640px) { .reel { aspect-ratio: auto; min-height: 520px; } }
+@media (max-width: 640px) { .reel { aspect-ratio: auto; min-height: 520px; --strip: 250px; } }
 
 
 /* Skinned project bands (smcart-style section color change, muted) */
@@ -203,7 +206,8 @@ footer .avail i { width: 8px; height: 8px; border-radius: 50%; background: #3ecf
 .plain { --sbg: var(--bg); --sfg: var(--fg); --sa: var(--brand); --ss: color-mix(in srgb, var(--brand) 8%, var(--bg)); }
 /* Clear edge between projects: solid color change plus a line in the new project's accent color */
 .band + .band { border-top: 3px solid var(--sa); }
-#experience { border-top: 1px solid var(--line) !important; }
+#experience { border-top: 3px solid var(--brand) !important; }
+.about-band { border-top: 3px solid var(--brand); }
 .note { font-size: .9rem; opacity: .8; margin-top: .8rem; max-width: 62ch; }
 .note b { color: var(--sa); }
 .sec-head { margin-bottom: 2rem; }
@@ -538,12 +542,14 @@ figure { grid-template-columns: minmax(0, 1fr); }
     </div>
   </section>
 
+  <div class="about-band">
   <section class="wrap about" id="about">
     <h2>About me</h2>
     <div><p>As I learned to program and started making games, I found out about game design, and it was love at first sight. Since then, it's been about the player's experience.</p>
       <p>I started at Jam City as a QA tester, open about wanting to be a designer. To prove it, I learned a new programming language to help build their QA automation tool. In return, they gave me a shot at the level design team, and I made it. I've since designed 500+ match-3 levels at Jam City and Redemption Games.</p>
       <p>I work across genres on purpose to create unique designs, and I keep everything I find useful in my own game design vault.</p></div>
   </section>
+  </div>
 </main>
 
 <footer><div class="wrap">
