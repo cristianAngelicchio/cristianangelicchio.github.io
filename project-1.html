@@ -316,7 +316,7 @@ figure { grid-template-columns: minmax(0, 1fr); }
       <a href="#fb-tech">Techniques</a><a href="#fb-final">Final result</a><a href="#fb-back">Looking back</a>
     </nav>
     <div>
-      <section class="fb-sec" id="fb-overview"><h2><small>01</small>Overview</h2>
+      <section class="fb-sec" id="fb-overview"><h2>Overview</h2>
         <div class="ph" data-file="uefn-playthrough" data-kind="video" data-youtube=""><span>Full playthrough<small>YouTube video ID in data-youtube</small></span></div>
         <div class="specs">
           <div><span>Role</span><b>Level Designer</b></div><div><span>Engine</span><b>UEFN</b></div><div><span>Team</span><b>Solo</b></div>
@@ -325,28 +325,28 @@ figure { grid-template-columns: minmax(0, 1fr); }
         <p>A 6v6 Team Deathmatch map built in UEFN, set in a realistic train station. Players have to keep moving around the level and fight over unique weapons and timed objectives. Each area is designed to play and look different.</p>
       </section>
 
-      <section class="fb-sec" id="fb-goal"><h2><small>02</small>Goal</h2>
+      <section class="fb-sec" id="fb-goal"><h2>Goal</h2>
         <p>A war-torn train station that could exist in real life. The map is long and narrow, so fights keep moving between the platforms and the tracks, like a train in motion.</p>
       </section>
 
-      <section class="fb-sec" id="fb-research"><h2><small>03</small>Moodboard / References</h2>
+      <section class="fb-sec" id="fb-research"><h2>Moodboard / References</h2>
         <p>Images used as inspiration when designing the level's layout.</p>
         <div class="ph" data-file="uefn-moodboard"><span>Moodboard<small>uefn-moodboard.jpg</small></span></div>
       </section>
 
-      <section class="fb-sec" id="fb-v1"><h2><small>04</small>Failed version</h2>
+      <section class="fb-sec" id="fb-v1"><h2>Failed version</h2>
         <div class="ph" data-file="uefn-v1-sketch"><span>First version sketch<small>uefn-v1-sketch.jpg</small></span></div>
         <div class="g3"><figure><div class="ph" data-file="uefn-v1-greybox-1"><span>First version greybox<small>uefn-v1-greybox-1.jpg</small></span></div></figure><figure><div class="ph" data-file="uefn-v1-greybox-2"><span>First version greybox<small>uefn-v1-greybox-2.jpg</small></span></div></figure><figure><div class="ph" data-file="uefn-v1-greybox-3"><span>First version greybox<small>uefn-v1-greybox-3.jpg</small></span></div></figure></div>
         <p>The first version was symmetrical: each team had its own base, with two areas between them, the platforms and the station lobby. It never felt right, and it failed on three things I needed from the map:</p>
         <div class="g3">
           <div class="sec"><h3>Stagnant gameplay</h3><p>Fights stayed on one area at a time, and the middle of the map became the focus.</p></div>
-          <div class="sec"><h3>No decision-making</h3><p>The active objective decided the range: long in the lobby, close on the platforms.</p></div>
-          <div class="sec"><h3>Visually similar</h3><p>Both halves shared the same layout, so only the set dressing told them apart.</p></div>
+          <div class="sec"><h3>No decision-making</h3><p>The active objective dictated the optimal playstyle too harshly.</p></div>
+          <div class="sec"><h3>Visually similar</h3><p>Both halves of the map risked feeling the same, making players get lost.</p></div>
         </div>
         <p>For these and other reasons, I redesigned the map around the train wagons, the most interesting part of this first draft.</p>
       </section>
 
-      <section class="fb-sec" id="fb-layout"><h2><small>05</small>Sketches</h2>
+      <section class="fb-sec" id="fb-layout"><h2>Sketches</h2>
         <figure><div class="ph" data-file="uefn-map"><span>Final sketch<small>uefn-map.jpg</small></span></div><figcaption><b>Final sketch</b></figcaption></figure>
         <span class="eyebrow" style="display:block">Earlier iterations</span>
         <div class="g2">
@@ -355,7 +355,7 @@ figure { grid-template-columns: minmax(0, 1fr); }
         </div>
       </section>
 
-      <section class="fb-sec" id="fb-compare"><h2><small>06</small>Greybox → final</h2>
+      <section class="fb-sec" id="fb-compare"><h2>Greybox → final</h2>
         <p>The same shots in greybox and final. Drag each image to compare.</p>
         <div class="cmp-row" style="grid-template-columns:1fr">
           <div class="cmp"><div class="ph a" data-file="uefn-greybox-3"><span>Greybox 3<small>uefn-greybox-3.jpg</small></span></div><div class="ph b" data-file="uefn-final-3"><span>Final 3<small>uefn-final-3.jpg</small></span></div><input type="range" min="0" max="100" value="50" aria-label="Compare greybox and final, shot 3"></div>
@@ -367,13 +367,13 @@ figure { grid-template-columns: minmax(0, 1fr); }
         </div>
       </section>
 
-      <section class="fb-sec" id="fb-tech"><h2><small>07</small>Techniques</h2>
+      <section class="fb-sec" id="fb-tech"><h2>Techniques</h2>
         <div class="sec"><h3>Sightlines &amp; cover</h3><p>Controlling how far players can see and shoot, so long-range weapons don't own every space.</p><div class="g2"><figure><div class="ph" data-file="uefn-cover-1"><span>Example<small>uefn-cover-1.jpg</small></span></div><figcaption>Cover breaks a long sightline, so weapons can't reach across the whole area.</figcaption></figure><figure><div class="ph" data-file="uefn-cover-2"><span>Example<small>uefn-cover-2.jpg</small></span></div><figcaption>A billboard sign cuts the sightline vertically, without working as cover.</figcaption></figure></div></div>
         <div class="sec"><h3>Landmarks</h3><p>Each area has something that stands out, so players recognize where they are.</p><div class="g3"><figure><div class="ph" data-file="uefn-landmark-1"><span>Example<small>uefn-landmark-1.jpg</small></span></div><figcaption>The footbridge works as a weenie: it's visible from anywhere on the map.</figcaption></figure><figure><div class="ph" data-file="uefn-landmark-2"><span>Example<small>uefn-landmark-2.jpg</small></span></div><figcaption>The derailed train and the crane.</figcaption></figure><figure><div class="ph" data-file="uefn-landmark-3"><span>Example<small>uefn-landmark-3.jpg</small></span></div><figcaption>The waiting benches on the platforms.</figcaption></figure></div></div>
         <div class="sec"><h3>Affordance</h3><p>Visual cues that tell players where they can go.</p><div class="g2"><figure><div class="ph" data-file="uefn-affordance-1"><span>Example<small>uefn-affordance-1.jpg</small></span></div><figcaption>Light draws the eye to an entrance.</figcaption></figure><figure><div class="ph" data-file="uefn-affordance-2"><span>Example<small>uefn-affordance-2.jpg</small></span></div><figcaption>Subtle arrows point players in the right direction.</figcaption></figure></div></div>
       </section>
 
-      <section class="fb-sec" id="fb-final"><h2><small>08</small>Final result</h2>
+      <section class="fb-sec" id="fb-final"><h2>Final result</h2>
         <div class="g2">
           <figure><div class="ph" data-file="uefn-area-1"><span>Platforms<small>uefn-area-1.jpg</small></span></div><figcaption><b>Platforms</b></figcaption></figure>
           <figure><div class="ph" data-file="uefn-area-2"><span>Wagons<small>uefn-area-2.jpg</small></span></div><figcaption><b>Wagons</b></figcaption></figure>
@@ -386,7 +386,7 @@ figure { grid-template-columns: minmax(0, 1fr); }
         </div>
       </section>
 
-      <section class="fb-sec" id="fb-back"><h2><small>09</small>Looking back</h2>
+      <section class="fb-sec" id="fb-back"><h2>Looking back</h2>
         <div class="reflect" style="margin-top:0"><span class="eyebrow">What worked</span><p>Playtests showed the map works: players found their way easily, and each area felt different to fight in.</p></div>
         <div class="reflect" style="margin-top:0"><span class="eyebrow">What I'd change</span><p>Better lighting, so no area feels too dark and paths are clearly lit, and fewer routes where too many paths lead to the same place.</p></div>
         <div class="cta-row" style="margin-top:1rem;justify-content:space-between"><a class="crumb" href="index.html#p1" style="margin:0">← Back to the portfolio</a><a class="crumb" href="project-2.html" style="margin:0">Next project: Pond Track →</a></div>
