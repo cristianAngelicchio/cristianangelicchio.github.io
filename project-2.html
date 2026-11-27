@@ -220,6 +220,11 @@ footer .avail i { width: 8px; height: 8px; border-radius: 50%; background: #3ecf
 .fb-sec > h2 { font-size: clamp(1.5rem, 3vw, 2rem); display: flex; gap: .8rem; align-items: baseline; }
 .fb-sec > h2 small { font-family: var(--body); font-size: .75rem; font-weight: 600; letter-spacing: .12em; color: var(--sa); }
 .fb-sec p { max-width: none; }
+.ph-tag { position: absolute; z-index: 1; left: .6rem; top: .6rem; font: 600 .7rem/1 var(--body); font-style: normal; letter-spacing: .08em; text-transform: uppercase; background: var(--sbg); color: var(--sa); padding: .3rem .5rem; border-radius: 4px; }
+.pairs .ph { position: relative; }
+.pairs .hl { align-content: start; }
+.pairs .hl > p { min-height: 3.2em; }
+#fb-tech .sec > p { margin-bottom: .9rem; opacity: .9; }
 .opt { font-size: .75rem; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; border: 1px dashed var(--sa); color: var(--sa); border-radius: 4px; padding: .05rem .4rem; margin-left: .4rem; vertical-align: middle; }
 .g2 { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 1rem; }
 .g3 { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 1rem; }
@@ -311,90 +316,79 @@ figure { grid-template-columns: minmax(0, 1fr); }
   <div class="wrap fb-layout">
     <nav class="toc" aria-label="On this page">
       <span class="eyebrow">On this page</span>
-      <a href="#fb-overview">Overview</a><a href="#fb-goal">Goal &amp; pillars</a><a href="#fb-layout">Sketches &amp; layout</a>
-      <a href="#fb-sections">Track sections</a><a href="#fb-boss">The boss fight</a><a href="#fb-greybox">Greybox</a>
-      <a href="#fb-iter">Iterations</a><a href="#fb-final">Final prototype</a><a href="#fb-back">Looking back</a>
+      <a href="#fb-overview">Overview</a><a href="#fb-goal">Goal</a><a href="#fb-layout">Sketches</a>
+      <a href="#fb-greybox">Greybox → final</a><a href="#fb-boss">Level gimmick</a><a href="#fb-tech">Techniques</a>
+      <a href="#fb-final">Final prototype</a><a href="#fb-back">Looking back</a>
     </nav>
     <div>
       <section class="fb-sec" id="fb-overview"><h2>Overview</h2>
-        <div class="ph" data-file="racing-playthrough" data-kind="video" data-youtube=""><span>Full race video (all laps)<small>racing-playthrough.mp4</small></span></div>
-        <div class="specs" style="grid-template-columns:repeat(4,minmax(0,1fr))">
-          <div><span>Role</span><b>Level Designer</b></div><div><span>Engine</span><b>Unity</b></div><div><span>Team</span><b>Solo</b></div><div><span>Duration</span><b>3 weeks</b></div>
-          <div><span>Genre</span><b>Racing</b></div><div><span>Laps</span><b>[3]</b></div><div><span>Year</span><b>2026</b></div><div><span>Tools</span><b>ProBuilder</b></div>
+        <div class="ph" data-file="racing-playthrough" data-kind="video" data-youtube=""><span>Full race video<small>YouTube video ID in data-youtube</small></span></div>
+        <div class="specs">
+          <div><span>Role</span><b>Level Designer</b></div><div><span>Engine</span><b>Unity</b></div><div><span>Team</span><b>Solo</b></div>
+          <div><span>Genre</span><b>Racing</b></div><div><span>Duration</span><b>3 weeks</b></div><div><span>Year</span><b>2026</b></div>
         </div>
-        <p>A toy-car race around a small pond. The first lap is a normal race. In the solo version, a carnivorous plant changes the track after every lap, turning the race into a boss fight.</p>
+        <p>A solo racing level built in Unity, where the player drives a toy car around a small pond. The first lap is a normal race. From then on, a carnivorous plant changes the track after every lap.</p>
       </section>
 
-      <section class="fb-sec" id="fb-goal"><h2>Goal &amp; pillars</h2>
+      <section class="fb-sec" id="fb-goal"><h2>Goal</h2>
         <p>Give the fantasy of being a small toy car, and turn a race into a boss fight without changing the core mechanics of racing games.</p>
-        <div class="g3">
-          <div class="sec"><h3>[Pillar 1]</h3><p>[E.g. how the scale sells being a toy car.]</p></div>
-          <div class="sec"><h3>[Pillar 2]</h3><p>[E.g. how the boss shows up using only driving.]</p></div>
-          <div class="sec"><h3>[Pillar 3]</h3><p>[E.g. how the player reads the track at speed.]</p></div>
+        <span class="eyebrow" style="display:block;margin-top:.5rem">What mattered most while designing</span>
+        <div class="g2">
+          <div class="sec"><h3>Read the track instantly</h3><p>Players can see where the track continues quickly and easily, without mistakes or stopping to analyze it.</p></div>
+          <div class="sec"><h3>Keep the speed up</h3><p>Players go fast for most of the track. Obstacles never force them to stop entirely.</p></div>
         </div>
       </section>
 
-      <section class="fb-sec" id="fb-layout"><h2>Sketches &amp; layout</h2>
-        <p>[How the track evolved on paper, one line per sketch.]</p>
-        <div class="g3">
-          <figure><div class="ph" data-file="racing-sketch-v1"><span>Sketch v1<small>racing-sketch-v1.jpg</small></span></div><figcaption><b>v1</b>[First idea]</figcaption></figure>
-          <figure><div class="ph" data-file="racing-sketch-v2"><span>Sketch v2<small>racing-sketch-v2.jpg</small></span></div><figcaption><b>v2</b>[What changed]</figcaption></figure>
-          <figure><div class="ph" data-file="racing-sketch"><span>Final layout<small>racing-sketch.jpg</small></span></div><figcaption><b>Final</b>[Why]</figcaption></figure>
+      <section class="fb-sec" id="fb-layout"><h2>Sketches</h2>
+        <figure><div class="ph" data-file="racing-sketch"><span>Final sketch<small>racing-sketch.jpg</small></span></div><figcaption><b>Final sketch</b></figcaption></figure>
+        <span class="eyebrow" style="display:block">Earlier iterations</span>
+        <div class="g2">
+          <figure><div class="ph" data-file="racing-sketch-v1"><span>Earlier sketch<small>racing-sketch-v1.jpg</small></span></div><figcaption>[What changed]</figcaption></figure>
+          <figure><div class="ph" data-file="racing-sketch-v2"><span>Earlier sketch<small>racing-sketch-v2.jpg</small></span></div><figcaption>[What changed]</figcaption></figure>
         </div>
       </section>
 
-      <section class="fb-sec" id="fb-sections"><h2>Track sections</h2>
-        <div class="ph" data-file="racing-sections-map"><span>Top-down track with sections and landmarks marked<small>racing-sections-map.jpg</small></span></div>
-        <div class="g3">
-          <figure><div class="ph" data-file="racing-shot-1"><span>Section 1<small>racing-shot-1.jpg</small></span></div><figcaption><b>Track Start</b>[What the player does here.]</figcaption></figure>
-          <figure><div class="ph" data-file="racing-shot-2"><span>Section 2<small>racing-shot-2.jpg</small></span></div><figcaption><b>Log Section</b>[What the player does here.]</figcaption></figure>
-          <figure><div class="ph" data-file="racing-shot-3"><span>Section 3<small>racing-shot-3.jpg</small></span></div><figcaption><b>Lily Pads</b>[What the player does here.]</figcaption></figure>
+      <section class="fb-sec" id="fb-greybox"><h2>Greybox → final</h2>
+        <p>Every pass from greybox to final prototype focused on affordance and clarity. Drag each image to compare.</p>
+        <div class="cmp-row" style="grid-template-columns:1fr">
+          <div class="cmp"><div class="ph a" data-file="racing-greybox-1"><span>Greybox<small>racing-greybox-1.jpg</small></span></div><div class="ph b" data-file="racing-shot-1"><span>Final prototype<small>racing-shot-1.jpg</small></span></div><input type="range" min="0" max="100" value="50" aria-label="Compare greybox and final prototype, Track Start"></div>
+          <p><b>Track Start</b></p>
+          <div class="cmp"><div class="ph a" data-file="racing-greybox-2"><span>Greybox<small>racing-greybox-2.jpg</small></span></div><div class="ph b" data-file="racing-shot-2"><span>Final prototype<small>racing-shot-2.jpg</small></span></div><input type="range" min="0" max="100" value="50" aria-label="Compare greybox and final prototype, Log Section"></div>
+          <p><b>Log Section</b></p>
+          <div class="cmp"><div class="ph a" data-file="racing-greybox-3"><span>Greybox<small>racing-greybox-3.jpg</small></span></div><div class="ph b" data-file="racing-shot-3"><span>Final prototype<small>racing-shot-3.jpg</small></span></div><input type="range" min="0" max="100" value="50" aria-label="Compare greybox and final prototype, Lily Pads"></div>
+          <p><b>Lily Pads</b></p>
         </div>
       </section>
 
-      <section class="fb-sec" id="fb-boss"><h2>The boss fight, lap by lap</h2>
-        <p>The first lap is a normal race. In the solo version, a carnivorous plant changes the track after every lap. [How the player defeats it.]</p>
-        <div class="beats">
-          <div class="beat"><div class="ph" data-file="racing-lap-1" data-kind="video"><span>Lap 1 clip<small>racing-lap-1.mp4</small></span></div><div><span class="eyebrow">Lap 1</span><h3>The normal track</h3><p>[What the player learns on this lap.]</p></div></div>
-          <div class="beat"><div class="ph" data-file="racing-lap-2" data-kind="video"><span>Lap 2 clip<small>racing-lap-2.mp4</small></span></div><div><span class="eyebrow">Lap 2</span><h3>[What changes]</h3><p>[What the plant does and how the player reacts.]</p></div></div>
-          <div class="beat"><div class="ph" data-file="racing-lap-3" data-kind="video"><span>Lap 3 clip<small>racing-lap-3.mp4</small></span></div><div><span class="eyebrow">Lap 3</span><h3>[What changes]</h3><p>[Copy one block per lap.]</p></div></div>
-        </div>
+      <section class="fb-sec" id="fb-boss"><h2>Level gimmick</h2>
+        <div class="ph" data-file="racing-change"><span>One section changing between laps (GIF or image)<small>racing-change.gif / .jpg</small></span></div>
+        <p>[How the plant changes the track after each lap, and how the player beats it.]</p>
       </section>
 
-      <section class="fb-sec" id="fb-greybox"><h2>Greybox</h2>
-        <p>Built in ProBuilder. Early greyboxes tested track length and how it felt to drive. Later passes focused on clarity, so players know where to go at a glance.</p>
-        <div class="g3">
-          <figure><div class="ph" data-file="racing-greybox-1"><span>Greybox 1<small>racing-greybox-1.jpg</small></span></div><figcaption><b>Pass 1</b>[What you tested]</figcaption></figure>
-          <figure><div class="ph" data-file="racing-greybox-2"><span>Greybox 2<small>racing-greybox-2.jpg</small></span></div><figcaption><b>Pass 2</b>[What changed]</figcaption></figure>
-          <figure><div class="ph" data-file="racing-greybox-3"><span>Greybox 3<small>racing-greybox-3.jpg</small></span></div><figcaption><b>Pass 3</b>[What changed]</figcaption></figure>
-        </div>
-      </section>
-
-      <section class="fb-sec" id="fb-iter"><h2>Iterations</h2>
-        <div class="stats"><div><b>[2]</b><span>sketch versions</span></div><div><b>[3]</b><span>greybox passes</span></div><div><b>3</b><span>weeks</span></div></div>
-        <article class="iter">
-          <h3>[Change 1 · Short title]</h3>
-          <div class="ps"><figure><div class="ph" data-file="racing-before-1"><span>Before<small>racing-before-1.jpg</small></span></div></figure><figure><div class="ph" data-file="racing-after-1"><span>After<small>racing-after-1.jpg</small></span></div></figure></div>
-          <dl><dt>Problem</dt><dd>[What wasn't working when you played it: track length, readability, landmarks.]</dd><dt>Change</dt><dd>[What you changed and the result.]</dd></dl>
-        </article>
-        <article class="iter">
-          <h3>[Change 2 · Short title]</h3>
-          <div class="ps"><figure><div class="ph" data-file="racing-before-2"><span>Before<small>racing-before-2.jpg</small></span></div></figure><figure><div class="ph" data-file="racing-after-2"><span>After<small>racing-after-2.jpg</small></span></div></figure></div>
-          <dl><dt>Problem</dt><dd>[…]</dd><dt>Change</dt><dd>[…]</dd></dl>
-        </article>
+      <section class="fb-sec" id="fb-tech"><h2>Techniques</h2>
+        <div class="sec"><h3>Affordance</h3><p>Guiding the player with the direction of the track's lines and its curves.</p><div class="g2"><figure><div class="ph" data-file="racing-affordance-1"><span>Example<small>racing-affordance-1.jpg</small></span></div><figcaption>[What the lines are doing here.]</figcaption></figure><figure><div class="ph" data-file="racing-affordance-2"><span>Example<small>racing-affordance-2.jpg</small></span></div><figcaption>[How this curve leads the player.]</figcaption></figure></div></div>
+        <div class="sec"><h3>Foreshadowing</h3><p>Showing the next parts of the track ahead of time, so players can anticipate them.</p><div class="g2"><figure><div class="ph" data-file="racing-foreshadow-1"><span>Example<small>racing-foreshadow-1.jpg</small></span></div><figcaption>[What the player sees coming.]</figcaption></figure><figure><div class="ph" data-file="racing-foreshadow-2"><span>Example<small>racing-foreshadow-2.jpg</small></span></div><figcaption>[What the player sees coming.]</figcaption></figure></div></div>
+        <div class="sec"><h3>Landmarks</h3><p>The carnivorous plant and other standout elements in each area work as obvious landmarks to orient yourself.</p><div class="g3"><figure><div class="ph" data-file="racing-landmark-1"><span>Example<small>racing-landmark-1.jpg</small></span></div><figcaption>The carnivorous plant.</figcaption></figure><figure><div class="ph" data-file="racing-landmark-2"><span>Example<small>racing-landmark-2.jpg</small></span></div><figcaption>[Landmark]</figcaption></figure><figure><div class="ph" data-file="racing-landmark-3"><span>Example<small>racing-landmark-3.jpg</small></span></div><figcaption>[Landmark]</figcaption></figure></div></div>
       </section>
 
       <section class="fb-sec" id="fb-final"><h2>Final prototype</h2>
         <p>The level reached a late prototype stage, right before the final art pass.</p>
-        <div class="ph" data-file="racing-loop" data-kind="video" style="margin-top:1rem"><span>Lap reel<small>racing-loop.mp4</small></span></div>
-        <div class="cta-row" style="margin-top:1rem"><a class="play" href="#">Play on itch.io →</a></div>
+        <div class="ph" data-file="racing-loop" data-kind="video"><span>Lap reel<small>racing-loop.mp4</small></span></div>
+        <div class="g2">
+          <figure><div class="ph" data-file="racing-shot-1"><span>Track Start<small>racing-shot-1.jpg</small></span></div><figcaption><b>Track Start</b></figcaption></figure>
+          <figure><div class="ph" data-file="racing-shot-2"><span>Log Section<small>racing-shot-2.jpg</small></span></div><figcaption><b>Log Section</b></figcaption></figure>
+          <figure><div class="ph" data-file="racing-shot-3"><span>Lily Pads<small>racing-shot-3.jpg</small></span></div><figcaption><b>Lily Pads</b></figcaption></figure>
+          <figure><div class="ph" data-file="racing-area-4"><span>[Area 4]<small>racing-area-4.jpg</small></span></div><figcaption><b>[Area 4]</b></figcaption></figure>
+          <figure><div class="ph" data-file="racing-area-5"><span>[Area 5]<small>racing-area-5.jpg</small></span></div><figcaption><b>[Area 5]</b></figcaption></figure>
+          <figure><div class="ph" data-file="racing-area-6"><span>[Area 6]<small>racing-area-6.jpg</small></span></div><figcaption><b>[Area 6]</b></figcaption></figure>
+        </div>
       </section>
 
       <section class="fb-sec" id="fb-back"><h2>Looking back</h2>
         <div class="reflect" style="margin-top:0"><span class="eyebrow">What worked</span><p>[…]</p></div>
         <div class="reflect" style="margin-top:0"><span class="eyebrow">What I'd change</span><p>[…]</p></div>
-        <p class="note credits">Credits: built on a Unity template project. The car, driving code and base art come from it; the track design, the boss-fight laps and their iterations are mine.</p>
-        <a class="crumb" href="index.html#p3" style="margin-top:1rem">Next project: Scarfguy →</a>
+        <p class="note credits">Credits: built on a racing game template project.<br>The track's layout and the gimmick were designed by me.</p>
+        <div class="cta-row" style="margin-top:1rem;justify-content:space-between"><a class="crumb" href="index.html#p2" style="margin:0">← Back to the portfolio</a><a class="crumb" href="index.html#p3" style="margin:0">Next project: Scarfguy →</a></div>
       </section>
     </div>
   </div>
