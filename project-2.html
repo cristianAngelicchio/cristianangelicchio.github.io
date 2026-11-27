@@ -56,8 +56,11 @@ a:focus-visible { outline: 3px solid var(--brand); outline-offset: 3px; border-r
 body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 10; background: var(--hero-bg); }
 .top { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5; background: color-mix(in srgb, var(--hero-bg) 92%, transparent); backdrop-filter: blur(8px); color: var(--hero-fg); }
 .top .wrap { display: flex; align-items: center; gap: 1.25rem; padding-block: .7rem; overflow-x: auto; white-space: nowrap; }
-.top .brandname { font-weight: 700; font-family: var(--display); margin-right: auto; opacity: 1; display: inline-flex; align-items: center; gap: .55rem; }
-.top .brandname i { width: 10px; height: 10px; border-radius: 50%; background: var(--brand); display: inline-block; }
+.top .brandname { font-weight: 700; font-family: var(--display); margin-right: auto; opacity: 1; display: inline-flex; align-items: center; gap: .5rem; font-size: 1.15rem; }
+.top .brandname .feather { width: 24px; height: 24px; flex: none; }
+.feather .vane { fill: var(--brand); stroke: currentColor; stroke-width: 1.6; stroke-linejoin: round; }
+.feather .cut { fill: none; stroke: currentColor; stroke-width: 1.4; stroke-linecap: round; }
+.feather .shaft { fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; }
 .top a { text-decoration: none; font-size: .9rem; color: inherit; }
 .mainnav .nl:hover { opacity: 1; }
 .btn { display: inline-flex; align-items: center; text-decoration: none; font-weight: 600; font-size: .92rem; padding: .5rem 1rem; border-radius: 8px; border: 1.5px solid currentColor; }
@@ -277,7 +280,7 @@ figure { grid-template-columns: minmax(0, 1fr); }
 </head>
 <body>
 <header class="top"><div class="wrap">
-  <a class="brandname" href="index.html"><i aria-hidden="true"></i>Cris Angelicchio</a>
+  <a class="brandname" href="index.html"><svg class="feather" viewBox="0 0 24 24" aria-hidden="true"><path class="vane" d="M21 3C14 3 8.6 7.4 7.6 14.6L7 17l2.4-.6C16.6 15.4 21 10 21 3Z"/><path class="cut" d="M14.2 10.6l3.6-.4M11.6 13l3.4-.2"/><path class="shaft" d="M3 21L16 8"/></svg>Cris Angelicchio</a>
   <button class="menu-btn" aria-expanded="false" aria-controls="mainnav">Menu</button>
   <nav id="mainnav" class="mainnav" aria-label="Main">
     <div class="item has-sub" style="--c:var(--brand)">
@@ -319,7 +322,7 @@ figure { grid-template-columns: minmax(0, 1fr); }
           <div><span>Role</span><b>Level Designer</b></div><div><span>Engine</span><b>Unity</b></div><div><span>Team</span><b>Solo</b></div><div><span>Duration</span><b>3 weeks</b></div>
           <div><span>Genre</span><b>Racing</b></div><div><span>Laps</span><b>[3]</b></div><div><span>Year</span><b>2026</b></div><div><span>Tools</span><b>ProBuilder</b></div>
         </div>
-        <p>[A short paragraph: the setting (a pond seen from a toy car), the normal race, and the solo version where the track changes every lap.]</p>
+        <p>A toy-car race around a small pond. The first lap is a normal race. In the solo version, a carnivorous plant changes the track after every lap, turning the race into a boss fight.</p>
       </section>
 
       <section class="fb-sec" id="fb-goal"><h2><small>02</small>Goal &amp; pillars</h2>
@@ -359,7 +362,7 @@ figure { grid-template-columns: minmax(0, 1fr); }
       </section>
 
       <section class="fb-sec" id="fb-greybox"><h2><small>06</small>Greybox</h2>
-        <p>[Built in ProBuilder. What you tested in each pass.]</p>
+        <p>Built in ProBuilder. Early greyboxes tested track length and how it felt to drive. Later passes focused on clarity, so players know where to go at a glance.</p>
         <div class="g3">
           <figure><div class="ph" data-file="racing-greybox-1"><span>Greybox 1<small>racing-greybox-1.jpg</small></span></div><figcaption><b>Pass 1</b>[What you tested]</figcaption></figure>
           <figure><div class="ph" data-file="racing-greybox-2"><span>Greybox 2<small>racing-greybox-2.jpg</small></span></div><figcaption><b>Pass 2</b>[What changed]</figcaption></figure>
@@ -382,7 +385,8 @@ figure { grid-template-columns: minmax(0, 1fr); }
       </section>
 
       <section class="fb-sec" id="fb-final"><h2><small>08</small>Final prototype</h2>
-        <div class="ph" data-file="racing-loop" data-kind="video"><span>Lap reel<small>racing-loop.mp4</small></span></div>
+        <p>The level reached a late prototype stage, right before the final art pass.</p>
+        <div class="ph" data-file="racing-loop" data-kind="video" style="margin-top:1rem"><span>Lap reel<small>racing-loop.mp4</small></span></div>
         <div class="cta-row" style="margin-top:1rem"><a class="play" href="#">Play on itch.io →</a></div>
       </section>
 

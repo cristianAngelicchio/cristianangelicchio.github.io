@@ -56,8 +56,11 @@ a:focus-visible { outline: 3px solid var(--brand); outline-offset: 3px; border-r
 body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 10; background: var(--hero-bg); }
 .top { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5; background: color-mix(in srgb, var(--hero-bg) 92%, transparent); backdrop-filter: blur(8px); color: var(--hero-fg); }
 .top .wrap { display: flex; align-items: center; gap: 1.25rem; padding-block: .7rem; overflow-x: auto; white-space: nowrap; }
-.top .brandname { font-weight: 700; font-family: var(--display); margin-right: auto; opacity: 1; display: inline-flex; align-items: center; gap: .55rem; }
-.top .brandname i { width: 10px; height: 10px; border-radius: 50%; background: var(--brand); display: inline-block; }
+.top .brandname { font-weight: 700; font-family: var(--display); margin-right: auto; opacity: 1; display: inline-flex; align-items: center; gap: .5rem; font-size: 1.15rem; }
+.top .brandname .feather { width: 24px; height: 24px; flex: none; }
+.feather .vane { fill: var(--brand); stroke: currentColor; stroke-width: 1.6; stroke-linejoin: round; }
+.feather .cut { fill: none; stroke: currentColor; stroke-width: 1.4; stroke-linecap: round; }
+.feather .shaft { fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; }
 .top a { text-decoration: none; font-size: .9rem; color: inherit; }
 .mainnav .nl:hover { opacity: 1; }
 .btn { display: inline-flex; align-items: center; text-decoration: none; font-weight: 600; font-size: .92rem; padding: .5rem 1rem; border-radius: 8px; border: 1.5px solid currentColor; }
@@ -276,7 +279,7 @@ figure { grid-template-columns: minmax(0, 1fr); }
 </head>
 <body>
 <header class="top"><div class="wrap">
-  <a class="brandname" href="index.html"><i aria-hidden="true"></i>Cris Angelicchio</a>
+  <a class="brandname" href="index.html"><svg class="feather" viewBox="0 0 24 24" aria-hidden="true"><path class="vane" d="M21 3C14 3 8.6 7.4 7.6 14.6L7 17l2.4-.6C16.6 15.4 21 10 21 3Z"/><path class="cut" d="M14.2 10.6l3.6-.4M11.6 13l3.4-.2"/><path class="shaft" d="M3 21L16 8"/></svg>Cris Angelicchio</a>
   <button class="menu-btn" aria-expanded="false" aria-controls="mainnav">Menu</button>
   <nav id="mainnav" class="mainnav" aria-label="Main">
     <div class="item has-sub" style="--c:var(--brand)">
@@ -300,9 +303,9 @@ figure { grid-template-columns: minmax(0, 1fr); }
 <main class="band s1" style="padding-block:0">
   <div class="wrap fb-hero">
     <a class="crumb" href="index.html#p1">← Back to the portfolio</a>
-    <span class="eyebrow" style="display:block;color:var(--sa)">Full breakdown · Multiplayer level design · UEFN</span>
+    <span class="eyebrow" style="display:block;color:var(--sa)">Full breakdown · FPS Multiplayer Level · UEFN</span>
     <h1>Train Station</h1>
-    <p class="tagline">A Team Deathmatch map for Fortnite, from paper sketch to greybox to final dressing, in one month.</p>
+    <p class="tagline">A Team Deathmatch map set in a war-torn train station.</p>
   </div>
   <div class="wrap fb-layout">
     <nav class="toc" aria-label="On this page">
@@ -319,11 +322,11 @@ figure { grid-template-columns: minmax(0, 1fr); }
           <div><span>Role</span><b>Level Designer</b></div><div><span>Engine</span><b>UEFN</b></div><div><span>Team</span><b>Solo</b></div><div><span>Duration</span><b>1 month</b></div>
           <div><span>Genre</span><b>FPS - Team Deathmatch</b></div><div><span>Players</span><b>[8 v 8]</b></div><div><span>Year</span><b>2026</b></div><div><span>Iterations</span><b>[3]</b></div>
         </div>
-        <p>[A short paragraph: the setting, the size of the map, and how a match plays out from spawn to the first fight.]</p>
+        <p>A war-torn train station with a derailed train. The map is long and narrow: half of it is the station platforms, a footbridge splits it in the middle, and the other half is the tracks running into a tunnel. [How a match plays out, from spawn to the first fight.]</p>
       </section>
 
       <section class="fb-sec" id="fb-goal"><h2><small>02</small>Goal &amp; pillars</h2>
-        <p>[The main goal of the map in 2–3 lines.]</p>
+        <p>A war-torn train station that could exist in real life. The map is long and narrow, so fights keep moving between the platforms and the tracks, like a train in motion.</p>
         <div class="g3">
           <div class="sec"><h3>[Pillar 1]</h3><p>[E.g. "Every fight has a flank route."]</p></div>
           <div class="sec"><h3>[Pillar 2]</h3><p>[E.g. "No spawn point is in a long sightline."]</p></div>
@@ -346,7 +349,7 @@ figure { grid-template-columns: minmax(0, 1fr); }
       </section>
 
       <section class="fb-sec" id="fb-lanes"><h2><small>05</small>Areas &amp; flow</h2>
-        <p>[The map is long on one axis: half is the station platforms, then the footbridge, then the tracks running to the tunnel. Five main areas:]</p>
+        <p>The map is long on one axis: half is the station platforms, then the footbridge, then the tracks running to the tunnel. Five main areas:</p>
         <div class="ph" data-file="uefn-lanes-map"><span>Top-down map with areas, routes and sightlines drawn on top<small>uefn-lanes-map.jpg</small></span></div>
         <div class="g3">
           <div class="sec"><h3>Platforms</h3><p>[What kind of fight happens here.]</p></div>
@@ -362,9 +365,9 @@ figure { grid-template-columns: minmax(0, 1fr); }
         <p>The same shots in greybox and final. Drag each image to compare.</p>
         <div class="cmp-row" style="grid-template-columns:1fr">
           <div class="cmp"><div class="ph a" data-file="uefn-greybox-1"><span>Greybox 1<small>uefn-greybox-1.jpg</small></span></div><div class="ph b" data-file="uefn-final-1"><span>Final 1<small>uefn-final-1.jpg</small></span></div><input type="range" min="0" max="100" value="50" aria-label="Compare greybox and final, shot 1"></div>
-          <p>[What you tested in this greybox, and what changed in the final.]</p>
+          <p>Fixed: sightlines at the window, readability and flow on the footbridge stairs.</p>
           <div class="cmp"><div class="ph a" data-file="uefn-greybox-2"><span>Greybox 2<small>uefn-greybox-2.jpg</small></span></div><div class="ph b" data-file="uefn-final-2"><span>Final 2<small>uefn-final-2.jpg</small></span></div><input type="range" min="0" max="100" value="50" aria-label="Compare greybox and final, shot 2"></div>
-          <p>[What you tested in this greybox, and what changed in the final.]</p>
+          <p>Fixed: movement around the mountains, sightlines near the water tower.</p>
           <div class="cmp"><div class="ph a" data-file="uefn-greybox-3"><span>Greybox 3<small>uefn-greybox-3.jpg</small></span></div><div class="ph b" data-file="uefn-final-3"><span>Final 3<small>uefn-final-3.jpg</small></span></div><input type="range" min="0" max="100" value="50" aria-label="Compare greybox and final, shot 3"></div>
           <p>[What you tested in this greybox, and what changed in the final.]</p>
         </div>
@@ -405,8 +408,8 @@ figure { grid-template-columns: minmax(0, 1fr); }
       </section>
 
       <section class="fb-sec" id="fb-back"><h2><small>11</small>Looking back</h2>
-        <div class="reflect" style="margin-top:0"><span class="eyebrow">What worked</span><p>[…]</p></div>
-        <div class="reflect" style="margin-top:0"><span class="eyebrow">What I'd change</span><p>[E.g. playtest with real players earlier.]</p></div>
+        <div class="reflect" style="margin-top:0"><span class="eyebrow">What worked</span><p>Playtests showed the map works: players found their way easily, and each area felt different to fight in.</p></div>
+        <div class="reflect" style="margin-top:0"><span class="eyebrow">What I'd change</span><p>Better lighting, so no area feels too dark and paths are clearly lit, and fewer routes where too many paths lead to the same place.</p></div>
         <a class="crumb" href="project-2.html" style="margin-top:1rem">Next project: Pond Track →</a>
       </section>
     </div>
