@@ -350,23 +350,23 @@ figure { grid-template-columns: minmax(0, 1fr); }
       </section>
 
       <section class="fb-sec" id="fb-v1"><h2>Failed version</h2>
-        <div class="ph" data-file="uefn-v1-sketch"><span>First version sketch<small>uefn-v1-sketch.jpg</small></span></div>
+        <div class="ph" data-file="uefn-v1-sketch" style="aspect-ratio:4/3"><span>First version sketch<small>uefn-v1-sketch.jpg</small></span></div>
         <div class="g3"><figure><div class="ph" data-file="uefn-v1-greybox-1"><span>First version greybox<small>uefn-v1-greybox-1.jpg</small></span></div></figure><figure><div class="ph" data-file="uefn-v1-greybox-2"><span>First version greybox<small>uefn-v1-greybox-2.jpg</small></span></div></figure><figure><div class="ph" data-file="uefn-v1-greybox-3"><span>First version greybox<small>uefn-v1-greybox-3.jpg</small></span></div></figure></div>
-        <p>The first version was symmetrical: each team had its own base, with two areas between them, the platforms and the station lobby. It never felt right, and it failed on three things I needed from the map:</p>
+        <p>The first version was symmetrical: each team had its own base, with two main areas between them, the platforms and the station lobby. It never felt right, and it had multiple issues:</p>
         <div class="g3">
           <div class="sec"><h3>Stagnant gameplay</h3><p>Fights stayed on one area at a time, and the middle of the map became the focus.</p></div>
           <div class="sec"><h3>No decision-making</h3><p>The active objective dictated the optimal playstyle too harshly.</p></div>
           <div class="sec"><h3>Visually similar</h3><p>Both halves of the map risked feeling the same, making players get lost.</p></div>
         </div>
-        <p>For these and other reasons, I redesigned the map around the train wagons, the most interesting part of this first draft.</p>
+        <p>For these and other reasons, I redesigned the map around the train wagons, the most interesting part of this first draft. The aim was to fix those issues: players have to move constantly, and every area feels unique in both playstyle and look.</p>
       </section>
 
       <section class="fb-sec" id="fb-layout"><h2>Sketches</h2>
         <figure><div class="ph" data-file="uefn-map"><span>Final sketch<small>uefn-map.jpg</small></span></div><figcaption><b>Final sketch</b></figcaption></figure>
         <span class="eyebrow" style="display:block">Earlier iterations</span>
         <div class="g2">
-          <figure><div class="ph" data-file="uefn-sketch-v1"><span>Earlier sketch<small>uefn-sketch-v1.jpg</small></span></div><figcaption>[What changed]</figcaption></figure>
-          <figure><div class="ph" data-file="uefn-sketch-v2"><span>Earlier sketch<small>uefn-sketch-v2.jpg</small></span></div><figcaption>[What changed]</figcaption></figure>
+          <figure><div class="ph" data-file="uefn-sketch-v1" style="aspect-ratio:3/4"><span>Earlier sketch<small>uefn-sketch-v1.jpg</small></span></div><figcaption><b>v1</b>Five areas at similar distances. Most areas were already defined, but where the watchtower is now, there was a second footbridge.</figcaption></figure>
+          <figure><div class="ph" data-file="uefn-sketch-v2" style="aspect-ratio:3/4"><span>Earlier sketch<small>uefn-sketch-v2.jpg</small></span></div><figcaption><b>v2</b>Every area and the connections between them polished to make them more interesting. The final sketch mostly adds clarity.</figcaption></figure>
         </div>
       </section>
 
@@ -374,7 +374,7 @@ figure { grid-template-columns: minmax(0, 1fr); }
         <p>The same shots in greybox and final. Drag each image to compare.</p>
         <div class="cmp-row" style="grid-template-columns:1fr">
           <div class="cmp"><div class="ph a" data-file="uefn-greybox-3"><span>Greybox 3<small>uefn-greybox-3.jpg</small></span></div><div class="ph b" data-file="uefn-final-3"><span>Final 3<small>uefn-final-3.jpg</small></span></div><input type="range" min="0" max="100" value="50" aria-label="Compare greybox and final, shot 3"></div>
-          <p>Fixed: [what changed].</p>
+          <p>Fixed: several spaces, such as lowering the watchtower and adding complexity to the center, which was too clean and empty.</p>
           <div class="cmp"><div class="ph a" data-file="uefn-greybox-1"><span>Greybox 1<small>uefn-greybox-1.jpg</small></span></div><div class="ph b" data-file="uefn-final-1"><span>Final 1<small>uefn-final-1.jpg</small></span></div><input type="range" min="0" max="100" value="50" aria-label="Compare greybox and final, shot 1"></div>
           <p>Fixed: sightlines at the window, readability and flow on the footbridge stairs.</p>
           <div class="cmp"><div class="ph a" data-file="uefn-greybox-2"><span>Greybox 2<small>uefn-greybox-2.jpg</small></span></div><div class="ph b" data-file="uefn-final-2"><span>Final 2<small>uefn-final-2.jpg</small></span></div><input type="range" min="0" max="100" value="50" aria-label="Compare greybox and final, shot 2"></div>
@@ -383,9 +383,9 @@ figure { grid-template-columns: minmax(0, 1fr); }
       </section>
 
       <section class="fb-sec" id="fb-tech"><h2>Techniques</h2>
-        <div class="sec"><h3>Sightlines &amp; cover</h3><p>Controlling how far players can see and shoot, so long-range weapons don't own every space.</p><div class="g2"><figure><div class="ph" data-file="uefn-cover-1"><span>Example<small>uefn-cover-1.jpg</small></span></div><figcaption>Cover breaks a long sightline, so weapons can't reach across the whole area.</figcaption></figure><figure><div class="ph" data-file="uefn-cover-2"><span>Example<small>uefn-cover-2.jpg</small></span></div><figcaption>A billboard sign cuts the sightline vertically, without working as cover.</figcaption></figure></div></div>
-        <div class="sec"><h3>Landmarks</h3><p>Each area has something that stands out, so players recognize where they are.</p><div class="g3"><figure><div class="ph" data-file="uefn-landmark-1"><span>Example<small>uefn-landmark-1.jpg</small></span></div><figcaption>The footbridge works as a weenie: it's visible from anywhere on the map.</figcaption></figure><figure><div class="ph" data-file="uefn-landmark-2"><span>Example<small>uefn-landmark-2.jpg</small></span></div><figcaption>The derailed train and the crane.</figcaption></figure><figure><div class="ph" data-file="uefn-landmark-3"><span>Example<small>uefn-landmark-3.jpg</small></span></div><figcaption>The waiting benches on the platforms.</figcaption></figure></div></div>
-        <div class="sec"><h3>Affordance</h3><p>Visual cues that tell players where they can go.</p><div class="g2"><figure><div class="ph" data-file="uefn-affordance-1"><span>Example<small>uefn-affordance-1.jpg</small></span></div><figcaption>Light draws the eye to an entrance.</figcaption></figure><figure><div class="ph" data-file="uefn-affordance-2"><span>Example<small>uefn-affordance-2.jpg</small></span></div><figcaption>Subtle arrows point players in the right direction.</figcaption></figure></div></div>
+        <div class="sec"><h3>Sightlines &amp; cover</h3><p>Controlling how far players can see and shoot, so long-range weapons don't own every space.</p><div class="g2"><figure><div class="ph" data-file="uefn-cover-1"><span>Example<small>uefn-cover-1.jpg</small></span></div><figcaption>Inside the footbridge, boxes on both sides of the walkway block the view from one side of the bridge to the other.</figcaption></figure><figure><div class="ph" data-file="uefn-cover-2"><span>Example<small>uefn-cover-2.jpg</small></span></div><figcaption>The GRAND STATION sign stops shots from the far end of the platforms to the center of the footbridge, a possible objective, and the other way around.</figcaption></figure></div></div>
+        <div class="sec"><h3>Landmarks</h3><p>Each area has something that stands out, so players recognize where they are.</p><div class="g2"><figure><div class="ph" data-file="uefn-landmark-1"><span>Example<small>uefn-landmark-1.jpg</small></span></div><figcaption>The footbridge works as a weenie: it's visible from anywhere on the map.</figcaption></figure><figure><div class="ph" data-file="uefn-landmark-2"><span>Example<small>uefn-landmark-2.jpg</small></span></div><figcaption>The derailed train and the crane.</figcaption></figure></div></div>
+        <div class="sec"><h3>Affordance</h3><p>Visual cues that tell players where they can go.</p><div class="g2"><figure><div class="ph" data-file="uefn-affordance-1"><span>Example<small>uefn-affordance-1.jpg</small></span></div><figcaption>A lit entrance tells players they can go into the wagon.</figcaption></figure><figure><div class="ph" data-file="uefn-affordance-2"><span>Example<small>uefn-affordance-2.jpg</small></span></div><figcaption>From the waiting room exit, players glimpse the footbridge stairs, and an arrow sign points the same way.</figcaption></figure></div></div>
       </section>
 
       <section class="fb-sec" id="fb-final"><h2>Final result</h2>
