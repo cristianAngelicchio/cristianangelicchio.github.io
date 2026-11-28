@@ -280,6 +280,7 @@ blockquote { margin: 0; padding-left: 1rem; border-left: 3px solid var(--sa); fo
 .cmp:has(input:focus-visible) { outline: 3px solid var(--sa); outline-offset: 3px; }
 .cmp-row { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 1rem; }
 @media (max-width: 700px) { .cmp-row { grid-template-columns: 1fr; } }
+.cmp-row > .cmp-cap { margin-bottom: -.5rem; } .cmp-row > .cmp-cap:not(:first-child) { margin-top: 1.25rem; }   /* slider titles sit above their image */
 .cta-row { display: flex; gap: 1.5rem; align-items: center; flex-wrap: wrap; }
 .cta-row .play { margin-top: 0; }
 /* Media: each gray box loads assets/<name> by itself when that file exists (see README) */
@@ -373,12 +374,12 @@ figure { grid-template-columns: minmax(0, 1fr); }
       <section class="fb-sec" id="fb-compare"><h2>Greybox → final</h2>
         <p>The same shots in greybox and final. Drag each image to compare.</p>
         <div class="cmp-row" style="grid-template-columns:1fr">
+          <p class="cmp-cap">Fixed: several spaces, such as lowering the watchtower and adding complexity to the center, which was too clean and empty.</p>
           <div class="cmp"><div class="ph a" data-file="uefn-greybox-3"><span>Greybox 3<small>uefn-greybox-3.jpg</small></span></div><div class="ph b" data-file="uefn-final-3"><span>Final 3<small>uefn-final-3.jpg</small></span></div><input type="range" min="0" max="100" value="50" aria-label="Compare greybox and final, shot 3"></div>
-          <p>Fixed: several spaces, such as lowering the watchtower and adding complexity to the center, which was too clean and empty.</p>
+          <p class="cmp-cap">Fixed: sightlines at the window, readability and flow on the footbridge stairs.</p>
           <div class="cmp"><div class="ph a" data-file="uefn-greybox-1"><span>Greybox 1<small>uefn-greybox-1.jpg</small></span></div><div class="ph b" data-file="uefn-final-1"><span>Final 1<small>uefn-final-1.jpg</small></span></div><input type="range" min="0" max="100" value="50" aria-label="Compare greybox and final, shot 1"></div>
-          <p>Fixed: sightlines at the window, readability and flow on the footbridge stairs.</p>
+          <p class="cmp-cap">Fixed: movement around the mountains, sightlines near the water tower.</p>
           <div class="cmp"><div class="ph a" data-file="uefn-greybox-2"><span>Greybox 2<small>uefn-greybox-2.jpg</small></span></div><div class="ph b" data-file="uefn-final-2"><span>Final 2<small>uefn-final-2.jpg</small></span></div><input type="range" min="0" max="100" value="50" aria-label="Compare greybox and final, shot 2"></div>
-          <p>Fixed: movement around the mountains, sightlines near the water tower.</p>
         </div>
       </section>
 

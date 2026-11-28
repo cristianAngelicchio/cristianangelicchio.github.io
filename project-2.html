@@ -284,6 +284,7 @@ blockquote { margin: 0; padding-left: 1rem; border-left: 3px solid var(--sa); fo
 .cmp:has(input:focus-visible) { outline: 3px solid var(--sa); outline-offset: 3px; }
 .cmp-row { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 1rem; }
 @media (max-width: 700px) { .cmp-row { grid-template-columns: 1fr; } }
+.cmp-row > .cmp-cap { margin-bottom: -.5rem; } .cmp-row > .cmp-cap:not(:first-child) { margin-top: 1.25rem; }   /* slider titles sit above their image */
 .cta-row { display: flex; gap: 1.5rem; align-items: center; flex-wrap: wrap; }
 .cta-row .play { margin-top: 0; }
 /* Media: each gray box loads assets/<name> by itself when that file exists (see README) */
@@ -363,55 +364,56 @@ figure { grid-template-columns: minmax(0, 1fr); }
         <figure><div class="ph" data-file="racing-sketch"><span>Final sketch<small>racing-sketch.jpg</small></span></div><figcaption><b>Final sketch</b></figcaption></figure>
         <span class="eyebrow" style="display:block">Earlier iterations</span>
         <div class="g2">
-          <figure><div class="ph" data-file="racing-sketch-v1"><span>Earlier sketch<small>racing-sketch-v1.jpg</small></span></div><figcaption>[What changed]</figcaption></figure>
-          <figure><div class="ph" data-file="racing-sketch-v2"><span>Earlier sketch<small>racing-sketch-v2.jpg</small></span></div><figcaption>[What changed]</figcaption></figure>
+          <figure><div class="ph" data-file="racing-sketch-v1"><span>Earlier sketch<small>racing-sketch-v1.jpg</small></span></div><figcaption><b>First paper draft</b></figcaption></figure>
+          <figure><div class="ph" data-file="racing-sketch-v2"><span>Earlier sketch<small>racing-sketch-v2.jpg</small></span></div><figcaption><b>Digital draft</b></figcaption></figure>
         </div>
       </section>
 
       <section class="fb-sec" id="fb-greybox"><h2>Greybox → final</h2>
         <p>Every pass from greybox to final prototype focused on affordance and clarity. Drag each image to compare.</p>
         <div class="cmp-row" style="grid-template-columns:1fr">
+          <p class="cmp-cap"><b>Track start</b></p>
           <div class="cmp"><div class="ph a" data-file="racing-greybox-1"><span>Greybox<small>racing-greybox-1.jpg</small></span></div><div class="ph b" data-file="racing-shot-1"><span>Final prototype<small>racing-shot-1.jpg</small></span></div><input type="range" min="0" max="100" value="50" aria-label="Compare greybox and final prototype, Track Start"></div>
-          <p><b>Track Start</b></p>
+          <p class="cmp-cap"><b>Log section</b></p>
           <div class="cmp"><div class="ph a" data-file="racing-greybox-2"><span>Greybox<small>racing-greybox-2.jpg</small></span></div><div class="ph b" data-file="racing-shot-2"><span>Final prototype<small>racing-shot-2.jpg</small></span></div><input type="range" min="0" max="100" value="50" aria-label="Compare greybox and final prototype, Log Section"></div>
-          <p><b>Log Section</b></p>
+          <p class="cmp-cap"><b>Lily pads</b></p>
           <div class="cmp"><div class="ph a" data-file="racing-greybox-3"><span>Greybox<small>racing-greybox-3.jpg</small></span></div><div class="ph b" data-file="racing-shot-3"><span>Final prototype<small>racing-shot-3.jpg</small></span></div><input type="range" min="0" max="100" value="50" aria-label="Compare greybox and final prototype, Lily Pads"></div>
-          <p><b>Lily Pads</b></p>
         </div>
       </section>
 
       <section class="fb-sec" id="fb-boss"><h2>Level gimmick</h2>
-        <p>The first lap is a normal race. After every lap, the carnivorous plant changes the track. [One more line: how the player beats it.]</p>
+        <p>The level is built as a special kind of track. The first lap is the base: a generic track like the ones in a regular racing game, where players compete against each other.</p>
+        <p>In this version, though, every lap after that changes the track and breaks the player's expectations, building up to the climax: the carnivorous plant boss and the destruction of different parts of the level.</p>
         <div class="beats">
-          <div class="beat"><div class="ph" data-file="racing-lap-1"><span>Lap 1 (GIF or image)<small>racing-lap-1.gif / .jpg</small></span></div><div><span class="eyebrow">Lap 1</span><h3>The normal track</h3><p>[What the player learns on this lap.]</p></div></div>
-          <div class="beat"><div class="ph" data-file="racing-lap-2"><span>Lap 2 (GIF or image)<small>racing-lap-2.gif / .jpg</small></span></div><div><span class="eyebrow">Lap 2</span><h3>[What changes]</h3><p>[What the plant does and how the player reacts.]</p></div></div>
-          <div class="beat"><div class="ph" data-file="racing-lap-3"><span>Lap 3 (GIF or image)<small>racing-lap-3.gif / .jpg</small></span></div><div><span class="eyebrow">Lap 3</span><h3>[What changes]</h3><p>[What the plant does and how the player reacts.]</p></div></div>
+          <div class="beat"><div class="ph" data-file="racing-lap-1"><span>Lap 1 (GIF or image)<small>racing-lap-1.gif / .jpg</small></span></div><div><span class="eyebrow">Lap 1</span><p>The player enters the log from ground level.</p></div></div>
+          <div class="beat"><div class="ph" data-file="racing-lap-2"><span>Lap 2 (GIF or image)<small>racing-lap-2.gif / .jpg</small></span></div><div><span class="eyebrow">Lap 2</span><p>The player is forced up a level: they jump onto the statue's base, and later cross along the top of the log.</p></div></div>
+          <div class="beat"><div class="ph" data-file="racing-lap-3"><span>Lap 3 (GIF or image)<small>racing-lap-3.gif / .jpg</small></span></div><div><span class="eyebrow">Lap 3</span><p>After the destruction, the player uses the statue as a bridge and drives through the upside-down log, now partly destroyed.</p></div></div>
         </div>
       </section>
 
       <section class="fb-sec" id="fb-tech"><h2>Techniques</h2>
-        <div class="sec"><h3>Affordance</h3><p>Guiding the player with the direction of the track's lines and its curves.</p><div class="g2"><figure><div class="ph" data-file="racing-affordance-1"><span>Example<small>racing-affordance-1.jpg</small></span></div><figcaption>[What the lines are doing here.]</figcaption></figure><figure><div class="ph" data-file="racing-affordance-2"><span>Example<small>racing-affordance-2.jpg</small></span></div><figcaption>[How this curve leads the player.]</figcaption></figure></div></div>
-        <div class="sec"><h3>Foreshadowing</h3><p>Showing the next parts of the track ahead of time, so players can anticipate them.</p><div class="g2"><figure><div class="ph" data-file="racing-foreshadow-1"><span>Example<small>racing-foreshadow-1.jpg</small></span></div><figcaption>[What the player sees coming.]</figcaption></figure><figure><div class="ph" data-file="racing-foreshadow-2"><span>Example<small>racing-foreshadow-2.jpg</small></span></div><figcaption>[What the player sees coming.]</figcaption></figure></div></div>
-        <div class="sec"><h3>Landmarks</h3><p>The carnivorous plant and other standout elements in each area work as obvious landmarks to orient yourself.</p><div class="g3"><figure><div class="ph" data-file="racing-landmark-1"><span>Example<small>racing-landmark-1.jpg</small></span></div><figcaption>The carnivorous plant.</figcaption></figure><figure><div class="ph" data-file="racing-landmark-2"><span>Example<small>racing-landmark-2.jpg</small></span></div><figcaption>[Landmark]</figcaption></figure><figure><div class="ph" data-file="racing-landmark-3"><span>Example<small>racing-landmark-3.jpg</small></span></div><figcaption>[Landmark]</figcaption></figure></div></div>
+        <div class="sec"><h3>Affordance</h3><p>Guiding the player with the direction of the track's lines and its curves.</p><div class="g2"><figure><div class="ph" data-file="racing-affordance-1"><span>Example<small>racing-affordance-1.jpg</small></span></div><figcaption>At the start of the track, the hose works as a directional line: its direction tells players where to go.</figcaption></figure><figure><div class="ph" data-file="racing-affordance-2"><span>Example<small>racing-affordance-2.jpg</small></span></div><figcaption>The lily pads form a curve instead of a straight line to the next section, adjusting the player's direction and making the drive more interesting.</figcaption></figure></div></div>
+        <div class="sec"><h3>Foreshadowing</h3><p>Showing the next parts of the track ahead of time, so players can anticipate them.</p><div class="g2"><figure><div class="ph" data-file="racing-foreshadow-1"><span>Example<small>racing-foreshadow-1.jpg</small></span></div><figcaption>From the start of the lap, players can already see much of what's coming: the lily pads, the log and the waterfall.</figcaption></figure><figure><div class="ph" data-file="racing-foreshadow-2"><span>Example<small>racing-foreshadow-2.jpg</small></span></div><figcaption>On the last lap, the carnivorous plant stalks the player, a hint that it will try to eat them at the end, the climax of the level.</figcaption></figure></div></div>
+        <div class="sec"><h3>Landmarks</h3><p>A standout element in each area works as a landmark, so players always know where they are.</p><div class="g3"><figure><div class="ph" data-file="racing-landmark-1"><span>Example<small>racing-landmark-1.jpg</small></span></div><figcaption>The center plant, which later turns into the carnivorous plant.</figcaption></figure><figure><div class="ph" data-file="racing-landmark-2"><span>Example<small>racing-landmark-2.jpg</small></span></div><figcaption>The gnome statue.</figcaption></figure><figure><div class="ph" data-file="racing-landmark-3"><span>Example<small>racing-landmark-3.jpg</small></span></div><figcaption>The vase waterfall.</figcaption></figure></div></div>
       </section>
 
       <section class="fb-sec" id="fb-final"><h2>Final prototype</h2>
         <p>The level reached a late prototype stage, right before the final art pass.</p>
         <div class="ph" data-file="racing-loop" data-kind="video"><span>Lap reel<small>racing-loop.mp4</small></span></div>
         <div class="g2">
-          <figure><div class="ph" data-file="racing-shot-1"><span>Track Start<small>racing-shot-1.jpg</small></span></div><figcaption><b>Track Start</b></figcaption></figure>
-          <figure><div class="ph" data-file="racing-shot-2"><span>Log Section<small>racing-shot-2.jpg</small></span></div><figcaption><b>Log Section</b></figcaption></figure>
-          <figure><div class="ph" data-file="racing-shot-3"><span>Lily Pads<small>racing-shot-3.jpg</small></span></div><figcaption><b>Lily Pads</b></figcaption></figure>
-          <figure><div class="ph" data-file="racing-area-4"><span>[Area 4]<small>racing-area-4.jpg</small></span></div><figcaption><b>[Area 4]</b></figcaption></figure>
-          <figure><div class="ph" data-file="racing-area-5"><span>[Area 5]<small>racing-area-5.jpg</small></span></div><figcaption><b>[Area 5]</b></figcaption></figure>
-          <figure><div class="ph" data-file="racing-area-6"><span>[Area 6]<small>racing-area-6.jpg</small></span></div><figcaption><b>[Area 6]</b></figcaption></figure>
+          <figure><div class="ph" data-file="racing-shot-1"><span>Track start (wooden bridge)<small>racing-shot-1.jpg</small></span></div><figcaption><b>Track start (wooden bridge)</b></figcaption></figure>
+          <figure><div class="ph" data-file="racing-area-gnome"><span>Gnome statue<small>racing-area-gnome.jpg</small></span></div><figcaption><b>Gnome statue</b></figcaption></figure>
+          <figure><div class="ph" data-file="racing-shot-2"><span>Log section<small>racing-shot-2.jpg</small></span></div><figcaption><b>Log section</b></figcaption></figure>
+          <figure><div class="ph" data-file="racing-area-stones"><span>Stone jumps<small>racing-area-stones.jpg</small></span></div><figcaption><b>Stone jumps</b></figcaption></figure>
+          <figure><div class="ph" data-file="racing-shot-3"><span>Lily pads<small>racing-shot-3.jpg</small></span></div><figcaption><b>Lily pads</b></figcaption></figure>
+          <figure><div class="ph" data-file="racing-area-flowerbed"><span>Flower bed<small>racing-area-flowerbed.jpg</small></span></div><figcaption><b>Flower bed</b></figcaption></figure>
         </div>
         <div class="cta-row"><a class="play itch" href="https://crowsi.itch.io/pond-track" target="_blank" rel="noopener">Play on itch.io →</a></div>
       </section>
 
       <section class="fb-sec" id="fb-back"><h2>Looking back</h2>
-        <div class="reflect" style="margin-top:0"><span class="eyebrow">What worked</span><p>[…]</p></div>
-        <div class="reflect" style="margin-top:0"><span class="eyebrow">What I'd change</span><p>[…]</p></div>
+        <div class="reflect" style="margin-top:0"><span class="eyebrow">What worked</span><p>Playtests showed the level communicated direction really well: not a single player was ever unsure where to go. On top of that, a boss-style twist in a solo race was a welcome surprise. A solo race isn't very interesting on its own, and changing an expected challenge made it much more satisfying.</p></div>
+        <div class="reflect" style="margin-top:0"><span class="eyebrow">What I'd change</span><p>A few sections, especially on the last lap, had too many curves in a row. They never made players stop entirely, but they made that last stretch challenging (good) and slow (bad). I'd tune those sections and remove or soften some of the curves where possible.</p></div>
         <p class="note credits">Credits: built on a racing game template project.<br>The track's layout and the gimmick were designed by me.</p>
         <div class="cta-row" style="margin-top:1rem;justify-content:space-between"><a class="crumb" href="index.html#p2" style="margin:0">← Back to the portfolio</a><a class="crumb" href="index.html#p3" style="margin:0">Next project: Scarfguy →</a></div>
       </section>
